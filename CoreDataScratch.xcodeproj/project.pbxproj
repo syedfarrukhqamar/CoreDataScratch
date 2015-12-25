@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D43CD81F1C2A8CD4008DE720 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43CD81E1C2A8CD4008DE720 /* TableViewController.swift */; };
+		D4E550C11C2BFFB400199198 /* Ingredients+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E550BF1C2BFFB400199198 /* Ingredients+CoreDataProperties.swift */; };
+		D4E550C21C2BFFB400199198 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E550C01C2BFFB400199198 /* Ingredients.swift */; };
 		D4FEDABA1C246BC60007B4D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDAB91C246BC60007B4D7 /* AppDelegate.swift */; };
 		D4FEDABC1C246BC60007B4D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDABB1C246BC60007B4D7 /* ViewController.swift */; };
 		D4FEDABF1C246BC60007B4D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FEDABD1C246BC60007B4D7 /* Main.storyboard */; };
-		D4FEDAC21C246BC60007B4D7 /* CoreDataScratch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDAC01C246BC60007B4D7 /* CoreDataScratch.xcdatamodeld */; };
 		D4FEDAC41C246BC60007B4D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4FEDAC31C246BC60007B4D7 /* Assets.xcassets */; };
 		D4FEDAC71C246BC60007B4D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FEDAC51C246BC60007B4D7 /* LaunchScreen.storyboard */; };
 		D4FEDAD21C246BC60007B4D7 /* CoreDataScratchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDAD11C246BC60007B4D7 /* CoreDataScratchTests.swift */; };
 		D4FEDADD1C246BC60007B4D7 /* CoreDataScratchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDADC1C246BC60007B4D7 /* CoreDataScratchUITests.swift */; };
+		D4FEDAEB1C246F320007B4D7 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDAEA1C246F320007B4D7 /* DataController.swift */; };
+		D4FEDAEC1C246F320007B4D7 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDAEA1C246F320007B4D7 /* DataController.swift */; };
+		D4FEDAED1C246F320007B4D7 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDAEA1C246F320007B4D7 /* DataController.swift */; };
+		D4FEDAF01C248D180007B4D7 /* CoreDataScratch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDAEE1C248D180007B4D7 /* CoreDataScratch.xcdatamodeld */; };
+		D4FEDAF21C27E54F0007B4D7 /* temp.xml in Resources */ = {isa = PBXBuildFile; fileRef = D4FEDAF11C27E54F0007B4D7 /* temp.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D43CD81E1C2A8CD4008DE720 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		D4E550BF1C2BFFB400199198 /* Ingredients+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ingredients+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D4E550C01C2BFFB400199198 /* Ingredients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 		D4FEDAB61C246BC60007B4D7 /* CoreDataScratch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataScratch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4FEDAB91C246BC60007B4D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4FEDABB1C246BC60007B4D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D4FEDABE1C246BC60007B4D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D4FEDAC11C246BC60007B4D7 /* CoreDataScratch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataScratch.xcdatamodel; sourceTree = "<group>"; };
 		D4FEDAC31C246BC60007B4D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4FEDAC61C246BC60007B4D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4FEDAC81C246BC60007B4D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +58,9 @@
 		D4FEDAD81C246BC60007B4D7 /* CoreDataScratchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataScratchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4FEDADC1C246BC60007B4D7 /* CoreDataScratchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataScratchUITests.swift; sourceTree = "<group>"; };
 		D4FEDADE1C246BC60007B4D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4FEDAEA1C246F320007B4D7 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		D4FEDAEF1C248D180007B4D7 /* CoreDataScratch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataScratch.xcdatamodel; sourceTree = "<group>"; };
+		D4FEDAF11C27E54F0007B4D7 /* temp.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = temp.xml; path = ../../../../../../Downloads/temp.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +111,18 @@
 		D4FEDAB81C246BC60007B4D7 /* CoreDataScratch */ = {
 			isa = PBXGroup;
 			children = (
+				D4FEDAEE1C248D180007B4D7 /* CoreDataScratch.xcdatamodeld */,
+				D4E550BF1C2BFFB400199198 /* Ingredients+CoreDataProperties.swift */,
+				D4E550C01C2BFFB400199198 /* Ingredients.swift */,
 				D4FEDAB91C246BC60007B4D7 /* AppDelegate.swift */,
 				D4FEDABB1C246BC60007B4D7 /* ViewController.swift */,
+				D43CD81E1C2A8CD4008DE720 /* TableViewController.swift */,
+				D4FEDAF11C27E54F0007B4D7 /* temp.xml */,
 				D4FEDABD1C246BC60007B4D7 /* Main.storyboard */,
 				D4FEDAC31C246BC60007B4D7 /* Assets.xcassets */,
 				D4FEDAC51C246BC60007B4D7 /* LaunchScreen.storyboard */,
 				D4FEDAC81C246BC60007B4D7 /* Info.plist */,
-				D4FEDAC01C246BC60007B4D7 /* CoreDataScratch.xcdatamodeld */,
+				D4FEDAEA1C246F320007B4D7 /* DataController.swift */,
 			);
 			path = CoreDataScratch;
 			sourceTree = "<group>";
@@ -233,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4FEDAC71C246BC60007B4D7 /* LaunchScreen.storyboard in Resources */,
+				D4FEDAF21C27E54F0007B4D7 /* temp.xml in Resources */,
 				D4FEDAC41C246BC60007B4D7 /* Assets.xcassets in Resources */,
 				D4FEDABF1C246BC60007B4D7 /* Main.storyboard in Resources */,
 			);
@@ -259,9 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4FEDAC21C246BC60007B4D7 /* CoreDataScratch.xcdatamodeld in Sources */,
+				D4E550C21C2BFFB400199198 /* Ingredients.swift in Sources */,
+				D4E550C11C2BFFB400199198 /* Ingredients+CoreDataProperties.swift in Sources */,
+				D4FEDAEB1C246F320007B4D7 /* DataController.swift in Sources */,
 				D4FEDABC1C246BC60007B4D7 /* ViewController.swift in Sources */,
 				D4FEDABA1C246BC60007B4D7 /* AppDelegate.swift in Sources */,
+				D43CD81F1C2A8CD4008DE720 /* TableViewController.swift in Sources */,
+				D4FEDAF01C248D180007B4D7 /* CoreDataScratch.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4FEDAD21C246BC60007B4D7 /* CoreDataScratchTests.swift in Sources */,
+				D4FEDAEC1C246F320007B4D7 /* DataController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4FEDADD1C246BC60007B4D7 /* CoreDataScratchUITests.swift in Sources */,
+				D4FEDAED1C246F320007B4D7 /* DataController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +512,7 @@
 				D4FEDAE31C246BC60007B4D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4FEDAE41C246BC60007B4D7 /* Build configuration list for PBXNativeTarget "CoreDataScratchTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +521,7 @@
 				D4FEDAE61C246BC60007B4D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4FEDAE71C246BC60007B4D7 /* Build configuration list for PBXNativeTarget "CoreDataScratchUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,16 +530,17 @@
 				D4FEDAE91C246BC60007B4D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D4FEDAC01C246BC60007B4D7 /* CoreDataScratch.xcdatamodeld */ = {
+		D4FEDAEE1C248D180007B4D7 /* CoreDataScratch.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D4FEDAC11C246BC60007B4D7 /* CoreDataScratch.xcdatamodel */,
+				D4FEDAEF1C248D180007B4D7 /* CoreDataScratch.xcdatamodel */,
 			);
-			currentVersion = D4FEDAC11C246BC60007B4D7 /* CoreDataScratch.xcdatamodel */;
+			currentVersion = D4FEDAEF1C248D180007B4D7 /* CoreDataScratch.xcdatamodel */;
 			path = CoreDataScratch.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
