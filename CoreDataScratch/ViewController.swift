@@ -48,6 +48,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
     var name = NSMutableString()
     // MARK Core data settings
     let context1 = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
+    var fetchedIngredients = [Ingredients]()
     
     
     //var nItem: List? = nil
@@ -93,9 +94,67 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         str = eNumberEntered.text!
         
 
-        if str.characters.count >= 4 {
+        if str.characters.count >= 3 {
         // MARK searchin via action
-            var strReturned = fetchResults(str)
+            let strReturned: [Ingredients] = fetchResults(str)
+            
+            if strReturned.count == 0 {
+             // Mark ingredient check Ingredient not found
+               eNumberEntered.backgroundColor = UIColor.yellowColor()
+               eNumberEntered.selectedTextRange = eNumberEntered.textRangeFromPosition(eNumberEntered.beginningOfDocument, toPosition: eNumberEntered.endOfDocument)
+            }
+            else if strReturned.count >= 1 {
+                
+                var firstIngredientId: String = (strReturned.first?.valueForKey("ingredient_id"))! as! String
+                var secondIngredientId: String = (strReturned.last?.valueForKey("ingredient_id"))! as! String
+                print("firstIngredientId is ::: \(firstIngredientId)")
+                print("if else has just started")
+                
+                
+                
+                if firstIngredientId == secondIngredientId
+                {
+                    var halalHaram: String = (strReturned.first?.valueForKey("usage_example"))! as! String
+                    //let replaced = halalHaram.stringByReplacingOccurrencesOfString(" ", withString: "")
+                    let replaced = halalHaram.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                    
+                    let halal = "HALAL"
+                    let haRaM = "HARAM"
+                        print("count of replaced is : \(replaced.characters.count) ")
+                    print("count of halal is : \(halal.characters.count) ")
+                    print("count of halal is : \(haRaM.characters.count) ")
+                    
+                    
+                    // let halal = "HALALHARAM"
+                    
+                    print("halalHaram :-:-: \(halalHaram)")
+                    
+                    // Change color of text box to green if Halal
+                    if replaced.lowercaseString == halal.lowercaseString {
+                        eNumberEntered.backgroundColor=UIColor.greenColor()
+                    
+                    print("Halal has been found:: \(strReturned.first?.valueForKey("usage_example")!)")
+                    
+                    }
+                    // Change color of text box to red if Haram
+                    
+                   else if replaced.lowercaseString == haRaM.lowercaseString {
+                        eNumberEntered.backgroundColor=UIColor.redColor()
+                        print("Haram has been found:: \(strReturned.first?.valueForKey("usage_example")!)")
+                        
+                    }
+                    
+                    // Change color of text box to Grey if Mushbooh or other
+                   else if replaced != "HALAL" || halalHaram != "HARAM"{
+                         eNumberEntered.backgroundColor=UIColor.grayColor()
+                        print("Mushbooh or need to be checked has been found:: \(halalHaram.lowercaseString)")
+                        
+                    }
+                
+                }
+            
+            
+            }
             
         print ("strReturned value is : \(strReturned)")
         }
@@ -426,7 +485,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
     }
     
     
-    func fetchResults (eNUmValue: String)->String  {
+    func fetchResults (eNUmValue: String)-> [Ingredients] {
         print("eNumValue: \(eNUmValue)")
         print("-FetchResults have been called up-1")
         // let moc = self.managedObjectContext
@@ -441,16 +500,34 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
 //        print("fetchResults func  3")
 //        //let ingredient_id = "MUSHBOOH"
 //        print("fetchResults func 4")
-             ingredientsFetch.predicate = NSPredicate(format: "ingredient_id contains %@", eNUmValue)
+        var eNum = eNUmValue
+             ingredientsFetch.predicate = NSPredicate(format: "%K Contains %@","ingredient_id", eNum)
             //ingredientsFetch.predicate = NSPredicate(format: "ingredient_id like 'e'")
 //
 //        print("fetchResults func 5")
-        var fetched = String()
-        do {
-            let fetchedIngredients = try context.executeFetchRequest(ingredientsFetch) as! [Ingredients]
+        var ingId = String()
+        var fetched2 = String()
+        var nme = String()
+        var desc = String()
+        var usgExm = String()
         
-             fetched = (fetchedIngredients.first?.ingredient_id)!
-            print("1 \(fetched)")
+        do {
+            fetchedIngredients = try context.executeFetchRequest(ingredientsFetch) as! [Ingredients]
+        
+        if fetchedIngredients.count == 0
+        {
+            
+            return fetchedIngredients
+            }
+            ingId = (fetchedIngredients.first!.ingredient_id)!
+            nme = (fetchedIngredients.first!.name)!
+            desc = (fetchedIngredients.first!.descryption)!
+            usgExm = (fetchedIngredients.first!.usage_example)!
+            
+//            print("1 \(fetched)")
+
+            print("Total Record Founds are:::: \(fetchedIngredients.count)")
+            
         /*    var index = 1
             while index < fetchedIngredients.count {
                 // print("3")
@@ -481,7 +558,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
             fatalError("Failed to fetch employees: \(error)")
         }
         
-        return fetched
+        return fetchedIngredients
         
     }
     
