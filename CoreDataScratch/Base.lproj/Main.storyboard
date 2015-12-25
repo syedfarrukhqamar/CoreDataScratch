@@ -50,6 +50,10 @@
                                 <rect key="frame" x="20" y="46" width="234" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="btnLoad" destination="BYZ-38-t0r" eventType="editingDidEnd" id="hh1-v5-lki"/>
+                                    <action selector="checkENumbers:" destination="BYZ-38-t0r" eventType="editingChanged" id="lsH-R2-qP0"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="exf-Ld-iRP">
                                 <rect key="frame" x="20" y="103" width="234" height="30"/>

@@ -59,10 +59,10 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         
         
   //   = "Load Button Pressed"
-     print("Fetch results have been called 787")
-        fetchResults()
-     print("Fetch results have been called 888")
-        print("User name is :: \(eNumberEntered.text)")
+//     print("Fetch results have been called 787")
+//        fetchResults()
+//     print("Fetch results have been called 888")
+//        print("User name is :: \(eNumberEntered.text)")
         
         print("Product Records available are :: \(productRecords.count)")
         
@@ -87,6 +87,21 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
     
         
     }
+    @IBAction func checkENumbers(sender: AnyObject) {
+        
+    var str = String()
+        str = eNumberEntered.text!
+        
+
+        if str.characters.count >= 4 {
+        // MARK searchin via action
+            var strReturned = fetchResults(str)
+            
+        print ("strReturned value is : \(strReturned)")
+        }
+        
+        
+    }
     
     // Mark: ENumber.Search
     
@@ -109,7 +124,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         
         var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         
-        fetchResults()
+//fetchResults()
         fetchRecords()
        // parser.delegate = self
         
@@ -321,13 +336,22 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         let context: NSManagedObjectContext = appDel.managedObjectContext
         
-    let ingredientFetch = NSFetchRequest(entityName: "Ingredients")
+        let ingredientFetch = NSFetchRequest(entityName: "Ingredients")
+  
+        var fetchRequest = NSFetchRequest(entityName: "Ingredients")
+        let sortDescriptor = NSSortDescriptor(key: "ingredient_id", ascending: true)
+        let predicate = NSPredicate(format: "ingredient_id contains %@", "E101")
         
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        fetchRequest.predicate = predicate
     
         do {
         
-         let fetchedIngredient = try context.executeFetchRequest(ingredientFetch) as! [Ingredients]
-            print ("fetched ingredients are :: \(fetchedIngredient)")
+         let fetchedIngredient = try context.executeFetchRequest(fetchRequest) as! [Ingredients]
+            print ("fetched ingredients' count are :: \(fetchedIngredient.count)")
+            
+            
+            print ("fetched ingredients are :: \(fetchedIngredient.first!.valueForKey("ingredient_id")!)")
         }
         catch {
         print("Fatal Error: \(error)")
@@ -402,8 +426,8 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
     }
     
     
-    func fetchResults ()  {
-        
+    func fetchResults (eNUmValue: String)->String  {
+        print("eNumValue: \(eNUmValue)")
         print("-FetchResults have been called up-1")
         // let moc = self.managedObjectContext
         print("fetchResults func 2")
@@ -417,18 +441,17 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
 //        print("fetchResults func  3")
 //        //let ingredient_id = "MUSHBOOH"
 //        print("fetchResults func 4")
-//        //     ingredientsFetch.predicate = NSPredicate(format: "ingredient_id == %@", ingredient_id)
-//        //ingredientsFetch.predicate = NSPredicate(format: "ingredient_id like 'e'")
-//        
+             ingredientsFetch.predicate = NSPredicate(format: "ingredient_id contains %@", eNUmValue)
+            //ingredientsFetch.predicate = NSPredicate(format: "ingredient_id like 'e'")
+//
 //        print("fetchResults func 5")
+        var fetched = String()
         do {
             let fetchedIngredients = try context.executeFetchRequest(ingredientsFetch) as! [Ingredients]
-            var a = 1
-            print("6")
-            print ("Total count at 1012AM is : \(fetchedIngredients[0].ingredient_id)")
-            print ("Total count at 1014AM is : \(productRecords.count)")
-            
-            var index = 1
+        
+             fetched = (fetchedIngredients.first?.ingredient_id)!
+            print("1 \(fetched)")
+        /*    var index = 1
             while index < fetchedIngredients.count {
                 // print("3")
                 if fetchedIngredients[index].ingredient_id != nil {
@@ -438,10 +461,11 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
                     print("one value is Please, in sha Allah :id:\(fetchedIngredients[index].usage_example!)")
                     print("Record # is \(a++)")
                 }
-                
+
                 //  println(numbers[index])
                 index++ }
-            // let one = try context.executeFetchRequest(ingredientsFetch). as! Ingredients
+*/
+// let one = try context.executeFetchRequest(ingredientsFetch). as! Ingredients
             
             
             //            print("one value is Please, in sha Allah :id:\(fetchedIngredients[100].ingredient_id)")
@@ -453,18 +477,11 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
             //            print("one value is Please, in sha Allah :id:\(fetchedIngredients[800].ingredient_id)")
             //
             
-            print("test:::Count:::\(fetchedIngredients.count)")
-            print("test:::Count:::\(fetchedIngredients.first)")
-            
-            print("end")
-            
-            
         } catch {
-            print("inside catch")
             fatalError("Failed to fetch employees: \(error)")
         }
         
-        print("just after catch in viewDidLoad")
+        return fetched
         
     }
     
