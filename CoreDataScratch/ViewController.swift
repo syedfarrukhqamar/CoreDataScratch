@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 //import DataController
 
-class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,NSFetchedResultsControllerDelegate {
+class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,NSFetchedResultsControllerDelegate,UITextFieldDelegate {
     
     //--MARK Fetching Data
     
@@ -49,46 +49,209 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
     // MARK Core data settings
     let context1 = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
     var fetchedIngredients = [Ingredients]()
-    
+    var centralDisplay = String()
     
     //var nItem: List? = nil
     
     
     @IBOutlet var eNumberEntered: UITextField!
-    @IBAction func btnLoad(){
-    
-        
-        
-  //   = "Load Button Pressed"
-//     print("Fetch results have been called 787")
-//        fetchResults()
-//     print("Fetch results have been called 888")
-//        print("User name is :: \(eNumberEntered.text)")
-        
-        print("Product Records available are :: \(productRecords.count)")
-        
-//Moving this section to viewDidLoad-Start
-//        var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
-//        var context: NSManagedObjectContext = appDel.managedObjectContext
-//        
-//        var newIngredient = NSEntityDescription.insertNewObjectForEntityForName("Ingredients", inManagedObjectContext: context) as NSManagedObject
-//            newIngredient.setValue("Halal", forKey: "ingredient_id")
-//            newIngredient.setValue("Halal", forKey: "name")
-//            newIngredient.setValue("Halal", forKey: "descryption")
-//            newIngredient.setValue("Halal", forKey: "usage_example")
-//        do {
-//            try context.save()
-//        } catch let error {
-//            print("Could not cache the response \(error)")
-//        }
-//        print("newIngredient")
-//        print(newIngredient)
-//        print("Object Saved")
-//         //____Moving this section to viewDidLoad-end
-    
+      //MARK add all interface functions here
+
+    @IBAction func aTyped(sender: UIButton) {
+        centralDisplay = centralDisplay + "A"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
         
     }
-    @IBAction func checkENumbers(sender: AnyObject) {
+    @IBAction func bTyped(sender: UIButton) {
+        centralDisplay = centralDisplay + "B"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
+    }
+    
+    @IBAction func cTyped(sender: UIButton) {
+        centralDisplay = centralDisplay + "C"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
+    }
+    
+    @IBAction func dTyped(sender: UIButton) {
+        centralDisplay = centralDisplay + "D"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
+    }
+    
+    @IBAction func eTyped(sender: UIButton) {
+        centralDisplay = centralDisplay + "E"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
+    }
+    
+    
+    @IBAction func fTyped(sender: UIButton) {
+        centralDisplay = centralDisplay + "F"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
+    }
+    // MARK E450A,B,C TYPED
+    @IBAction func abcTyped(sender: UIButton) {
+        centralDisplay = centralDisplay + "E450A,B,C"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
+    }
+    
+    @IBAction func oneTyped(sender: UIButton) {
+        centralDisplay = centralDisplay + "1"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
+    }
+    
+    @IBAction func twoTyped(sender: UIButton) {
+        centralDisplay = centralDisplay + "2"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
+
+    }
+    
+    @IBAction func threeTyped(sender: UIButton) {
+        centralDisplay = centralDisplay + "3"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
+
+    }
+    
+    @IBAction func fourTyped(sender: UIButton) {
+        centralDisplay = centralDisplay + "4"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
+
+    }
+    
+    @IBAction func fiveTyped(sender: UIButton) {
+        centralDisplay = centralDisplay + "5"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
+
+    }
+    
+    @IBAction func sixTyped(sender: UIButton) {
+        centralDisplay = centralDisplay + "6"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
+
+    }
+    
+    @IBAction func sevenTyped(sender: UIButton) {
+        centralDisplay = centralDisplay + "7"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
+    }
+    @IBAction func eight(sender: UIButton) {
+        centralDisplay = centralDisplay + "8"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
+    }
+    
+    @IBAction func nineTyped(sender: UIButton) {
+        centralDisplay = centralDisplay + "9"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
+    }
+    
+    @IBAction func zeroTyped(sender: UIButton) {
+        centralDisplay = centralDisplay + "0"
+        eNumberEntered.text = centralDisplay
+        checkIngredientStatus ()
+    }
+    
+    @IBAction func clearTyped(sender: UIButton) {
+        centralDisplay = ""
+        eNumberEntered.text = centralDisplay
+        
+    }
+    
+    @IBAction func displayedText(sender: UITextField) {
+        
+        print("String being entered is :212:\(eNumberEntered.text)")
+    }
+    
+    @IBAction func eNumberedTextValueChanged(sender: UITextField) {
+        print("Value Changed is :\(eNumberEntered.text)")
+    }
+    func checkIngredientStatus () {
+    
+        var str = String()
+        str = eNumberEntered.text!
+        
+        
+        if str.characters.count >= 3 {
+            // MARK searchin via action
+            let strReturned: [Ingredients] = fetchResults(str)
+            
+            if strReturned.count == 0 {
+                // Mark ingredient check Ingredient not found
+                eNumberEntered.backgroundColor = UIColor.yellowColor()
+                eNumberEntered.selectedTextRange = eNumberEntered.textRangeFromPosition(eNumberEntered.beginningOfDocument, toPosition: eNumberEntered.endOfDocument)
+            }
+            else if strReturned.count >= 1 {
+                
+                var firstIngredientId: String = (strReturned.first?.valueForKey("ingredient_id"))! as! String
+                var secondIngredientId: String = (strReturned.last?.valueForKey("ingredient_id"))! as! String
+                print("firstIngredientId is ::: \(firstIngredientId)")
+                print("if else has just started")
+                
+                
+                
+                if firstIngredientId == secondIngredientId
+                {
+                    var halalHaram: String = (strReturned.first?.valueForKey("usage_example"))! as! String
+                    //let replaced = halalHaram.stringByReplacingOccurrencesOfString(" ", withString: "")
+                    let replaced = halalHaram.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                    
+                    let halal = "HALAL"
+                    let haRaM = "HARAM"
+                    print("count of replaced is : \(replaced.characters.count) ")
+                    print("count of halal is : \(halal.characters.count) ")
+                    print("count of halal is : \(haRaM.characters.count) ")
+                    
+                    
+                    // let halal = "HALALHARAM"
+                    
+                    print("halalHaram :-:-: \(halalHaram)")
+                    
+                    // Change color of text box to green if Halal
+                    if replaced.lowercaseString == halal.lowercaseString {
+                        eNumberEntered.backgroundColor=UIColor.greenColor()
+                        
+                        print("Halal has been found:: \(strReturned.first?.valueForKey("usage_example")!)")
+                        
+                    }
+                        // Change color of text box to red if Haram
+                        
+                    else if replaced.lowercaseString == haRaM.lowercaseString {
+                        eNumberEntered.backgroundColor=UIColor.redColor()
+                        print("Haram has been found:: \(strReturned.first?.valueForKey("usage_example")!)")
+                        
+                    }
+                        
+                        // Change color of text box to Grey if Mushbooh or other
+                    else if replaced != "HALAL" || halalHaram != "HARAM"{
+                        eNumberEntered.backgroundColor=UIColor.grayColor()
+                        print("Mushbooh or need to be checked has been found:: \(halalHaram.lowercaseString)")
+                        
+                    }
+                    
+                }
+                
+                
+            }
+            
+            print ("strReturned value is : \(strReturned)")
+        }
+    
+    
+    }
+    @IBAction func checkENumbers(sender: UITextField) {
         
     var str = String()
         str = eNumberEntered.text!
@@ -194,6 +357,10 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         print("posts records total count ---:\(posts.count)")
         // Mark remove it later
         print ("DB Saved Status:::::\(saveObjectsToDB())")
+       
+        // MARK Delegate to centralDisplay
+        eNumberEntered.delegate = self
+        
         
 // MARK Need Fixing : above xml parsing has some errors
         
@@ -240,6 +407,13 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
        // posts.objectAtIndex(indexPath.row).valueForKey("date") as! NSString as String
         //MARK SQLLITE DB Loading started from xml-Ended
         
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        print("TextField did begin editing method called")
+    }
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+     return false
     }
 
     override func didReceiveMemoryWarning() {
@@ -410,7 +584,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
             print ("fetched ingredients' count are :: \(fetchedIngredient.count)")
             
             
-            print ("fetched ingredients are :: \(fetchedIngredient.first!.valueForKey("ingredient_id")!)")
+           // print ("fetched ingredients are ::  (fetchedIngredient.first!.valueForKey("ingredient_id")!)")
         }
         catch {
         print("Fatal Error: \(error)")
@@ -641,6 +815,10 @@ let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDel
         }
         
     }
+    
+    // MARK text field delegates
+    
+   
 
 }
 
