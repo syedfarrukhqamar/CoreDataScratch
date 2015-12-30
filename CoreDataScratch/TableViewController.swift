@@ -64,7 +64,7 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
                 print("one value is Please, in sha Allah :id:\(fetchedIngredients[index].ingredient_id)")
                 print("one value is Please, in sha Allah :id:\(fetchedIngredients[index].name)")
                 print("one value is Please, in sha Allah :id:\(fetchedIngredients[index].descryption)")
-                print("one value is Please, in sha Allah :id:\(fetchedIngredients[index].usage_example)")
+                print("one value is Please, in sha Allah :id:\(fetchedIngredients[index].halal_status)")
                 print("Record # is \(a++)")
                 }
                 

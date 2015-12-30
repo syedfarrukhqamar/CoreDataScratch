@@ -32,6 +32,12 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
 //    }()
     
     //___fetch data end
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var halalStatusLabel: UILabel!
+   
+    
     var parser = NSXMLParser()
     // Mark temp
     var posts = NSMutableArray()
@@ -167,7 +173,9 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
     @IBAction func clearTyped(sender: UIButton) {
         centralDisplay = ""
         eNumberEntered.text = centralDisplay
-        
+        nameLabel.text = "Name"
+        descriptionLabel.text = "Description"
+        halalStatusLabel.text = "Halal / Haram / Mushbooh"
     }
     
     @IBAction func displayedText(sender: UITextField) {
@@ -204,7 +212,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
                 
                 if firstIngredientId == secondIngredientId
                 {
-                    var halalHaram: String = (strReturned.first?.valueForKey("usage_example"))! as! String
+                    var halalHaram: String = (strReturned.first?.valueForKey("halal_status"))! as! String
                     //let replaced = halalHaram.stringByReplacingOccurrencesOfString(" ", withString: "")
                     let replaced = halalHaram.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
                     
@@ -222,21 +230,39 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
                     // Change color of text box to green if Halal
                     if replaced.lowercaseString == halal.lowercaseString {
                         eNumberEntered.backgroundColor=UIColor.greenColor()
-                        
-                        print("Halal has been found:: \(strReturned.first?.valueForKey("usage_example")!)")
+                     // MARK updating the labels on main screen accordingly
+                        nameLabel.text = (strReturned.first?.valueForKey("name"))! as! String
+                        descriptionLabel.text = (strReturned.first?.valueForKey("descryption"))! as! String
+                       halalStatusLabel.text = (strReturned.first?.valueForKey("halal_status"))! as! String
+                        halalStatusLabel.backgroundColor = UIColor.greenColor()
+                        print("Halal has been found:: \(strReturned.first?.valueForKey("halal_status")!)")
                         
                     }
                         // Change color of text box to red if Haram
                         
                     else if replaced.lowercaseString == haRaM.lowercaseString {
                         eNumberEntered.backgroundColor=UIColor.redColor()
-                        print("Haram has been found:: \(strReturned.first?.valueForKey("usage_example")!)")
+                        // MARK updating the labels on main screen accordingly
+                        nameLabel.text = (strReturned.first?.valueForKey("name"))! as! String
+                        descriptionLabel.text = (strReturned.first?.valueForKey("descryption"))! as! String
+                        halalStatusLabel.text = (strReturned.first?.valueForKey("halal_status"))! as! String
+                        halalStatusLabel.backgroundColor = UIColor.redColor()
+                        
+                        print("Haram has been found:: \(strReturned.first?.valueForKey("halal_status")!)")
                         
                     }
                         
                         // Change color of text box to Grey if Mushbooh or other
                     else if replaced != "HALAL" || halalHaram != "HARAM"{
                         eNumberEntered.backgroundColor=UIColor.grayColor()
+                        // MARK updating the labels on main screen accordingly
+                        nameLabel.text = (strReturned.first?.valueForKey("name"))! as! String
+                        
+                       halalStatusLabel.textColor = UIColor.whiteColor()
+                        descriptionLabel.text = (strReturned.first?.valueForKey("descryption"))! as! String
+                        halalStatusLabel.text = (strReturned.first?.valueForKey("halal_status"))! as! String
+                        halalStatusLabel.backgroundColor = UIColor.grayColor()
+                        
                         print("Mushbooh or need to be checked has been found:: \(halalHaram.lowercaseString)")
                         
                     }
@@ -277,7 +303,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
                 
                 if firstIngredientId == secondIngredientId
                 {
-                    var halalHaram: String = (strReturned.first?.valueForKey("usage_example"))! as! String
+                    var halalHaram: String = (strReturned.first?.valueForKey("halal_status"))! as! String
                     //let replaced = halalHaram.stringByReplacingOccurrencesOfString(" ", withString: "")
                     let replaced = halalHaram.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
                     
@@ -296,14 +322,14 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
                     if replaced.lowercaseString == halal.lowercaseString {
                         eNumberEntered.backgroundColor=UIColor.greenColor()
                     
-                    print("Halal has been found:: \(strReturned.first?.valueForKey("usage_example")!)")
+                    print("Halal has been found:: \(strReturned.first?.valueForKey("halal_status")!)")
                     
                     }
                     // Change color of text box to red if Haram
                     
                    else if replaced.lowercaseString == haRaM.lowercaseString {
                         eNumberEntered.backgroundColor=UIColor.redColor()
-                        print("Haram has been found:: \(strReturned.first?.valueForKey("usage_example")!)")
+                        print("Haram has been found:: \(strReturned.first?.valueForKey("halal_status")!)")
                         
                     }
                     
@@ -359,7 +385,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         print ("DB Saved Status:::::\(saveObjectsToDB())")
        
         // MARK Delegate to centralDisplay
-        eNumberEntered.delegate = self
+       // eNumberEntered.delegate = self
         
         
 // MARK Need Fixing : above xml parsing has some errors
@@ -620,10 +646,10 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
             newIngredient.setValue(productRecords[index].valueForKey("ingredient_id"), forKey: "ingredient_id")
             newIngredient.setValue(productRecords[index].valueForKey("name"), forKey: "name")
             newIngredient.setValue(productRecords[index].valueForKey("description"), forKey: "descryption")
-            newIngredient.setValue(productRecords[index].valueForKey("halal_status"), forKey: "usage_example")
+            newIngredient.setValue(productRecords[index].valueForKey("halal_status"), forKey: "halal_status")
            // print("Record # \(index)")
             
-          
+// MARK DB Saving is switched off for now
 //            do {
 //               // print("trying to save records- BEFORE")
 //                try context.save()
@@ -637,7 +663,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
 //                
 //               // return statusSave
 //            }
-//
+
            // print("Here is productRecords::\(productRecords)")
             
             
@@ -696,7 +722,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
             ingId = (fetchedIngredients.first!.ingredient_id)!
             nme = (fetchedIngredients.first!.name)!
             desc = (fetchedIngredients.first!.descryption)!
-            usgExm = (fetchedIngredients.first!.usage_example)!
+            usgExm = (fetchedIngredients.first!.halal_status)!
             
 //            print("1 \(fetched)")
 
@@ -804,7 +830,7 @@ let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDel
     entity.setValue("seed_id", forKey: "ingredient_id")
     entity.setValue("Seed Name", forKey: "name")
     entity.setValue("seed Desc", forKey: "descryption")
-    entity.setValue("seed usage", forKey: "usage_example")
+    entity.setValue("seed usage", forKey: "halal_status")
         do{
         try moc.save()
         

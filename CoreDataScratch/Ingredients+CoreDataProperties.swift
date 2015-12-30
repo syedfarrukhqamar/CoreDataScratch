@@ -17,6 +17,6 @@ extension Ingredients {
     @NSManaged var descryption: String?
     @NSManaged var ingredient_id: String?
     @NSManaged var name: String?
-    @NSManaged var usage_example: String?
+    @NSManaged var halal_status: String?
 
 }
