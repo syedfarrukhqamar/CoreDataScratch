@@ -12,6 +12,7 @@ import Foundation
 import UIKit
 import CoreData
 class DataController: NSObject {
+   
     var managedObjectContext: NSManagedObjectContext
    override init() {
         // This resource is the same name as your xcdatamodeld contained in your project.
@@ -30,10 +31,10 @@ class DataController: NSObject {
             let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
             let docURL = urls[urls.endIndex-1]
             /* The directory the application uses to store the Core Data store file.
-            This code uses a file named "DataModel.sqlite" in the application's documents directory.
+            This code uses a file named "ProductsWithIngredientsDB.sqlite" in the application's documents directory.
             */
             print("Inside DataController.swift:Directory for SQLITE is:\(docURL)")
-            let storeURL = docURL.URLByAppendingPathComponent("CoreData.sqlite")
+            let storeURL = docURL.URLByAppendingPathComponent("ProductsWithIngredientsDB.sqlite")
             do {
                 try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
             } catch {

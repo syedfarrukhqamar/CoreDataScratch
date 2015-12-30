@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Automatic">
-    <entity name="Employee" representedClassName="AAAEmployeeMO" parentEntity="Person" syncable="YES">
-        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
-    </entity>
     <entity name="Ingredients" representedClassName=".Ingredients" syncable="YES">
         <attribute name="descryption" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="halal_status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="ingredient_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Person" syncable="YES">
-        <attribute name="dateOfBirth" optional="YES" attributeType="Date" syncable="YES"/>
+    <entity name="MasterProducts" representedClassName="AAAMasterProductsMO" syncable="YES">
+        <attribute name="product_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="product_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="product_type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ProductIngredients" representedClassName="AAAProductInfredientsMO" parentEntity="Products" syncable="YES"/>
+    <entity name="Products" representedClassName=".AAAProductsMO" syncable="YES"/>
+    <entity name="ProductsWithIngredients" representedClassName="AAAProductsWithIngredientsMO" syncable="YES">
+        <attribute name="ing_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prd_id" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Employee" positionX="-63" positionY="-18" width="128" height="60"/>
         <element name="Ingredients" positionX="-54" positionY="-9" width="128" height="105"/>
-        <element name="Person" positionX="-36" positionY="9" width="128" height="75"/>
+        <element name="ProductIngredients" positionX="-261" positionY="153" width="128" height="45"/>
+        <element name="Products" positionX="142" positionY="153" width="128" height="45"/>
+        <element name="ProductsWithIngredients" positionX="187" positionY="-27" width="128" height="88"/>
+        <element name="MasterProducts" positionX="241" positionY="54" width="128" height="90"/>
     </elements>
 </model>

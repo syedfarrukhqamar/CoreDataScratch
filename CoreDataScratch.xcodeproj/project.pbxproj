@@ -8,6 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		D43CD81F1C2A8CD4008DE720 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43CD81E1C2A8CD4008DE720 /* TableViewController.swift */; };
+		D467D2D71C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D31C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift */; };
+		D467D2D81C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D31C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift */; };
+		D467D2D91C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D31C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift */; };
+		D467D2DA1C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D41C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift */; };
+		D467D2DB1C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D41C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift */; };
+		D467D2DC1C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D41C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift */; };
+		D467D2DD1C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D51C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift */; };
+		D467D2DE1C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D51C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift */; };
+		D467D2DF1C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D51C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift */; };
+		D467D2E01C346AF60061E7EF /* AAAMasterProductsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D61C346AF60061E7EF /* AAAMasterProductsMO.swift */; };
+		D467D2E11C346AF60061E7EF /* AAAMasterProductsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D61C346AF60061E7EF /* AAAMasterProductsMO.swift */; };
+		D467D2E21C346AF60061E7EF /* AAAMasterProductsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D61C346AF60061E7EF /* AAAMasterProductsMO.swift */; };
+		D467D2E61C346C130061E7EF /* temp.xml in Resources */ = {isa = PBXBuildFile; fileRef = D467D2E51C346C130061E7EF /* temp.xml */; };
+		D467D2E81C34779C0061E7EF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D467D2E71C34779C0061E7EF /* AVFoundation.framework */; };
+		D467D2EA1C34780E0061E7EF /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2E91C34780E0061E7EF /* BarcodeViewController.swift */; };
+		D467D2EB1C34780E0061E7EF /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2E91C34780E0061E7EF /* BarcodeViewController.swift */; };
+		D467D2EC1C34780E0061E7EF /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2E91C34780E0061E7EF /* BarcodeViewController.swift */; };
 		D4E550C11C2BFFB400199198 /* Ingredients+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E550BF1C2BFFB400199198 /* Ingredients+CoreDataProperties.swift */; };
 		D4E550C21C2BFFB400199198 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E550C01C2BFFB400199198 /* Ingredients.swift */; };
 		D4FEDABA1C246BC60007B4D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDAB91C246BC60007B4D7 /* AppDelegate.swift */; };
@@ -21,7 +38,6 @@
 		D4FEDAEC1C246F320007B4D7 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDAEA1C246F320007B4D7 /* DataController.swift */; };
 		D4FEDAED1C246F320007B4D7 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDAEA1C246F320007B4D7 /* DataController.swift */; };
 		D4FEDAF01C248D180007B4D7 /* CoreDataScratch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDAEE1C248D180007B4D7 /* CoreDataScratch.xcdatamodeld */; };
-		D4FEDAF21C27E54F0007B4D7 /* temp.xml in Resources */ = {isa = PBXBuildFile; fileRef = D4FEDAF11C27E54F0007B4D7 /* temp.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +59,13 @@
 
 /* Begin PBXFileReference section */
 		D43CD81E1C2A8CD4008DE720 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		D467D2D31C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AAAProductsWithIngredientsMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D467D2D41C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAAProductsWithIngredientsMO.swift; sourceTree = "<group>"; };
+		D467D2D51C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AAAMasterProductsMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D467D2D61C346AF60061E7EF /* AAAMasterProductsMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAAMasterProductsMO.swift; sourceTree = "<group>"; };
+		D467D2E51C346C130061E7EF /* temp.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = temp.xml; path = ../../../../../../Downloads/temp.xml; sourceTree = "<group>"; };
+		D467D2E71C34779C0061E7EF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D467D2E91C34780E0061E7EF /* BarcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 		D4E550BF1C2BFFB400199198 /* Ingredients+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ingredients+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D4E550C01C2BFFB400199198 /* Ingredients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 		D4FEDAB61C246BC60007B4D7 /* CoreDataScratch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataScratch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,7 +83,6 @@
 		D4FEDADE1C246BC60007B4D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4FEDAEA1C246F320007B4D7 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		D4FEDAEF1C248D180007B4D7 /* CoreDataScratch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataScratch.xcdatamodel; sourceTree = "<group>"; };
-		D4FEDAF11C27E54F0007B4D7 /* temp.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = temp.xml; path = ../../../../../../Downloads/temp.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D467D2E81C34779C0061E7EF /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +114,7 @@
 		D4FEDAAD1C246BC60007B4D7 = {
 			isa = PBXGroup;
 			children = (
+				D467D2E71C34779C0061E7EF /* AVFoundation.framework */,
 				D4FEDAB81C246BC60007B4D7 /* CoreDataScratch */,
 				D4FEDAD01C246BC60007B4D7 /* CoreDataScratchTests */,
 				D4FEDADB1C246BC60007B4D7 /* CoreDataScratchUITests */,
@@ -111,13 +135,18 @@
 		D4FEDAB81C246BC60007B4D7 /* CoreDataScratch */ = {
 			isa = PBXGroup;
 			children = (
+				D467D2D31C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift */,
+				D467D2D41C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift */,
+				D467D2D51C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift */,
+				D467D2D61C346AF60061E7EF /* AAAMasterProductsMO.swift */,
 				D4FEDAEE1C248D180007B4D7 /* CoreDataScratch.xcdatamodeld */,
 				D4E550BF1C2BFFB400199198 /* Ingredients+CoreDataProperties.swift */,
 				D4E550C01C2BFFB400199198 /* Ingredients.swift */,
 				D4FEDAB91C246BC60007B4D7 /* AppDelegate.swift */,
 				D4FEDABB1C246BC60007B4D7 /* ViewController.swift */,
+				D467D2E91C34780E0061E7EF /* BarcodeViewController.swift */,
+				D467D2E51C346C130061E7EF /* temp.xml */,
 				D43CD81E1C2A8CD4008DE720 /* TableViewController.swift */,
-				D4FEDAF11C27E54F0007B4D7 /* temp.xml */,
 				D4FEDABD1C246BC60007B4D7 /* Main.storyboard */,
 				D4FEDAC31C246BC60007B4D7 /* Assets.xcassets */,
 				D4FEDAC51C246BC60007B4D7 /* LaunchScreen.storyboard */,
@@ -250,7 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4FEDAC71C246BC60007B4D7 /* LaunchScreen.storyboard in Resources */,
-				D4FEDAF21C27E54F0007B4D7 /* temp.xml in Resources */,
+				D467D2E61C346C130061E7EF /* temp.xml in Resources */,
 				D4FEDAC41C246BC60007B4D7 /* Assets.xcassets in Resources */,
 				D4FEDABF1C246BC60007B4D7 /* Main.storyboard in Resources */,
 			);
@@ -278,11 +307,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4E550C21C2BFFB400199198 /* Ingredients.swift in Sources */,
+				D467D2DA1C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift in Sources */,
+				D467D2E01C346AF60061E7EF /* AAAMasterProductsMO.swift in Sources */,
 				D4E550C11C2BFFB400199198 /* Ingredients+CoreDataProperties.swift in Sources */,
+				D467D2DD1C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift in Sources */,
+				D467D2EA1C34780E0061E7EF /* BarcodeViewController.swift in Sources */,
 				D4FEDAEB1C246F320007B4D7 /* DataController.swift in Sources */,
 				D4FEDABC1C246BC60007B4D7 /* ViewController.swift in Sources */,
 				D4FEDABA1C246BC60007B4D7 /* AppDelegate.swift in Sources */,
 				D43CD81F1C2A8CD4008DE720 /* TableViewController.swift in Sources */,
+				D467D2D71C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift in Sources */,
 				D4FEDAF01C248D180007B4D7 /* CoreDataScratch.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,8 +325,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D467D2DB1C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift in Sources */,
+				D467D2D81C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift in Sources */,
 				D4FEDAD21C246BC60007B4D7 /* CoreDataScratchTests.swift in Sources */,
+				D467D2DE1C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift in Sources */,
 				D4FEDAEC1C246F320007B4D7 /* DataController.swift in Sources */,
+				D467D2E11C346AF60061E7EF /* AAAMasterProductsMO.swift in Sources */,
+				D467D2EB1C34780E0061E7EF /* BarcodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,8 +339,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D467D2DC1C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift in Sources */,
+				D467D2D91C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift in Sources */,
 				D4FEDADD1C246BC60007B4D7 /* CoreDataScratchUITests.swift in Sources */,
+				D467D2DF1C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift in Sources */,
 				D4FEDAED1C246F320007B4D7 /* DataController.swift in Sources */,
+				D467D2E21C346AF60061E7EF /* AAAMasterProductsMO.swift in Sources */,
+				D467D2EC1C34780E0061E7EF /* BarcodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

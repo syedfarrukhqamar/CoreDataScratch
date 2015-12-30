@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 //import DataController
 
-class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,NSFetchedResultsControllerDelegate,UITextFieldDelegate {
+class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,NSFetchedResultsControllerDelegate,UITextFieldDelegate, BarcodeDelegate {
     
     //--MARK Fetching Data
     
@@ -30,14 +30,18 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
 //        
 //        return frc
 //    }()
-    
+    // MARK Reset Constants Data
+    let firstAddProductCode = "First Add Product Bar Code"
     //___fetch data end
     
+    @IBOutlet weak var addProductsBarCode: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var halalStatusLabel: UILabel!
    
-    
+    @IBOutlet weak var productBarCodeDisplay: UILabel!
+    var productBarCode = String()
+    var productDBAdded = Bool()
     var parser = NSXMLParser()
     // Mark temp
     var posts = NSMutableArray()
@@ -60,7 +64,8 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
     //var nItem: List? = nil
     
     
-    @IBOutlet var eNumberEntered: UITextField!
+    @IBOutlet weak var eNumberEntered: UILabel!
+    //@IBOutlet var eNumberEntered: UITextField!
       //MARK add all interface functions here
 
     @IBAction func aTyped(sender: UIButton) {
@@ -199,7 +204,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
             if strReturned.count == 0 {
                 // Mark ingredient check Ingredient not found
                 eNumberEntered.backgroundColor = UIColor.yellowColor()
-                eNumberEntered.selectedTextRange = eNumberEntered.textRangeFromPosition(eNumberEntered.beginningOfDocument, toPosition: eNumberEntered.endOfDocument)
+                //eNumberEntered.selectedTextRange = eNumberEntered.textRangeFromPosition(eNumberEntered.beginningOfDocument, toPosition: eNumberEntered.endOfDocument)
             }
             else if strReturned.count >= 1 {
                 
@@ -290,7 +295,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
             if strReturned.count == 0 {
              // Mark ingredient check Ingredient not found
                eNumberEntered.backgroundColor = UIColor.yellowColor()
-               eNumberEntered.selectedTextRange = eNumberEntered.textRangeFromPosition(eNumberEntered.beginningOfDocument, toPosition: eNumberEntered.endOfDocument)
+       //        eNumberEntered.selectedTextRange = eNumberEntered.textRangeFromPosition(eNumberEntered.beginningOfDocument, toPosition: eNumberEntered.endOfDocument)
             }
             else if strReturned.count >= 1 {
                 
@@ -361,7 +366,8 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
        
     
         super.viewDidLoad()
-        // MARK Seed Ingredients
+        
+               // MARK Seed Ingredients
         //seedIngredients()
         
         let urlpath = NSBundle.mainBundle().pathForResource("temp", ofType: "xml")
@@ -617,6 +623,8 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         }
     
     }
+    
+    // MARK DB Loading ::::xml to db Move
     func saveObjectsToDB ()
     {
         
@@ -684,6 +692,88 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         //return statusSave
     }
     
+    // MARK DB Record Insertion and Editing----Start
+   func addProduct ()
+    {
+        
+        // create db connection
+      print("323a")
+        var statusSave = Bool()
+        print("323b")
+        
+        let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        print("323c")
+        
+        print("323d")
+        let context: NSManagedObjectContext = appDel.managedObjectContext
+       // var ing = AAAMasterProductsMO()
+        print("323e")
+        
+            var newProduct = NSEntityDescription.insertNewObjectForEntityForName("MasterProducts", inManagedObjectContext: context) as! AAAMasterProductsMO
+        
+        print("323f")
+        
+            
+           // print("Product_ID :::\(productRecords[index].valueForKey("ingredient_id"))")
+        newProduct.setValue(productBarCode, forKey: "product_id")
+                        do {
+                           // print("trying to save records- BEFORE")
+                            try context.save()
+                           print("Product is saved\(productBarCode)")
+            
+                            statusSave = true
+                        } catch let error {
+                            print("Could not cache the response \(error)")
+                            statusSave=false
+                        //    print("Here is productRecords::\(productRecords.count)")
+            
+                           // return statusSave
+                        }
+        
+        
+    }
+    
+    // DB Record Insertion and Editing-- end
+    // MARK Search product BarCode if exists then do not add it if doesnt exist then add it-START------
+    
+    func searchProduct()
+    {
+    // Create Connection and get context
+//        var dataController = DataController()
+//        let context = dataController.managedObjectContext
+//        var newProduct = NSEntityDescription.insertNewObjectForEntityForName("MasterProducts", inManagedObjectContext: context) as! AAAMasterProductsMO
+        let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context: NSManagedObjectContext = appDel.managedObjectContext
+        
+        let productFetch = NSFetchRequest(entityName:"MasterProducts")
+        productFetch.predicate = NSPredicate(format: "%K Contains %@","product_id", productBarCode)
+        var fetchedProducts = [AAAMasterProductsMO]()
+        var statusSave = Bool()
+        var ing = [AAAMasterProductsMO]()
+        
+        
+        do {
+            fetchedProducts = try context.executeFetchRequest(productFetch) as! [AAAMasterProductsMO]
+           // context.executeFetchRequest(<#T##request: NSFetchRequest##NSFetchRequest#>)
+            
+            if fetchedProducts.count == 0
+            {// if no product found then add the product
+                addProduct()
+                print("Product saved 999")
+            }
+            
+            //            print("1 \(fetched)")
+            
+            else {
+                print("Product is allready available ::: \(fetchedProducts.count)")
+            }
+        } catch {
+            fatalError("Failed to fetch employees: \(error)")
+        }
+
+    
+    }
+    // MARK Search product BarCode if exists then do not add it if doesnt exist then add it -END-------
     
     func fetchResults (eNUmValue: String)-> [Ingredients] {
         print("eNumValue: \(eNUmValue)")
@@ -762,6 +852,49 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         
     }
     
+    // MARK Search DB Functions
+    // MARK Search Ingredients
+    func searchIngredients (ingredientsID: String)-> [Ingredients]{
+    var dataController = DataController()
+    print("a11")
+        let context: NSManagedObjectContext = dataController.managedObjectContext    //let ingredientsFetch =
+    let ingredientsFetch = NSFetchRequest(entityName: "Ingredients")
+        print("b11")
+        
+        var eNum = ingredientsID
+    ingredientsFetch.predicate = NSPredicate(format: "%K Contains %@","ingredient_id", eNum)
+    var ingId = String()
+    var fetched2 = String()
+    var nme = String()
+    var desc = String()
+    var usgExm = String()
+    do {
+        print("c11")
+        
+    fetchedIngredients = try context.executeFetchRequest(ingredientsFetch) as! [Ingredients]
+    if fetchedIngredients.count == 0
+    {
+         print("d11")
+    return fetchedIngredients
+    }
+    ingId = (fetchedIngredients.first!.ingredient_id)!
+    nme = (fetchedIngredients.first!.name)!
+    desc = (fetchedIngredients.first!.descryption)!
+    usgExm = (fetchedIngredients.first!.halal_status)!
+    print("Total Record Founds are::8769:: \(fetchedIngredients.count)")
+    } catch {
+         print("e11")
+    fatalError("Failed to fetch employees: \(error)")
+    }
+         print("f11")
+    return fetchedIngredients
+}
+
+
+// MArk Search Products
+    
+    
+    
     /*
 let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         let context: NSManagedObjectContext = appDel.managedObjectContext
@@ -823,6 +956,7 @@ let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDel
     }
    // return fetchedResults
     */
+   
     func seedIngredients (){
     
     let moc     = DataController().managedObjectContext
@@ -837,14 +971,32 @@ let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDel
         }
         catch {
         fatalError("Failure to save error \(error)")
-            
-        }
-        
+            }
     }
     
     // MARK text field delegates
     
-   
+   // MARK BARCODE reading
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("Segue!")
+        
+        let barcodeViewController: BarcodeViewController = segue.destinationViewController as! BarcodeViewController
+        barcodeViewController.delegate = self
+        
+    }
+    
+    func barcodeReaded(barcode: String) {
+        print("Barcode leido: \(barcode)")
+       productBarCodeDisplay.text = "Product:" + barcode
+        productBarCode = barcode
+        //MARK SearchProduct
+        searchProduct()
+        
+        // codeTextView.text = barcode
+    }
+
 
 }
 
