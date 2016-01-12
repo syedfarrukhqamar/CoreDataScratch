@@ -7,6 +7,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="MasterProducts" representedClassName="AAAMasterProductsMO" syncable="YES">
+        <attribute name="h_status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="product_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="product_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="product_type" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,15 +15,16 @@
     <entity name="ProductIngredients" representedClassName="AAAProductInfredientsMO" parentEntity="Products" syncable="YES"/>
     <entity name="Products" representedClassName=".AAAProductsMO" syncable="YES"/>
     <entity name="ProductsWithIngredients" representedClassName="AAAProductsWithIngredientsMO" syncable="YES">
+        <attribute name="h_Status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="ing_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="prd_id" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Ingredients" positionX="-54" positionY="-9" width="128" height="105"/>
+        <element name="MasterProducts" positionX="241" positionY="54" width="128" height="105"/>
         <element name="ProductIngredients" positionX="-261" positionY="153" width="128" height="45"/>
         <element name="Products" positionX="142" positionY="153" width="128" height="45"/>
-        <element name="ProductsWithIngredients" positionX="187" positionY="-27" width="128" height="88"/>
-        <element name="MasterProducts" positionX="241" positionY="54" width="128" height="90"/>
+        <element name="ProductsWithIngredients" positionX="187" positionY="-27" width="128" height="105"/>
     </elements>
 </model>

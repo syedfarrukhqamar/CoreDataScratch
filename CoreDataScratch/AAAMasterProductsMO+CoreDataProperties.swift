@@ -2,8 +2,8 @@
 //  AAAMasterProductsMO+CoreDataProperties.swift
 //  CoreDataScratch
 //
-//  Created by syed farrukh Qamar on 30/12/15.
-//  Copyright © 2015 Be My Competence AB. All rights reserved.
+//  Created by syed farrukh Qamar on 08/01/16.
+//  Copyright © 2016 Be My Competence AB. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
 //  to delete and recreate this implementation file for your updated model.
@@ -15,7 +15,8 @@ import CoreData
 extension AAAMasterProductsMO {
 
     @NSManaged var product_id: String?
-    @NSManaged var product_type: String?
     @NSManaged var product_name: String?
+    @NSManaged var product_type: String?
+    @NSManaged var h_status: String?
 
 }
