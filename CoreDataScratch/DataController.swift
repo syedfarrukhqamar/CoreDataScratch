@@ -91,7 +91,9 @@ class DataController: NSObject {
 
         let context: NSManagedObjectContext = self.managedObjectContext
          let tableFetch = NSFetchRequest(entityName: table_Name)
-               tableFetch.predicate = NSPredicate(format: "%K Contains %@",column_name, searchFor)
+       // tableFetch.predicate = NSPredicate(format: "%K Contains %@",column_name, searchFor)
+        tableFetch.predicate = NSPredicate(format: "%K = %@",column_name, searchFor)
+      //  tableFetch.predicate = NSPredicate(format: "%K Contains %@",column_name, searchFor)
 //        var ingId = String()
 //        var fetched2 = String()
 //        var nme = String()
@@ -126,6 +128,83 @@ return fetchedResult
         
     
     }
+    // MARK Update records function
+    
+    func updateMasterProducts (productID: String,hStatus: String)  {
+        
+        // let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        print("inside update function------")
+        
+        var searchFor = productID
+        
+        let context: NSManagedObjectContext = self.managedObjectContext
+        
+        let tableFetch = NSFetchRequest(entityName: "MasterProducts")
+        //tableFetch.predicate = NSPredicate(format: "%K Contains %@",column_name, searchFor)
+        tableFetch.predicate = NSPredicate(format: "%K = %@","product_id", searchFor)
+        
+        
+        
+     //   var fetchedResult = [AnyObject]()
+        
+        do {
+           var  fetchedResult = try context.executeFetchRequest(tableFetch) as! [NSManagedObject]
+            print("inside Update function fetching results---")
+            
+            if fetchedResult.count != 0{
+            var managedObject = fetchedResult[0]
+            var existingProductStatus = managedObject.valueForKey("h_status") as! String
+                
+                // MARK Product Halal Status Logic is here
+                // if DNK is found then any value can be updated against that product id
+                // use a bool to check if context.save must be called or not
+                var toSaveStatus = false
+                if (existingProductStatus == "DNK" || existingProductStatus == HALAL )
+                {
+                    print("product status will be updated with \(hStatus)")
+                    managedObject.setValue(hStatus, forKey: "h_status")
+                    toSaveStatus = true
+                }
+                    // if "HARAM" FOUND THEN do not change
+                else if (existingProductStatus == HARAM){
+                    
+                print ("product status will not be Changed as it is ::\(hStatus)")
+                }
+                // If "MUSHBOOH" IS FOUND THEN it can be changed to only "Haram" else exit
+                else if (existingProductStatus == MUSHBOOH){
+                if (hStatus == HARAM)
+                    
+                {  print ("Existing product status is mushbooh and hStatus variable is :\(hStatus)")
+                    
+                    // change the value to haram
+                    managedObject.setValue(hStatus, forKey: "h_status")
+                    toSaveStatus = true
+
+                    }
+                }
+                
+                if (toSaveStatus == true){
+                
+                // new record will be saved if toSaveStatus is true else it will not
+                    
+                    try context.save()
+                }
+                
+                
+            }
+                        //return fetchedResult
+        
+        } catch {
+            fatalError("Failed to update Products for h_status: \(error)")
+        }
+        //    var result = [String]()
+        //    result [0] = "False"
+        //    return result
+       // return fetchedResult
+        
+        
+    }
+
     
     // MARK Register Ingredient To Product
     
@@ -168,33 +247,45 @@ return fetchedResult
         let ingredientRegisterationCheckResult = ingredientRegisterationCheck.createDBConnectionAndSearchFor("ProductsWithIngredients", columnName: "prd_id", searchString: productID) as! [AAAProductsWithIngredientsMO]
         // If NO product id is found then add it together with ingredient id
        
-        var ingredientToAddStatus = false
+        var ingredientToAddStatus = true
         
         
         if (ingredientRegisterationCheckResult.count == 0){
         print ("-----Registering Ingredients to Products")
         ingredientRegisterationCheck.addIngredientsToProduct(ingredientID, productID: productID, halal_haram_mushbooh_Status: h_status)
             print ("-----Ingredients Registered---------")
+            // MARK Updateing product's status in MasterProducts table based on the ingredient's status
+            // MARK BACK BONE Of product , halal, haram, mushbooh status update
+            print("updating product status also 878")
+            var productStatusUpdate = DataController()
+            productStatusUpdate.updateMasterProducts(productID, hStatus: h_status)
+
         }
         
         else {
             
 //            var productIngredientsFetchResult = ingredientRegisterationCheck.createDBConnectionAndSearchFor("MasterProducts", columnName: "product_id", searchString: productID) as! [AAAProductsWithIngredientsMO]
             
-            // change ingredientoaddstatus to true if ingredient is already registered
+            // change ingredientoaddstatus to false if ingredient is already registered
             for index in 0..<ingredientRegisterationCheckResult.count {
               
                 if (ingredientRegisterationCheckResult[index].ing_id == ingredientID){
                 
-                ingredientToAddStatus = true
+                ingredientToAddStatus = false
                     print("Ingredient----\(ingredientID) is already registered 878")
                 }
             }
         // if Ingredient is not registered against existing product in ProductIngredient Table then register it i.e. if ingredienttoAddStatus == false
             
-            if (ingredientToAddStatus == false){
+            if (ingredientToAddStatus == true){
             ingredientRegisterationCheck.addIngredientsToProduct(ingredientID, productID: productID, halal_haram_mushbooh_Status: h_status)
             print("ingredient--\(ingredientID)----has been just now registered against product id: \(productID)")
+                
+                // MARK Updateing product's status in MasterProducts table based on the ingredient's status
+                // MARK BACK BONE Of product , halal, haram, mushbooh status update
+                print("updating product status also 656")
+                var productStatusUpdate = DataController()
+                productStatusUpdate.updateMasterProducts(productID, hStatus: h_status)
             
             }        
         }
@@ -237,7 +328,7 @@ return fetchedResult
     
     func addIngredientsToProduct ( ingredientToRegister: String, productID: String, halal_haram_mushbooh_Status: String) {
         
-        print("")
+       // print("")
         var ingredientsExistsOrNot = DataController()
         var productCode = String()
         
@@ -262,7 +353,7 @@ return fetchedResult
             do {
                 print("Registering Ingredient id :\(ingredientToRegister) against product ID::\(productID)")
                 try context.save()
-                context.unlock()
+                //context.unlock()
                 print("Registered Ingredient id :\(ingredientToRegister) against product ID::\(productID)")
                 //               statusSave = true
             } catch let error {
@@ -316,6 +407,11 @@ return fetchedResult
                 } catch let error {
                     print("Could not cache the response \(error)")
                 }
+                
+               
+                
+                
+
             }
             
             
@@ -346,7 +442,9 @@ var productSearchResult =        productExistsOrNot.createDBConnectionAndSearchF
         print("125")
         var insertRecordToMasterProducts = NSEntityDescription.insertNewObjectForEntityForName("MasterProducts", inManagedObjectContext: context) as! AAAMasterProductsMO
         print("---------------126")
-        insertRecordToMasterProducts.setValue(productToAdd["h_status"],forKey: "h_status")
+            
+        
+        insertRecordToMasterProducts.setValue(productHStatus,forKey: "h_status")
         insertRecordToMasterProducts.setValue(productToAdd["product_id"],forKey: "product_id")
         insertRecordToMasterProducts.setValue(productToAdd["product_name"],forKey: "product_name")
         insertRecordToMasterProducts.setValue(productToAdd["product_type"],forKey: "product_type")
@@ -375,6 +473,77 @@ var productSearchResult =        productExistsOrNot.createDBConnectionAndSearchF
         
     }
     
+    // MARK DB: getProductIngredientStatus
+    
+    func getProductOrIngredientStatus (productID:String, ingredientID:String) -> String {
+        var status = "Error Occured While retrieving status"
+        
+        // MARK Assumption getproductOrIngredientStatus()-> that ingredient is registered already if product id is there.
+        // Create DB Search Object
+        // Case A: product_id = yes & Ing_Id = Yes
+        // Check in Table MAsterProducts
+        // registered flag =true
+        if (!productID.isEmpty)
+        {
+        var masterProducts = DataController()
+        var productStatus = masterProducts.createDBConnectionAndSearchFor("MasterProducts", columnName: "product_id", searchString: productID) as! [AAAMasterProductsMO]
+        
+        
+        if (productStatus.count != 0){
+            
+        //if ((productStatus[0].valueForKey("h_status")?.isEqual("DNK")) != nil)
+        if (productStatus[0].valueForKey("h_status")!.isEqual("DNK"))
+            {
+            status = "DNK found"
+            return status
+            }
+            
+            else
+        {
+            
+            status = productStatus[0].valueForKey("h_status") as! String
+           return status
+            }
+        
+        
+            }
+        }
+        
+        else {
+            
+            var ingredientStatus = DataController()
+            var ingredientStatusCheck = ingredientStatus.createDBConnectionAndSearchFor("Ingredients", columnName: "ingredient_id", searchString: productID) as! [Ingredients]
+            
+            
+            if (ingredientStatusCheck.count != 0 )
+            {
+            
+            status = ingredientStatusCheck[0].valueForKey("halal_status") as! String
+                return status
+            }
+
+        
+        
+        
+        
+        
+        }
+        
+        
+        
+        
+        
+        // Case A: product_id = nil & Ing_Id = Yes
+        
+        // registered flag =false
+        
+    
+    
+    
+    
+    return status
+    
+    }
    
    /*
     var managedObjectContext: NSManagedObjectContext

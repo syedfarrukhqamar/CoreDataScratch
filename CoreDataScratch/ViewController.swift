@@ -10,6 +10,14 @@ import UIKit
 import CoreData
 //import DataController
 
+let productHStatus = "DNK"
+let HALAL = "HALAL"
+let HARAM = "HARAM"
+let MUSHBOOH = "MUSHBOOH"
+var registeredIngredient = false
+
+
+
 class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,NSFetchedResultsControllerDelegate,UITextFieldDelegate, BarcodeDelegate {
     
     //--MARK Fetching Data
@@ -40,6 +48,13 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
     @IBOutlet weak var halalStatusLabel: UILabel!
     
     @IBOutlet weak var productBarCodeDisplay: UILabel!
+    @IBOutlet weak var eNumberEntered: UILabel!
+    //@IBOutlet var eNumberEntered: UITextField!
+    // MARK Constants
+    
+    // MARK Variables: View Controller Level
+    
+    
     var productBarCode = String()
     var productDBAdded = Bool()
     var parser = NSXMLParser()
@@ -64,8 +79,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
     //var nItem: List? = nil
     
     
-    @IBOutlet weak var eNumberEntered: UILabel!
-    //@IBOutlet var eNumberEntered: UITextField!
+    
     //MARK add all interface functions here
     
     @IBAction func aTyped(sender: UIButton) {
@@ -416,7 +430,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         
 //        var productToAdd = AAAMasterProductsMO()
         print ("Creating productToAdd-----999--")
-        let productToAdd:[String:String] = ["h_status": "Test Status Dict","product_id":"3873","product_name":"Temp Name DIct","product_type":"Temp Type Dict"]
+        let productToAdd:[String:String] = ["h_status": productHStatus,"product_id":"1234","product_name":"Temp Name DIct","product_type":"Temp Type Dict"]
          print ("Created productToAdd-----999--")
 //        productToAdd.setValue("Test Status", forKey: "h_status")
 //        productToAdd.setValue("1111", forKey: "product_id")
@@ -427,7 +441,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
          print ("connectToDBAndGet----after---")
         
         
-        var ingredients = connectToDBAndGet.createDBConnectionAndSearchFor("MasterProducts", columnName: "product_id", searchString: "3333") as! [AAAMasterProductsMO]
+        var ingredients = connectToDBAndGet.createDBConnectionAndSearchFor("MasterProducts", columnName: "product_id", searchString: "4321") as! [AAAMasterProductsMO]
        
         
        print("DB Connection has been established and total count of result is::> \(ingredients.count)")
@@ -438,11 +452,15 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
 //            
 //        }
         
+        // MARK need to change strings to the real variables to add required perfectly
         
+        connectToDBAndGet.registerIngredientToProduct("878", ingredientID: "WE32", h_status: "HALAL")
         
-        connectToDBAndGet.registerIngredientToProduct("4021", ingredientID: "E450", h_status: "HALAL")
+        // MARK getting the status via new getproductOrIngredientStatus Function
         
+        var statusProductOrIngredient = connectToDBAndGet.getProductOrIngredientStatus("878", ingredientID: "WE32")
         
+        print("Status of Product or Ingredient has been reported as :: \(statusProductOrIngredient)")
         
         // MARK TEmp adding products
         
