@@ -85,6 +85,7 @@ class DataController: NSObject {
     
        // let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
     print("inside createDBConnectionAndSearchFor------")
+       print("SEARCH STRING IS table name :\(tableName) and column name is :::\(columnName) while the search string is ::\(searchString)")
         var table_Name = tableName
         var column_name = columnName
         var searchFor = searchString
@@ -105,6 +106,8 @@ class DataController: NSObject {
         do {
             fetchedResult = try context.executeFetchRequest(tableFetch) //as! [Ingredients]
             print("inside createDBConnectionAndSearchFor-FetchResult Attempt-----")
+            
+            print("SEARCH STRING IS table name :\(tableName) and column name is :::\(columnName) while the search string is ::\(searchString)")
 //            if fetchedIngredients.count == 0
 //            {
 //
@@ -141,6 +144,7 @@ return fetchedResult
         
         let tableFetch = NSFetchRequest(entityName: "MasterProducts")
         //tableFetch.predicate = NSPredicate(format: "%K Contains %@",column_name, searchFor)
+        print("searching for product inside update product is :product ID::\(searchFor)")
         tableFetch.predicate = NSPredicate(format: "%K = %@","product_id", searchFor)
         
         
@@ -149,8 +153,9 @@ return fetchedResult
         
         do {
            var  fetchedResult = try context.executeFetchRequest(tableFetch) as! [NSManagedObject]
-            print("inside Update function fetching results---")
-            
+            print("inside Update function fetching results---fetched count is::\(fetchedResult.count)")
+            print("inside Update function h_status is :::\(fetchedResult[0].valueForKey("h_status")!)")
+
             if fetchedResult.count != 0{
             var managedObject = fetchedResult[0]
             var existingProductStatus = managedObject.valueForKey("h_status") as! String
@@ -245,13 +250,17 @@ return fetchedResult
         
         let ingredientRegisterationCheck = DataController()
         let ingredientRegisterationCheckResult = ingredientRegisterationCheck.createDBConnectionAndSearchFor("ProductsWithIngredients", columnName: "prd_id", searchString: productID) as! [AAAProductsWithIngredientsMO]
+      
         // If NO product id is found then add it together with ingredient id
        
         var ingredientToAddStatus = true
         
         
         if (ingredientRegisterationCheckResult.count == 0){
-        print ("-----Registering Ingredients to Products")
+        print ("-----Registering Ingredients to Products with ingredient id is :\(ingredientID) ")
+             print ("-----againsta product id is :\(productID) ")
+             print ("-----and halal_haram_mushbooh status is  :\(h_status) ")
+        
         ingredientRegisterationCheck.addIngredientsToProduct(ingredientID, productID: productID, halal_haram_mushbooh_Status: h_status)
             print ("-----Ingredients Registered---------")
             // MARK Updateing product's status in MasterProducts table based on the ingredient's status
@@ -259,6 +268,7 @@ return fetchedResult
             print("updating product status also 878")
             var productStatusUpdate = DataController()
             productStatusUpdate.updateMasterProducts(productID, hStatus: h_status)
+          //  productStatusUpdate.up
 
         }
         
@@ -284,6 +294,8 @@ return fetchedResult
                 // MARK Updateing product's status in MasterProducts table based on the ingredient's status
                 // MARK BACK BONE Of product , halal, haram, mushbooh status update
                 print("updating product status also 656")
+                print("ing status was:\(h_status)")
+                
                 var productStatusUpdate = DataController()
                 productStatusUpdate.updateMasterProducts(productID, hStatus: h_status)
             
@@ -485,6 +497,7 @@ var productSearchResult =        productExistsOrNot.createDBConnectionAndSearchF
         // registered flag =true
         if (!productID.isEmpty)
         {
+            print("inside product id check for status func name is =getProductOrIngredientStatus")
         var masterProducts = DataController()
         var productStatus = masterProducts.createDBConnectionAndSearchFor("MasterProducts", columnName: "product_id", searchString: productID) as! [AAAMasterProductsMO]
         
@@ -510,14 +523,17 @@ var productSearchResult =        productExistsOrNot.createDBConnectionAndSearchF
         }
         
         else {
+            print("inside ingredient id check for status func name is =getProductOrIngredientStatus")
+
             
             var ingredientStatus = DataController()
-            var ingredientStatusCheck = ingredientStatus.createDBConnectionAndSearchFor("Ingredients", columnName: "ingredient_id", searchString: productID) as! [Ingredients]
-            
+            var ingredientStatusCheck = ingredientStatus.createDBConnectionAndSearchFor("Ingredients", columnName: "ingredient_id", searchString: ingredientID) as! [Ingredients]
+            print("ingredientID is ::121: \(ingredientID)")
+            print("ingredientStatusCheck Count is ::: \(ingredientStatusCheck.count )")
             
             if (ingredientStatusCheck.count != 0 )
             {
-            
+             print("ingredientStatusCheck Count is ::: \(ingredientStatusCheck.count )")
             status = ingredientStatusCheck[0].valueForKey("halal_status") as! String
                 return status
             }

@@ -27,6 +27,9 @@
 		D467D2EC1C34780E0061E7EF /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2E91C34780E0061E7EF /* BarcodeViewController.swift */; };
 		D4E550C11C2BFFB400199198 /* Ingredients+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E550BF1C2BFFB400199198 /* Ingredients+CoreDataProperties.swift */; };
 		D4E550C21C2BFFB400199198 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E550C01C2BFFB400199198 /* Ingredients.swift */; };
+		D4E55BED1C50CBAE00B9468C /* AddProductManuallyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E55BEC1C50CBAE00B9468C /* AddProductManuallyController.swift */; };
+		D4E55BEE1C50CBAE00B9468C /* AddProductManuallyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E55BEC1C50CBAE00B9468C /* AddProductManuallyController.swift */; };
+		D4E55BEF1C50CBAE00B9468C /* AddProductManuallyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E55BEC1C50CBAE00B9468C /* AddProductManuallyController.swift */; };
 		D4FEDABA1C246BC60007B4D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDAB91C246BC60007B4D7 /* AppDelegate.swift */; };
 		D4FEDABC1C246BC60007B4D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDABB1C246BC60007B4D7 /* ViewController.swift */; };
 		D4FEDABF1C246BC60007B4D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FEDABD1C246BC60007B4D7 /* Main.storyboard */; };
@@ -68,6 +71,7 @@
 		D467D2E91C34780E0061E7EF /* BarcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 		D4E550BF1C2BFFB400199198 /* Ingredients+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ingredients+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D4E550C01C2BFFB400199198 /* Ingredients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
+		D4E55BEC1C50CBAE00B9468C /* AddProductManuallyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductManuallyController.swift; sourceTree = "<group>"; };
 		D4FEDAB61C246BC60007B4D7 /* CoreDataScratch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataScratch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4FEDAB91C246BC60007B4D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4FEDABB1C246BC60007B4D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				D467D2E51C346C130061E7EF /* temp.xml */,
 				D43CD81E1C2A8CD4008DE720 /* TableViewController.swift */,
 				D4FEDABD1C246BC60007B4D7 /* Main.storyboard */,
+				D4E55BEC1C50CBAE00B9468C /* AddProductManuallyController.swift */,
 				D4FEDAC31C246BC60007B4D7 /* Assets.xcassets */,
 				D4FEDAC51C246BC60007B4D7 /* LaunchScreen.storyboard */,
 				D4FEDAC81C246BC60007B4D7 /* Info.plist */,
@@ -307,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4E550C21C2BFFB400199198 /* Ingredients.swift in Sources */,
+				D4E55BED1C50CBAE00B9468C /* AddProductManuallyController.swift in Sources */,
 				D467D2DA1C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift in Sources */,
 				D467D2E01C346AF60061E7EF /* AAAMasterProductsMO.swift in Sources */,
 				D4E550C11C2BFFB400199198 /* Ingredients+CoreDataProperties.swift in Sources */,
@@ -331,6 +337,7 @@
 				D467D2DE1C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift in Sources */,
 				D4FEDAEC1C246F320007B4D7 /* DataController.swift in Sources */,
 				D467D2E11C346AF60061E7EF /* AAAMasterProductsMO.swift in Sources */,
+				D4E55BEE1C50CBAE00B9468C /* AddProductManuallyController.swift in Sources */,
 				D467D2EB1C34780E0061E7EF /* BarcodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +352,7 @@
 				D467D2DF1C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift in Sources */,
 				D4FEDAED1C246F320007B4D7 /* DataController.swift in Sources */,
 				D467D2E21C346AF60061E7EF /* AAAMasterProductsMO.swift in Sources */,
+				D4E55BEF1C50CBAE00B9468C /* AddProductManuallyController.swift in Sources */,
 				D467D2EC1C34780E0061E7EF /* BarcodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

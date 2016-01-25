@@ -14,8 +14,13 @@ let productHStatus = "DNK"
 let HALAL = "HALAL"
 let HARAM = "HARAM"
 let MUSHBOOH = "MUSHBOOH"
-var registeredIngredient = false
+let DONOTKNOW = "DNK"
 
+var registeredIngredient = false
+let productLevelForStatus = "Prd-LEVEL"
+let ingredientLevelForStatus = "Ing-LEVEL"
+var displayShow = false
+var productBarCodeGlobal = ""
 
 
 class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,NSFetchedResultsControllerDelegate,UITextFieldDelegate, BarcodeDelegate {
@@ -49,13 +54,22 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
     
     @IBOutlet weak var productBarCodeDisplay: UILabel!
     @IBOutlet weak var eNumberEntered: UILabel!
+   
     //@IBOutlet var eNumberEntered: UITextField!
     // MARK Constants
     
     // MARK Variables: View Controller Level
+    // MARK: Display Color Variables
+    
+    var bgColorDefaultButton = UIColor()
+    var bgColorViewController = UIColor()
+    var bgColorNameLabel = UIColor()
+    var bgColorDescryptionLabel = UIColor()
+    var bgColorHalalStatusLabel = UIColor()
+    var bgColorENumberEntered = UIColor()
     
     
-    var productBarCode = String()
+    var productBarCode = ""
     var productDBAdded = Bool()
     var parser = NSXMLParser()
     // Mark temp
@@ -77,9 +91,77 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
     var centralDisplay = String()
     
     //var nItem: List? = nil
+   
+    // mark: register ingredients code
+    
+    @IBAction func registerIngredient(sender: UIButton) {
+        // get the ingredients h_status from the global? variable
+       
+        // MARK : Work left. need to change to DB values insteead of label values
+        
+        var registerIngredientToProductInDB =  DataController()
+        registerIngredientToProductInDB.registerIngredientToProduct(productBarCode, ingredientID: eNumberEntered.text!, h_status: halalStatusLabel.text!)
+        
+    }
+    
+    // exit view test
+   
+    @IBAction func cancelToPlayersViewController(segue:UIStoryboardSegue) {
+    }
+    
+    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue)
+    {
+        
+        let productEnteredView = unwindSegue.sourceViewController as? AddProductManuallyController
+        
+        checkProduct((productEnteredView?.productBarCodeEnteredManually.text!)!)
+    
+        
+    print("productEnteredView?.productBarCodeEnteredManually-----\(productEnteredView?.productBarCodeEnteredManually.text!)")
+        
+        
+    
+    }
+    // MARK: Func= this function take values entered on screen for product as BarCod
+    // it checks if the product is available in db , if not then it adds it
+    // then it gets the product as an object 
+    // extracts the status of the product i.e. h:status 
+    // then hand over these values to changeStatus Display and changes accordingly
+    // this will be called at all those places which are taking product value and wants to change the status as well
+    
+    func checkProduct (barCodeEntered: String)
+ {
+    
+    productBarCodeDisplay.text = barCodeEntered
+        productBarCode = barCodeEntered
+    let productFound = searchProduct() 
+    // change the status based on the product received
+    
+    print("productCheck Function called.productFound status is = \(productFound.h_status!)")
+    
+    if (productFound.h_status != nil) {
+    
+    changeDisplayStatus(productFound.h_status!, productOrIngredientLevel: productLevelForStatus )
+    }
+    else {
+    
+    changeDisplayStatus(productHStatus, productOrIngredientLevel: productLevelForStatus)
+    }
+}
     
     
-    
+    // exit view test end
+    // MARK Exit from Add Manuall Product Scene
+    @IBAction func cancelToMoveToViewController(segue:UIStoryboardSegue) {
+    }
+    @IBAction func UpdateProductBarCodeDisplayAndMoveToViewController(segue:UIStoryboardSegue) {
+   //     productBarCodeGlobal =
+   productBarCodeDisplay.text = productBarCodeGlobal
+        
+        
+        print("manually entered text of product code is ::::\(productBarCodeGlobal)")
+        print("Product id label is  ::::\(productBarCodeDisplay.text)")
+    }
     //MARK add all interface functions here
     
     @IBAction func aTyped(sender: UIButton) {
@@ -93,7 +175,13 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         eNumberEntered.text = centralDisplay
         checkIngredientStatus ()
     }
+    // MARK: Clearing Products and ingredients
     
+    @IBAction func clearProductsAndIngredients(sender: AnyObject) {
+        masterReset(productLevelForStatus)
+    }
+    
+    // MARK: Clearing ingredients
     @IBAction func cTyped(sender: UIButton) {
         centralDisplay = centralDisplay + "C"
         eNumberEntered.text = centralDisplay
@@ -190,12 +278,15 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
     }
     
     @IBAction func clearTyped(sender: UIButton) {
-        centralDisplay = ""
-        eNumberEntered.text = centralDisplay
-        nameLabel.text = "Name"
-        descriptionLabel.text = "Description"
-        halalStatusLabel.text = "Halal / Haram / Mushbooh"
-    }
+        
+          masterReset (ingredientLevelForStatus)
+        
+//        centralDisplay = ""
+//        eNumberEntered.text = centralDisplay
+//        nameLabel.text = "Name"
+//        descriptionLabel.text = "Description"
+//        halalStatusLabel.text = "Halal / Haram / Mushbooh"
+  }
     
     @IBAction func displayedText(sender: UITextField) {
         
@@ -205,190 +296,248 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
     @IBAction func eNumberedTextValueChanged(sender: UITextField) {
         print("Value Changed is :\(eNumberEntered.text)")
     }
+
     func checkIngredientStatus () {
+       
+        //MARK ingredient instant reset is temporarily switched off
         
-        var str = String()
+        //print("displayShow is ::before: \(displayShow)")
+
+//        if (displayShow == true)
+//        
+//     {
+//     var eNumberedTemp = eNumberEntered.text
+//        print("displayShow is ::: \(displayShow)")
+//        masterReset(ingredientLevelForStatus)
+//        displayShow = false
+//        eNumberEntered.text = eNumberedTemp
+//        }
+//        
+       var str = ""
+        print("str last value is ::: \(str)")
+        
+
         str = eNumberEntered.text!
+        print("str updated value is ::: \(str)")
         
         
-        if str.characters.count >= 3 {
-            // MARK searchin via action
-            let strReturned: [Ingredients] = fetchResults(str)
-            
-            if strReturned.count == 0 {
-                // Mark ingredient check Ingredient not found
-                eNumberEntered.backgroundColor = UIColor.yellowColor()
-                //eNumberEntered.selectedTextRange = eNumberEntered.textRangeFromPosition(eNumberEntered.beginningOfDocument, toPosition: eNumberEntered.endOfDocument)
-            }
-            else if strReturned.count >= 1 {
-                
-                var firstIngredientId: String = (strReturned.first?.valueForKey("ingredient_id"))! as! String
-                var secondIngredientId: String = (strReturned.last?.valueForKey("ingredient_id"))! as! String
-                print("firstIngredientId is ::: \(firstIngredientId)")
-                print("if else has just started")
-                
-                
-                
-                if firstIngredientId == secondIngredientId
-                {
-                    var halalHaram: String = (strReturned.first?.valueForKey("halal_status"))! as! String
-                    //let replaced = halalHaram.stringByReplacingOccurrencesOfString(" ", withString: "")
-                    let replaced = halalHaram.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-                    
-                    let halal = "HALAL"
-                    let haRaM = "HARAM"
-                    print("count of replaced is : \(replaced.characters.count) ")
-                    print("count of halal is : \(halal.characters.count) ")
-                    print("count of halal is : \(haRaM.characters.count) ")
-                    
-                    
-                    // let halal = "HALALHARAM"
-                    
-                    print("halalHaram :-:-: \(halalHaram)")
-                    
-                    // Change color of text box to green if Halal
-                    if replaced.lowercaseString == halal.lowercaseString {
-                        eNumberEntered.backgroundColor=UIColor.greenColor()
-                        // MARK check if the ingredient is already registered
-                        print("searchregisteredIngredient had been called and now it on next statement")
-                        // MARK updating the labels on main screen accordingly
-                        nameLabel.text = (strReturned.first?.valueForKey("name"))! as! String
-                        descriptionLabel.text = (strReturned.first?.valueForKey("descryption"))! as! String
-                        halalStatusLabel.text = (strReturned.first?.valueForKey("halal_status"))! as! String
-                        halalStatusLabel.backgroundColor = UIColor.greenColor()
-                        //var recIngredients = [AAAProductsWithIngredientsMO()]
-                        //var temp = eNumberEntered.text!
-                        //recIngredients =
-                        searchRegisteredIngredient()
-                        print("lowercasestring:: \(replaced.lowercaseString)")
-                        
-                        print("Halal has been found:: \(strReturned.first?.valueForKey("halal_status")!)")
-                        
-                        
-                        
-                        
-                        
-                    }
-                        // Change color of text box to red if Haram
-                        
-                    else if replaced.lowercaseString == haRaM.lowercaseString {
-                        eNumberEntered.backgroundColor=UIColor.redColor()
-                        // MARK updating the labels on main screen accordingly
-                        nameLabel.text = (strReturned.first?.valueForKey("name"))! as! String
-                        descriptionLabel.text = (strReturned.first?.valueForKey("descryption"))! as! String
-                        halalStatusLabel.text = (strReturned.first?.valueForKey("halal_status"))! as! String
-                        halalStatusLabel.backgroundColor = UIColor.redColor()
-                        searchRegisteredIngredient()
-                        
-                        
-                        print("Haram has been found:: \(strReturned.first?.valueForKey("halal_status")!)")
-                        
-                    }
-                        
-                        // Change color of text box to Grey if Mushbooh or other
-                    else if replaced != "HALAL" || halalHaram != "HARAM"{
-                        eNumberEntered.backgroundColor=UIColor.grayColor()
-                        // MARK updating the labels on main screen accordingly
-                        nameLabel.text = (strReturned.first?.valueForKey("name"))! as! String
-                        
-                        halalStatusLabel.textColor = UIColor.whiteColor()
-                        descriptionLabel.text = (strReturned.first?.valueForKey("descryption"))! as! String
-                        halalStatusLabel.text = (strReturned.first?.valueForKey("halal_status"))! as! String
-                        halalStatusLabel.backgroundColor = UIColor.grayColor()
-                        searchRegisteredIngredient()
-                        
-                        print("Mushbooh or need to be checked has been found:: \(halalHaram.lowercaseString)")
-                        
-                    }
-                    
-                }
-                
-                
-            }
-            
-            print ("strReturned value is : \(strReturned)")
+        
+         if str.characters.count >= 3 {
+        // check for the ingredient or product status via Data Controller status funciton
+        
+        var dbCheckHalalStatus = DataController()
+        print("Calling status check function viewcontroller.checkIngredients() eNumber Entered is:\(str)")
+        var halalStatusFromDB = dbCheckHalalStatus.getProductOrIngredientStatus(productBarCode, ingredientID: str)
+        
+        print("halal Status from db for the above eNumber ENtered is ::\(halalStatusFromDB)")
+        changeDisplayStatus(halalStatusFromDB, productOrIngredientLevel: ingredientLevelForStatus)
+        
+         print("changeDisplayStatus(halalStatusFromDB, productOrIngredientLevel: ingredientLevelForStatus)----Called")
+        var ingredientFound = dbCheckHalalStatus.createDBConnectionAndSearchFor("Ingredients", columnName: "ingredient_id", searchString: str) as! [Ingredients]
+        print("ingredients found 181:: \(ingredientFound.count)")
+        
+       
+        if (ingredientFound.count != 0){
+        // Mark Display Label's changes on the basis of ingredient info
+            descriptionLabel.text = ingredientFound[0].valueForKey("descryption") as! String
+            nameLabel.text = ingredientFound[0].valueForKey("name") as! String
+            halalStatusLabel.text = ingredientFound[0].valueForKey("halal_status") as! String
+
+        
+        }
         }
         
+//        if str.characters.count >= 3 {
+//        var ingredientOrProductStatus = DataController()
+//        var halalStatus = ingredientOrProductStatus.getProductOrIngredientStatus(productBarCode, ingredientID: eNumberEntered.text!)
+//        print ("halalStatus on eNumberEntered is :1001:\(halalStatus)")
+//        // MARK later call for the status change
+//        }
+        
+        // MARK ingredient status mechanism is temporarily switched off to implement new way
+//        
+//        
+//        if str.characters.count >= 3 {
+//            // MARK searchin via action
+//            // MARK old way of getting ingredients status but had some problem
+//            let strReturned: [Ingredients] = fetchResults(str)
+//            
+//            
+//            if strReturned.count == 0 {
+//                // Mark ingredient check Ingredient not found
+//                eNumberEntered.backgroundColor = UIColor.yellowColor()
+//                //eNumberEntered.selectedTextRange = eNumberEntered.textRangeFromPosition(eNumberEntered.beginningOfDocument, toPosition: eNumberEntered.endOfDocument)
+//            }
+//            else if strReturned.count >= 1 {
+//                
+//                var firstIngredientId: String = (strReturned.first?.valueForKey("ingredient_id"))! as! String
+//                var secondIngredientId: String = (strReturned.last?.valueForKey("ingredient_id"))! as! String
+//                print("firstIngredientId is ::: \(firstIngredientId)")
+//                print("if else has just started")
+//                
+//                
+//                
+//                if firstIngredientId == secondIngredientId
+//                {
+//                    var halalHaram: String = (strReturned.first?.valueForKey("halal_status"))! as! String
+//                    //let replaced = halalHaram.stringByReplacingOccurrencesOfString(" ", withString: "")
+//                    let replaced = halalHaram.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+//                    
+//                    let halal = "HALAL"
+//                    let haRaM = "HARAM"
+//                    print("count of replaced is : \(replaced.characters.count) ")
+//                    print("count of halal is : \(halal.characters.count) ")
+//                    print("count of halal is : \(haRaM.characters.count) ")
+//                    
+//                    
+//                    // let halal = "HALALHARAM"
+//                    
+//                    print("halalHaram :-:-: \(halalHaram)")
+//                    
+//                    // Change color of text box to green if Halal
+//                    if replaced.lowercaseString == halal.lowercaseString {
+//                        eNumberEntered.backgroundColor=UIColor.greenColor()
+//                        // MARK check if the ingredient is already registered
+//                        print("searchregisteredIngredient had been called and now it on next statement")
+//                        // MARK updating the labels on main screen accordingly
+//                        nameLabel.text = (strReturned.first?.valueForKey("name"))! as! String
+//                        descriptionLabel.text = (strReturned.first?.valueForKey("descryption"))! as! String
+//                        halalStatusLabel.text = (strReturned.first?.valueForKey("halal_status"))! as! String
+//                        halalStatusLabel.backgroundColor = UIColor.greenColor()
+//                        //var recIngredients = [AAAProductsWithIngredientsMO()]
+//                        //var temp = eNumberEntered.text!
+//                        //recIngredients =
+//                        searchRegisteredIngredient()
+//                        print("lowercasestring:: \(replaced.lowercaseString)")
+//                        
+//                        print("Halal has been found:: \(strReturned.first?.valueForKey("halal_status")!)")
+//                        
+//                        
+//                        
+//                        
+//                        
+//                    }
+//                        // Change color of text box to red if Haram
+//                        
+//                    else if replaced.lowercaseString == haRaM.lowercaseString {
+//                        eNumberEntered.backgroundColor=UIColor.redColor()
+//                        // MARK updating the labels on main screen accordingly
+//                        nameLabel.text = (strReturned.first?.valueForKey("name"))! as! String
+//                        descriptionLabel.text = (strReturned.first?.valueForKey("descryption"))! as! String
+//                        halalStatusLabel.text = (strReturned.first?.valueForKey("halal_status"))! as! String
+//                        halalStatusLabel.backgroundColor = UIColor.redColor()
+//                        searchRegisteredIngredient()
+//                        
+//                        
+//                        print("Haram has been found:: \(strReturned.first?.valueForKey("halal_status")!)")
+//                        
+//                    }
+//                        
+//                        // Change color of text box to Grey if Mushbooh or other
+//                    else if replaced != "HALAL" || halalHaram != "HARAM"{
+//                        eNumberEntered.backgroundColor=UIColor.grayColor()
+//                        // MARK updating the labels on main screen accordingly
+//                        nameLabel.text = (strReturned.first?.valueForKey("name"))! as! String
+//                        
+//                        halalStatusLabel.textColor = UIColor.whiteColor()
+//                        descriptionLabel.text = (strReturned.first?.valueForKey("descryption"))! as! String
+//                        halalStatusLabel.text = (strReturned.first?.valueForKey("halal_status"))! as! String
+//                        halalStatusLabel.backgroundColor = UIColor.grayColor()
+//                        searchRegisteredIngredient()
+//                        
+//                        print("Mushbooh or need to be checked has been found:: \(halalHaram.lowercaseString)")
+//                        
+//                    }
+//                    
+//                }
+//                
+//                
+//            }
+//            
+//            print ("  \(strReturned)")
+//        }
+//        
         
     }
-    @IBAction func checkENumbers(sender: UITextField) {
-        
-        var str = String()
-        str = eNumberEntered.text!
-        
-        
-        if str.characters.count >= 3 {
-            // MARK searchin via action
-            let strReturned: [Ingredients] = fetchResults(str)
-            
-            if strReturned.count == 0 {
-                // Mark ingredient check Ingredient not found
-                eNumberEntered.backgroundColor = UIColor.yellowColor()
-                //        eNumberEntered.selectedTextRange = eNumberEntered.textRangeFromPosition(eNumberEntered.beginningOfDocument, toPosition: eNumberEntered.endOfDocument)
-            }
-            else if strReturned.count >= 1 {
-                
-                var firstIngredientId: String = (strReturned.first?.valueForKey("ingredient_id"))! as! String
-                var secondIngredientId: String = (strReturned.last?.valueForKey("ingredient_id"))! as! String
-                print("firstIngredientId is ::: \(firstIngredientId)")
-                print("if else has just started")
-                
-                
-                
-                if firstIngredientId == secondIngredientId
-                {
-                    var halalHaram: String = (strReturned.first?.valueForKey("halal_status"))! as! String
-                    //let replaced = halalHaram.stringByReplacingOccurrencesOfString(" ", withString: "")
-                    let replaced = halalHaram.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-                    
-                    let halal = "HALAL"
-                    let haRaM = "HARAM"
-                    print("count of replaced is : \(replaced.characters.count) ")
-                    print("count of halal is : \(halal.characters.count) ")
-                    print("count of halal is : \(haRaM.characters.count) ")
-                    
-                    
-                    // let halal = "HALALHARAM"
-                    
-                    print("halalHaram :-:-: \(halalHaram)")
-                    
-                    // Change color of text box to green if Halal
-                    if replaced.lowercaseString == halal.lowercaseString {
-                        eNumberEntered.backgroundColor=UIColor.greenColor()
-                        
-                        print("Halal has been found:: \(strReturned.first?.valueForKey("halal_status")!)")
-                        
-                    }
-                        // Change color of text box to red if Haram
-                        
-                    else if replaced.lowercaseString == haRaM.lowercaseString {
-                        eNumberEntered.backgroundColor=UIColor.redColor()
-                        print("Haram has been found:: \(strReturned.first?.valueForKey("halal_status")!)")
-                        
-                    }
-                        
-                        // Change color of text box to Grey if Mushbooh or other
-                    else if replaced != "HALAL" || halalHaram != "HARAM"{
-                        eNumberEntered.backgroundColor=UIColor.grayColor()
-                        print("Mushbooh or need to be checked has been found:: \(halalHaram.lowercaseString)")
-                        
-                    }
-                    
-                }
-                
-                
-            }
-            
-            print ("strReturned value is : \(strReturned)")
-        }
-        
-        
-    }
+    
+//    @IBAction func checkENumbers(sender: UITextField) {
+//        
+//        var str = String()
+//        str = eNumberEntered.text!
+//        if str.characters.count >= 3 {
+//            // MARK searchin via action
+//            let strReturned: [Ingredients] = fetchResults(str)
+//            
+//            if strReturned.count == 0 {
+//                // Mark ingredient check Ingredient not found
+//                
+//               descriptionLabel.text = "eNumber Not Found"
+//                eNumberEntered.backgroundColor = UIColor.yellowColor()
+//                //        eNumberEntered.selectedTextRange = eNumberEntered.textRangeFromPosition(eNumberEntered.beginningOfDocument, toPosition: eNumberEntered.endOfDocument)
+//            }
+//            else if strReturned.count >= 1 {
+//                
+//                var firstIngredientId: String = (strReturned.first?.valueForKey("ingredient_id"))! as! String
+//                var secondIngredientId: String = (strReturned.last?.valueForKey("ingredient_id"))! as! String
+//                print("firstIngredientId is ::: \(firstIngredientId)")
+//                print("if else has just started")
+//                
+//                
+//                
+//                if firstIngredientId == secondIngredientId
+//                {
+//                    var halalHaram: String = (strReturned.first?.valueForKey("halal_status"))! as! String
+//                    //let replaced = halalHaram.stringByReplacingOccurrencesOfString(" ", withString: "")
+//                    let replaced = halalHaram.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+//                    
+//                    let halal = "HALAL"
+//                    let haRaM = "HARAM"
+//                    print("count of replaced is : \(replaced.characters.count) ")
+//                    print("count of halal is : \(halal.characters.count) ")
+//                    print("count of halal is : \(haRaM.characters.count) ")
+//                    
+//                    
+//                    // let halal = "HALALHARAM"
+//                    
+//                    print("halalHaram :-:-: \(halalHaram)")
+//                    
+//                    // Change color of text box to green if Halal
+//                    if replaced.lowercaseString == halal.lowercaseString {
+//                        eNumberEntered.backgroundColor=UIColor.greenColor()
+//                        
+//                        print("Halal has been found:: \(strReturned.first?.valueForKey("halal_status")!)")
+//                        
+//                    }
+//                        // Change color of text box to red if Haram
+//                        
+//                    else if replaced.lowercaseString == haRaM.lowercaseString {
+//                        eNumberEntered.backgroundColor=UIColor.redColor()
+//                        print("Haram has been found:: \(strReturned.first?.valueForKey("halal_status")!)")
+//                        
+//                    }
+//                        
+//                        // Change color of text box to Grey if Mushbooh or other
+//                    else if replaced != "HALAL" || halalHaram != "HARAM"{
+//                        eNumberEntered.backgroundColor=UIColor.grayColor()
+//                        print("Mushbooh or need to be checked has been found:: \(halalHaram.lowercaseString)")
+//                        
+//                    }
+//                    
+//                }
+//                
+//                
+//            }
+//            
+//            print ("strReturned value is : \(strReturned)")
+//        }
+//        
+//        
+//    }
     
     // Mark: ENumber.Search
     
-    @IBAction func eNumberSearch(sender: AnyObject) {
-    }
+//    @IBAction func eNumberSearch(sender: AnyObject) {
+//    }
     
     
     override func viewDidLoad() {
@@ -409,17 +558,23 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
       print("After app del")  
         //fetchResults()
         fetchRecords()
-        // parser.delegate = self
+        parser.delegate = self
 
         print("Parsing started::\(parser.parse())")
-        //self.beginParsing()
-        print("product records total count ---:\(productRecords.count)")
         
-        print("posts records total count ---:\(posts.count)")
-        // Mark remove it later
-        print ("DB Saved Status:::::\(saveObjectsToDB())")
+        
+        print("product records total count --565-:\(productRecords.count)")
+        
+        print("posts records total count --565-:\(posts.count)")
+        // Mark DB Saving of xml to DB is switched off for now later add some logic based on business logic what to do and how to maintain db for keeping data. should it be on the cloud or individual etc
+        print ("DB Saved Status:::565::\(saveObjectsToDB())")
         // MARK checking new DB Connection function
+       
         
+        //MARK beginParsing function will reset all the variables
+        //MARK BeginParsing Usage: use it after saving records to the db and parsing. else nothing will be saved to db
+        
+        self.beginParsing()
         
         var connectToDBAndGet = DataController()
         
@@ -441,10 +596,10 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
          print ("connectToDBAndGet----after---")
         
         
-        var ingredients = connectToDBAndGet.createDBConnectionAndSearchFor("MasterProducts", columnName: "product_id", searchString: "4321") as! [AAAMasterProductsMO]
+        var ingredients = connectToDBAndGet.createDBConnectionAndSearchFor("Ingredients", columnName: "ingredient_id", searchString: "E127") as! [AAAMasterProductsMO]
        
         
-       print("DB Connection has been established and total count of result is::> \(ingredients.count)")
+       print("DB Connection has been established and total count of result is:111:> \(ingredients.count)")
 //
 //        for index in 0..<ingredients.count {
 //            print("Result is ::=\(ingredients[index].product_id)")
@@ -458,7 +613,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         
         // MARK getting the status via new getproductOrIngredientStatus Function
         
-        var statusProductOrIngredient = connectToDBAndGet.getProductOrIngredientStatus("878", ingredientID: "WE32")
+        var statusProductOrIngredient = connectToDBAndGet.getProductOrIngredientStatus("", ingredientID: "E127")
         
         print("Status of Product or Ingredient has been reported as :: \(statusProductOrIngredient)")
         
@@ -622,7 +777,17 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         
         if element.isEqualToString("ingredient_id") {
             
-            ingredient_id.appendString(string)
+            
+            if (string.containsString(" "))
+            {
+            print("Space found")
+            
+            }
+            else {
+                ingredient_id.appendString(string)
+
+            }
+            
             
             
         } else if element.isEqualToString("description") {
@@ -680,15 +845,21 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         print("Just before for loop to save the records::\(productRecords.count)")
         
         
-        for index in 1..<productRecords.count
+        for index in 0..<productRecords.count
             
         {
             
-            
             var newIngredient = NSEntityDescription.insertNewObjectForEntityForName("Ingredients", inManagedObjectContext: context) as! Ingredients
+            productRecords[index].valueForKey("ingredient_id")
             
             print("Ingredient_ID :::\(productRecords[index].valueForKey("ingredient_id"))")
-            newIngredient.setValue(productRecords[index].valueForKey("ingredient_id"), forKey: "ingredient_id")
+           
+            // Temp white space removal
+            newIngredient.setValue(productRecords[index].valueForKey("ingredient_id")!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()), forKey: "ingredient_id")
+            
+            // Temp comments testing to remove white spaces
+            //newIngredient.setValue(productRecords[index].valueForKey("ingredient_id"), forKey: "ingredient_id")
+            
             print("Ingredient_ID set value is:::\(newIngredient.valueForKey("ingredient_id")!)")
             
             print("iteration\(productRecords[index].valueForKey("name"))")
@@ -696,22 +867,22 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
             newIngredient.setValue(productRecords[index].valueForKey("name"), forKey: "name")
             newIngredient.setValue(productRecords[index].valueForKey("description"), forKey: "descryption")
             newIngredient.setValue(productRecords[index].valueForKey("halal_status"), forKey: "halal_status")
-            // print("Record # \(index)")
+            print("Record #909# \(index)")
             
             // MARK DB Saving is switched off for now
-            //            do {
-            //               // print("trying to save records- BEFORE")
-            //                try context.save()
-            //               // print("trying to save records-AFTER")
-            //
-            //                statusSave = true
-            //            } catch let error {
-            //                print("Could not cache the response \(error)")
-            //                statusSave=false
-            //                print("Here is productRecords::\(productRecords.count)")
-            //
-            //               // return statusSave
-            //            }
+                        do {
+                            print("trying to save records- BEFORE")
+                            try context.save()
+                            print("trying to save records-AFTER")
+            
+                            statusSave = true
+                        } catch let error {
+                            print("Could not cache the response \(error)")
+                            statusSave=false
+                            print("Here is productRecords::\(productRecords.count)")
+            
+                           // return statusSave
+                        }
             
             // print("Here is productRecords::\(productRecords)")
             
@@ -734,7 +905,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
     }
     
     // MARK DB Record Insertion and Editing----Start
-    func addProduct ()
+    func addProduct ()->AAAMasterProductsMO
     {
         
         // create db connection
@@ -757,6 +928,10 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         
         // print("Product_ID :::\(productRecords[index].valueForKey("ingredient_id"))")
         newProduct.setValue(productBarCode, forKey: "product_id")
+        newProduct.setValue("New Product", forKey: "product_name")
+        newProduct.setValue("Product Type", forKey: "product_type")
+        newProduct.setValue("DNK", forKey: "h_status")
+        
         do {
             // print("trying to save records- BEFORE")
             try context.save()
@@ -770,14 +945,14 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
             
             // return statusSave
         }
-        
+        return newProduct
         
     }
     
     // DB Record Insertion and Editing-- end
     // MARK Search product BarCode if exists then do not add it if doesnt exist then add it-START------
     
-    func searchProduct()
+    func searchProduct()-> AAAMasterProductsMO
     {
         // Create Connection and get context
         //        var dataController = DataController()
@@ -799,19 +974,24 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
             
             if fetchedProducts.count == 0
             {// if no product found then add the product
-                addProduct()
-                print("Product saved 999")
+               var addedProduct = addProduct()
+                print("Product saved with id (DB Value is):\(addedProduct.product_id!)")
+               return addedProduct
+                
             }
                 
                 //            print("1 \(fetched)")
                 
             else {
+               
                 print("Product is allready available ::: \(fetchedProducts.count)")
+                 return fetchedProducts[0]
             }
         } catch {
-            fatalError("Failed to fetch employees: \(error)")
+            fatalError("Failed to fetch Products: \(error)")
         }
-        
+        print ("about to return fetched products[]")
+        return fetchedProducts[0]
         
     }
     // MARK Search product BarCode if exists then do not add it if doesnt exist then add it -END-------
@@ -1016,7 +1196,7 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         do {
             fetchedregisteredIngredientsToProduct = try context.executeFetchRequest(registeredIngredientsToProductFetch) as! [AAAProductsWithIngredientsMO]
             // context.executeFetchRequest(<#T##request: NSFetchRequest##NSFetchRequest#>)
-            
+            print("registeredIngredientsToProductFetch---- inside do:::\(fetchedregisteredIngredientsToProduct.count)")
             var index = 0
             for index = 0; index < 10; index++ {
                 // print("3")
@@ -1182,21 +1362,272 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print("Segue!")
         
+        
+print("segue.identifier::::::\(segue.identifier)")
+
+        
+        
         let barcodeViewController: BarcodeViewController = segue.destinationViewController as! BarcodeViewController
+     print("after barcode view controller")
+        
         barcodeViewController.delegate = self
         
     }
     
     func barcodeReaded(barcode: String) {
-        print("Barcode leido: \(barcode)")
+        print("Barcode leido::::: \(barcode)")
         productBarCodeDisplay.text = "Product:" + barcode
         productBarCode = barcode
         //MARK SearchProduct
-        searchProduct()
-        
+       checkProduct(productBarCode)
+        // let productFound = searchProduct()
+        // change the status based on the product received
+       // changeDisplayStatus(productFound.h_status!, productOrIngredientLevel: productLevelForStatus )
         // codeTextView.text = barcode
     }
     
+    func changeColor ( setColorValueTo: UIColor, setViewColorValue: UIColor ,productOrIngredienLevelColorChange: String ) {
+        
+        print("setColorValueto is ::: \(setColorValueTo)")
+         print("setViewColorValue is ::: \(setViewColorValue)")
+        print("productOrIngredienLevelColorChange is ::: \(productOrIngredienLevelColorChange)")
+        
+        //self.view.backgroundColor = UIColor.greenColor()
+        
+        // first save object colors' default state
+        bgColorViewController = self.view.backgroundColor!
+        bgColorDefaultButton = addProductsBarCode.backgroundColor!
+        bgColorDescryptionLabel = descriptionLabel.backgroundColor!
+        bgColorNameLabel = nameLabel.backgroundColor!
+        bgColorHalalStatusLabel = halalStatusLabel.backgroundColor!
+        bgColorENumberEntered = eNumberEntered.backgroundColor!
+        // assign new color value
+        // Product Level (all)
+        if (productOrIngredienLevelColorChange == productLevelForStatus){
+            
+            
+            
+            self.view.backgroundColor = setViewColorValue
+            addProductsBarCode.backgroundColor = setColorValueTo
+        }
+        
+        // ingredient Level (without product)
+        
+        descriptionLabel.backgroundColor = setColorValueTo
+        nameLabel.backgroundColor = setColorValueTo
+        halalStatusLabel.backgroundColor = setColorValueTo
+        eNumberEntered.backgroundColor = setColorValueTo
+    }
     
+    // MARK Change Display Status based on the Halal Status value of Product or ingredient:
+    
+    func changeDisplayStatus (halalStatusDB: String, productOrIngredientLevel: String) {
+
+        print("halalStatusDB= \(halalStatusDB) and productOrIngredientLevel=\(productOrIngredientLevel)")
+
+    /*
+    1) Status will only be changed based on the product id 's status
+    2) if ingredient is not registered then register it first
+        
+        */
+        
+    // Product Level Change (if Pid was found
+        
+        if (productOrIngredientLevel == productLevelForStatus)
+        {
+            print("Inside Product Level Display change")
+            print("halal status found is :: = \(halalStatusDB.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()))")
+            
+            // Halal Found Product Level
+            
+    if ((halalStatusDB.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())) == HALAL)
+    {
+        changeColor(UIColor.grayColor(), setViewColorValue: UIColor.greenColor(), productOrIngredienLevelColorChange: productLevelForStatus)
+
+        print("Inside Product Level-halal with sub Level :: \(halalStatusDB.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())))")
+        
+        print("Inside Product Level Display change")
+        //addProductsBarCode.backgroundColor=UIColor.greenColor()
+        displayShow = true
+        
+        }
+         // HARAM Found Product Level
+            else if ((halalStatusDB.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())) == HARAM) {
+        
+        changeColor(UIColor.redColor(), setViewColorValue: UIColor.redColor(), productOrIngredienLevelColorChange: productLevelForStatus)
+
+        print("Inside Product Level-HARAM Display change")
+       //         addProductsBarCode.backgroundColor=UIColor.redColor()
+        displayShow = true
+            }
+        // MUSHBOOH Found Product Level
+    else if ((halalStatusDB.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())) == MUSHBOOH) {
+        print("Inside Product Level-MUSHBOOH Display change")
+       
+        changeColor(UIColor.grayColor(), setViewColorValue: UIColor.orangeColor(), productOrIngredienLevelColorChange: productLevelForStatus)
+
+        // addProductsBarCode.backgroundColor=UIColor.grayColor()
+        displayShow = true
+            }
+        // DO NOT KNOW Found Product Level
+    else if ((halalStatusDB.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())) == DONOTKNOW) {
+      
+        
+        changeColor(UIColor.grayColor(), setViewColorValue: UIColor.blueColor(), productOrIngredienLevelColorChange: productLevelForStatus)
+
+//        print("addProductsBarCode.backgroundColor\(addProductsBarCode.backgroundColor!)")
+
+        // Saving default colors
+        
+     //   changeColor()
+        
+        bgColorDefaultButton = addProductsBarCode.backgroundColor!
+        // Changing colors accordingly
+//        self.view.backgroundColor = UIColor.blueColor()
+//        addProductsBarCode.backgroundColor=UIColor.blueColor()
+        displayShow = true
+            }
+            
+    // Ingredient Level
+                 }
+        
+        // MARK INGREDIENT LEVEL CHANGE
+    else if (productOrIngredientLevel == ingredientLevelForStatus)
+        {
+            
+            print("Inside ingredient Level Display change")
+            // Halal Found Ingredient Level
+            if ((halalStatusDB.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())) == HALAL)
+            {
+                print("Inside ingredient Level-halal")
+
+                changeColor(UIColor.greenColor(), setViewColorValue: UIColor.greenColor(), productOrIngredienLevelColorChange: ingredientLevelForStatus)
+
+                //                eNumberEntered.backgroundColor=UIColor.greenColor()
+//                halalStatusLabel.backgroundColor=UIColor.greenColor()
+//                descriptionLabel.backgroundColor=UIColor.greenColor()
+//                
+                displayShow = true
+            }
+                // HARAM Found Ingredient Level
+            else if ((halalStatusDB.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())) == HARAM) {
+                print("Inside ingredient Level-HARAM")
+                changeColor(UIColor.redColor(), setViewColorValue: UIColor.yellowColor(), productOrIngredienLevelColorChange: ingredientLevelForStatus)
+
+//                eNumberEntered.backgroundColor=UIColor.redColor()
+//                halalStatusLabel.backgroundColor=UIColor.redColor()
+//                descriptionLabel.backgroundColor=UIColor.redColor()
+//            displayShow = true
+            }
+                // MUSHBOOH Found Ingredient Level
+            else if ((halalStatusDB.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())) == MUSHBOOH) {
+                print("Inside ingredient Level-MUSHBOOH")
+                changeColor(UIColor.grayColor(), setViewColorValue: UIColor.grayColor(), productOrIngredienLevelColorChange: ingredientLevelForStatus)
+
+//                eNumberEntered.backgroundColor=UIColor.grayColor()
+//                halalStatusLabel.backgroundColor=UIColor.grayColor()
+//                descriptionLabel.backgroundColor=UIColor.grayColor()
+            displayShow = true
+            }
+                // DO NOT KNOW Found Ingredient Level
+            else if ((halalStatusDB.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())) == DONOTKNOW) {
+                print("Inside ingredient Level-DONOTKNOW")
+                changeColor(UIColor.yellowColor(), setViewColorValue: UIColor.blueColor(), productOrIngredienLevelColorChange: ingredientLevelForStatus)
+               
+//                eNumberEntered.backgroundColor=UIColor.blueColor()
+//                halalStatusLabel.backgroundColor=UIColor.blueColor()
+//                descriptionLabel.backgroundColor=UIColor.blueColor()
+            displayShow = true
+            }
+            
+            
+            
+            
+            
+
+        
+    // Haram Found
+        
+    // Mushbooh Found
+        
+    // Do Not Know Found (DNK)
+        
+    
+    }
+        
+        // MARK: Func changeColors
+       
+    
+    // Mark Master Reset Status of display to start checking product or ingredient from start
+    
+        
+    
+}
+    func masterReset (resetLevel: String) {
+        
+        if (resetLevel == ingredientLevelForStatus)
+        {
+            
+            
+            
+            // setting variables to default state
+            centralDisplay = ""
+            // Ingredient Level
+            // Setting up Label text
+            descriptionLabel.text = "Descryption"
+            nameLabel.text = "Name"
+            halalStatusLabel.text = "Halal / Haram / Mushbooh"
+            eNumberEntered.text = "Use Buttons"
+            // Setting up colors
+            
+            nameLabel.backgroundColor = UIColor.lightGrayColor()
+            descriptionLabel.backgroundColor = UIColor.lightGrayColor()
+            halalStatusLabel.backgroundColor = UIColor.lightGrayColor()
+            eNumberEntered.backgroundColor = UIColor.lightGrayColor()
+            
+        }
+        else {
+            
+            // resetting variables
+            
+             centralDisplay = ""
+            // Product Level
+            // Setting up text for Product level Labels & Text Boxes
+            productBarCodeDisplay.text = "Product ID"
+            addProductsBarCode.isEqual("First Add Product Bar Code")
+            
+            // Setting up Color for Product level Labels & Text Boxes
+            productBarCodeDisplay.backgroundColor = UIColor.whiteColor()
+            addProductsBarCode.backgroundColor = UIColor.orangeColor()
+            
+            
+            // Ingredient Level
+            
+            
+            // Setting up text for Ingredients Labels/Text Boxes
+            descriptionLabel.text = "Descryption"
+            nameLabel.text = "Name"
+            halalStatusLabel.text = "Halal / Haram / Mushbooh"
+            eNumberEntered.text = "Use Buttons"
+            // Setting up colors for Ingredients Labels/Text Boxes
+            
+            nameLabel.backgroundColor = UIColor.lightGrayColor()
+            descriptionLabel.backgroundColor = UIColor.lightGrayColor()
+            halalStatusLabel.backgroundColor = UIColor.lightGrayColor()
+            eNumberEntered.backgroundColor = UIColor.lightGrayColor()
+            self.view.backgroundColor = UIColor.whiteColor()
+            
+            
+            
+        }
+        
+        // if master reset level found in resetLevel then reset every thing
+        
+        
+        // if ingredient level reset found then reset only ingredient info and let the product info stays
+        
+        
+    }
+
 }
 
