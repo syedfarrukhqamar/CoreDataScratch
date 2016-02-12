@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 //import DataController
-
+var showFilteredIngredients = Bool()
 let productHStatus = "DNK"
 let HALAL = "HALAL"
 let HARAM = "HARAM"
@@ -58,7 +58,7 @@ var productBarCodeGlobal = ""
 
 var ing_name = String()
 var ing_descryption = String()
-var showFilteredIngredients = Bool()
+
 // MARK app setting variables and constants
 // DB
 var dbLoadedStatus_atAppLaunch = false
@@ -143,9 +143,10 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         // get the ingredients h_status from the global? variable
         
         // MARK : Work left. need to change to DB values insteead of label values
+        //---12th feb temp change
         
-        var registerIngredientToProductInDB =  DataController()
-        
+       // var registerIngredientToProductInDB =  DataController()
+        var registerIngredientToProductInDB =  DataControllerCentral()
         
         //registerIngredientToProductInDB.registerIngredientToProduct(productBarCode, ingredientID: eNumberEntered.text!, h_status: halalStatusLabel.text!)
         print("product bar code global's value is  \(productBarCodeGlobal)")
@@ -1305,12 +1306,14 @@ class ViewController: UIViewController,UITableViewDelegate, NSXMLParserDelegate,
         // set tag to 9 which will bring all the ingredients belongs to some product
         if ( sender?.tag == 9 || sender?.tag == 11)
         {
+            showFilteredIngredients = true
             
             print("Filtered ingredients are going to be printed \(self.managedObjectContext)")
             
             segue.destinationViewController.setValue(self.managedObjectContext, forKey: "managedObjectContext")
+            segue.destinationViewController.setValue(self.productBarCode, forKey: "productBarCodeGlobal")
+            segue.destinationViewController.setValue(showFilteredIngredients, forKey: "showFilteredIngredients")
             
-            showFilteredIngredients = true
         }
             // set tag to 7 which will bring all the ingredients
         else if (sender?.tag == 7)

@@ -379,7 +379,7 @@ class DataController {
             // MARK Updateing product's status in MasterProducts table based on the ingredient's status
             // MARK BACK BONE Of product , halal, haram, mushbooh status update
             print("updating product status also 878")
-            var productStatusUpdate = DataController()
+            var productStatusUpdate = DataControllerCentral()
             productStatusUpdate.updateMasterProducts(productID, hStatus: h_status)
             //  productStatusUpdate.up
             
@@ -412,7 +412,7 @@ class DataController {
                 print("updating product status also 656")
                 print("ing status was:\(h_status)")
                 
-                var productStatusUpdate = DataController()
+                var productStatusUpdate = DataControllerCentral()
                 productStatusUpdate.updateMasterProducts(productID, hStatus: h_status)
                 
             }
@@ -609,7 +609,10 @@ class DataController {
     // MARK DB Adding products
     
     func addRecordToProduct ( productToAdd: [String: String]) {
-        var productExistsOrNot = DataController()
+      
+        //var productExistsOrNot = DataController()
+        var productExistsOrNot = DataControllerCentral()
+        
         var productCode = String()
         productCode = productToAdd["product_id"]!
         
@@ -670,7 +673,9 @@ class DataController {
         if (!productID.isEmpty)
         {
             print("inside product id check for status func name is =getProductOrIngredientStatus")
-            var masterProducts = DataController()
+           // var masterProducts = DataController()
+            var masterProducts = DataControllerCentral()
+            
             var productStatus = masterProducts.createDBConnectionAndSearchFor("MasterProducts", columnName: "product_id", searchString: productID,filtered: true) as! [AAAMasterProductsMO]
             
             
@@ -698,7 +703,9 @@ class DataController {
             print("inside ingredient id check for status func name is =getProductOrIngredientStatus")
             
             
-            var ingredientStatus = DataController()
+           // var ingredientStatus = DataController()
+            var ingredientStatus = DataControllerCentral()
+            
             var ingredientStatusCheck = ingredientStatus.createDBConnectionAndSearchFor("Ingredients", columnName: "ingredient_id", searchString: ingredientID,filtered: true) as! [Ingredients]
             print("ingredientID is ::121: \(ingredientID)")
             print("ingredientStatusCheck Count is ::: \(ingredientStatusCheck.count )")

@@ -16,18 +16,34 @@ class TableViewController: UITableViewController,UISearchBarDelegate{
     var IngredientsCell = [AAAProductsWithIngredientsMO]()
     var ingredientAll = [Ingredients]()
     var shoppingList = [String]()
-    
-    
     var temp = String()
-    
     @IBOutlet var ingredientsTableView: UITableView!
-    
- //   @IBOutlet var searchBar: UITableView!
-    
-    
     var searchActive : Bool = false
+    var filtered = [NSManagedObject]()
+    var bundledIngredients = [NSManagedObject]()
+    
+    //   @IBOutlet var searchBar: UITableView!
     //var data = ["San Francisco","New York","San Jose","Chicago","Los Angeles","Austin","Seattle"]
     //var filtered:[String] = []
+    override func viewDidLoad() {
+        
+        
+        var fetchedResultsController: NSFetchedResultsController!
+        
+        print("table view controller has been called 101")
+        super.viewDidLoad()
+        
+        // load ingredients to ingredient mutable array
+        //temp 2nd of feb
+        // loadIngredients()
+        loadIngredientsForTableView()
+        
+        
+        //searchBar.delegate = self
+        
+        //-----1------//
+    }
+    
     func searchEntityResults (searchText: String,columnName: String){
         
         //entityArrayInNsManagedObject[0].valueForKey("test").conta
@@ -93,26 +109,6 @@ class TableViewController: UITableViewController,UISearchBarDelegate{
     // temp change on tuesday 2nd feb to test ns managed object
      //var filtered = [IngredientBundles]()
     //var bundledIngredients = [IngredientBundles]()
-    var filtered = [NSManagedObject]()
-    var bundledIngredients = [NSManagedObject]()
-    override func viewDidLoad() {
-        
-        
-        var fetchedResultsController: NSFetchedResultsController!
-        
-        print("table view controller has been called 101")
-        super.viewDidLoad()
-        
-        // load ingredients to ingredient mutable array
-        //temp 2nd of feb
-        // loadIngredients()
-        loadIngredientsForTableView()
-        
-        
-        //searchBar.delegate = self
-        
-        //-----1------//
-    }
     //    */
     // MARK: loading ingredients based on the product based on only ingredient based
     func loadIngredientsForTableView()

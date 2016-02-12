@@ -494,7 +494,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2C5-Mh-F43"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="chn-UR-v0x">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tM1-T1-hpK">
@@ -545,7 +545,7 @@
                         <viewControllerLayoutGuide type="bottom" id="jIM-5C-Uhb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZJu-Qp-kZp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZM-us-psD">

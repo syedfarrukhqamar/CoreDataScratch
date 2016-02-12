@@ -10,21 +10,25 @@ import UIKit
 import Foundation
 import CoreData
 
-
 class IngredientsTableViewController: UITableViewController,NSFetchedResultsControllerDelegate,UISearchBarDelegate {
+//----table View Cell Variables
+    var ingredient_Name = String()
+    var ingredient_Id = String()
+    var ingredient_Descryption = String()
+    var ingredient_H_Status = String()
+//----table View Cell Variables def end here
+    var productBarCodeGlobal = ""
     var ingredientsForTableViewDataSource = [NSManagedObject]()
     var managedObjectContext: NSManagedObjectContext!
     var fetchedResultsController: NSFetchedResultsController!
     var searchActive : Bool = false
-    
+    var showFilteredIngredients = false
     //----temp---start
     var filtered = [NSManagedObject]()
     //-----temp end
     @IBOutlet weak var ingredientsTableView: UITableView!
     //var managedObjectContext: NSManagedObjectContext!
-    
     //var dataController = DataControllerCentral()
-    
     override func viewDidLoad() {
         print("self.managedObject Context inside ingredients VC is :\(self.managedObjectContext)")
         //UIApplication.sharedApplication().delegate.
@@ -35,64 +39,11 @@ class IngredientsTableViewController: UITableViewController,NSFetchedResultsCont
         // following : https://developer.apple.com/library/tvos/documentation/Cocoa/Conceptual/CoreData/nsfetchedresultscontroller.html#//apple_ref/doc/uid/TP40001075-CH8-SW1
         //
         print("--------------about to initialize Fetch Result Controller--1---")
-        func initializeFetchedResultsController() {
-            print("------------2---")
-            
-            let request = NSFetchRequest(entityName: "Ingredients")
-            print("------------3---")
-            
-            let ingredientIDSort = NSSortDescriptor(key: "ingredient_id", ascending: true)
-            // let lastNameSort = NSSortDescriptor(key: "lastName", ascending: true)
-            print("------------4---")
-            
-            request.sortDescriptors = [ingredientIDSort]
-            print("------------5---")
-            
-            //   let moc = managedObjectContext.existingObjectWithID(<#T##objectID: NSManagedObjectID##NSManagedObjectID#>)
-            
-            
-            if (self.managedObjectContext == nil){
-                
-                print("self.managedObjectContext is nil")
-            }
-            print("lk---------------")
-            //            self.fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: "ingredients", cacheName: "rootCache")
-            
-            // sectionIdentifier = sectionForCurrentState().toRaw()
-            // NSPredicate(format: "ingredient_id == %@", ingredient_id)
-            
-            var ingredientsPredicate = NSPredicate(format: "ingredient_id contains %@", "107")
-            
-            
-            
-            self.fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: "ingredient_id", cacheName: "rootCache")
-            
-            // fetchedResultsController.sections?.filter({$0.ingredient_id = "107"})
-            //fetchedResultsController.filter ({$0.ingredient_id = "107"})
-            //          fetchedResultsController.
-            print("------------6---")
-            
-            
-            //--start---temp working area formed on 10th of feb 1000
-            
-            
-            // testing area for search tab bar
-            
-            
-            
-            ////-end----temp working area formed on 10th of feb 1000
-            self.fetchedResultsController.delegate = self
-            print("------------7---")
-            
-            do {
-                print("about to fetch the results")
-                try self.fetchedResultsController.performFetch()
-                
-            } catch {
-                fatalError("Failed to initialize FetchedResultsController: \(error)")
-            }
-        }
+        
         initializeFetchedResultsController()
+        
+        ingredientsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
         //---------------------------search bar controller start
         
         // Create the search results controller and store a reference to it.
@@ -112,12 +63,92 @@ class IngredientsTableViewController: UITableViewController,NSFetchedResultsCont
         
         // assigning identifier to the cell inside the table view
         
-        ingredientsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
         //         fetchIngredients(false,entityName: "Ingredients")
         //        print("-------starting to fetch ingredients")
         //        print("count of ingredients is \(ingredientsForTableViewDataSource.count)")
+    
     }
     
+    func initializeFetchedResultsController() {
+        print("------------2---")
+        
+        
+        
+        //   let moc = managedObjectContext.existingObjectWithID(<#T##objectID: NSManagedObjectID##NSManagedObjectID#>)
+        
+        
+        if (self.managedObjectContext == nil){
+            
+            
+            print("self.managedObjectContext is nil")
+        }
+        print("lk---------------")
+        //            self.fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: "ingredients", cacheName: "rootCache")
+        
+        // sectionIdentifier = sectionForCurrentState().toRaw()
+        // NSPredicate(format: "ingredient_id == %@", ingredient_id)
+        
+//        var ingredientsPredicate = NSPredicate(format: "ingredient_id contains %@", "107")
+        
+        
+        if ( showFilteredIngredients == false) {
+            let request = NSFetchRequest(entityName: "Ingredients")
+            print("------------3---")
+            
+            let ingredientIDSort = NSSortDescriptor(key: "ingredient_id", ascending: true)
+            // let lastNameSort = NSSortDescriptor(key: "lastName", ascending: true)
+            print("------------4---")
+            
+            request.sortDescriptors = [ingredientIDSort]
+            print("------------5---")
+            
+        self.fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: "ingredient_id", cacheName: "rootCache")
+        }
+        
+        else if (showFilteredIngredients == true){
+            let request = NSFetchRequest(entityName: "ProductsWithIngredients")
+            print("//---creating a predicate----")
+            let filteredPorductIngredientsPredicate = NSPredicate(format: "@product_id like %@",productBarCodeGlobal)
+            
+            print("------------3---")
+            
+            let ingredientIDSort = NSSortDescriptor(key: "ing_id", ascending: true)
+            // let lastNameSort = NSSortDescriptor(key: "lastName", ascending: true)
+            print("------------4--\(productBarCodeGlobal)-")
+            print ("------character count-----\(productBarCodeGlobal.characters.count)")
+            request.sortDescriptors = [ingredientIDSort]
+            print("------------5---")
+            self.fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: "ing_id", cacheName: "rootCache")
+            print("----count of ingredientsProducts---\(fetchedResultsController.sections?.count)")
+        
+        
+        }
+        // fetchedResultsController.sections?.filter({$0.ingredient_id = "107"})
+        //fetchedResultsController.filter ({$0.ingredient_id = "107"})
+        //          fetchedResultsController.
+        print("------------6---")
+        
+        
+        //--start---temp working area formed on 10th of feb 1000
+        
+        
+        // testing area for search tab bar
+        
+        
+        
+        ////-end----temp working area formed on 10th of feb 1000
+        self.fetchedResultsController.delegate = self
+        print("------------7---")
+        
+        do {
+            print("about to fetch the results")
+            try self.fetchedResultsController.performFetch()
+            
+        } catch {
+            fatalError("Failed to initialize FetchedResultsController: \(error)")
+        }
+    }
     // each time the view is loading but with new ingredients if added
     
     override func viewWillAppear(animated: Bool) {
@@ -221,19 +252,42 @@ class IngredientsTableViewController: UITableViewController,NSFetchedResultsCont
     let cellIdentifier = "IngredientsTableViewCell"
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        
+        
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! IngredientsTableViewCell
+        
+        if (showFilteredIngredients == false){
         let fetchedIngredients = fetchedResultsController.objectAtIndexPath(indexPath) as! Ingredients
+            
+            ingredient_Name = fetchedIngredients.name!
+            ingredient_Id = fetchedIngredients.ingredient_id!
+            ingredient_Descryption = fetchedIngredients.descryption!
+            ingredient_H_Status = fetchedIngredients.halal_haram_flag!
+        }
+        
+        else if (showFilteredIngredients == true){
+        
+            let fetchedIngredients = fetchedResultsController.objectAtIndexPath(indexPath) as! AAAProductsWithIngredientsMO
+           ingredient_Name = fetchedIngredients.ing_name!
+             ingredient_Id = fetchedIngredients.ing_id!
+             ingredient_Descryption = fetchedIngredients.ing_descryption!
+            ingredient_H_Status = fetchedIngredients.h_Status!
+            
+        }
         //        let fetched1Ingredients = fetchedResultsController as! [Ingredients]
         //
         //
         // Set up the cell
         print("------------9-indexPath--\(indexPath)")
-        print("status is :=\(fetchedIngredients.ingredient_id)")
-        print("status is :=\(fetchedIngredients.halal_haram_flag)")
-        cell.nameIngredient.text = fetchedIngredients.name
-        cell.descryptionIngredient.text = fetchedIngredients.descryption
-        cell.ingredient_id.text = fetchedIngredients.ingredient_id
-        cell.halal_status.text = fetchedIngredients.halal_haram_flag
+        print("status is :=\(ingredient_Name)")
+        print("status is :=\(ingredient_Descryption)")
+        
+        cell.nameIngredient.text = ingredient_Name
+        cell.descryptionIngredient.text = ingredient_Descryption
+        cell.ingredient_id.text = ingredient_Id
+        cell.halal_status.text = ingredient_H_Status
+        
         self.configureCell(cell, indexPath: indexPath)
         return cell
     }
