@@ -8,13 +8,15 @@
 
 import UIKit
 import AVFoundation
+import CoreData
 
 protocol BarcodeDelegate {
     func barcodeReaded(barcode: String)
 }
 
 class BarcodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-    
+    var managedObjectContext: NSManagedObjectContext!
+
     @IBOutlet weak var test: UIButton!
     
     @IBOutlet weak var exit: UIButton!
@@ -24,9 +26,10 @@ class BarcodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     var code: String?
     
     override func viewDidLoad() {
-         print("bar code view loaded")
+      //  self.navigationController?.hidesBarsOnTap = true
+        print("bar code view loaded")
         super.viewDidLoad()
-               
+               self.navigationController?.navigationBar.hidden = true
         self.captureSession = AVCaptureSession();
         print("toold bar items\( self.view.subviews.count)")
         
@@ -99,10 +102,16 @@ class BarcodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             print("Error while creating vide input device: \(error.localizedDescription)")
         }
         
+    } 
+    
+     func viewWillAppear() {
+        super.viewWillAppear(true)
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        self.navigationController?.navigationBar.hidden = true
         // Dispose of any resources that can be recreated.
     }
     
@@ -113,7 +122,13 @@ class BarcodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             if !code.isEmpty {
                 self.captureSession.stopRunning()
                 self.dismissViewControllerAnimated(true, completion: nil)
+                productBarCodeGlobal = code
                 self.delegate?.barcodeReaded(code)
+
+                print("code of product is ===\(code)")
+                print("product global code is === \(productBarCodeGlobal)")
+                autoBarCodeDetected = true
+                self.performSegueWithIdentifier("segueViewController", sender:  self)
             }
         }
     }
@@ -131,4 +146,33 @@ class BarcodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
 //        
 //    }
 
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("Segue!")
+        
+        
+       // print("segue.identifier::::::\(sender?.tag)")
+        print("segue.identifier::::::\(sender?.identifier)")
+        
+        print("self.managedObjectContext---inside barcodeviewcontroller::::::\(self.managedObjectContext)")
+        segue.destinationViewController.setValue(self.managedObjectContext, forKey: "managedObjectContext")
+        
+        // set tag to 9 which will bring all the ingredients belongs to some product
+//        if ( sender?.tag == 9 || sender?.tag == 11)
+//        {
+//            showFilteredIngredients = true
+//        }
+//            // set tag to 7 which will bring all the ingredients
+//        else if (sender?.tag == 7)
+//        {
+//            print("all ingredients are going to be printed")
+//            showFilteredIngredients = false
+//        }
+//        else {
+//            let barcodeViewController: BarcodeViewController = segue.destinationViewController as! BarcodeViewController
+        print("inside barcode auto segue exit testing___product value is here__ \(productBarCodeGlobal)")
+//            barcodeViewController.delegate = self
+//        }
+   }
+    
 }

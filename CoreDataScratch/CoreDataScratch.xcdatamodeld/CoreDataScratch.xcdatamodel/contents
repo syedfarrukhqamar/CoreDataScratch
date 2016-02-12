@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Automatic">
+    <entity name="DB_Log" representedClassName="AAADB_LogMO" syncable="YES">
+        <attribute name="db_loaded" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="db_loaded_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="db_loaded_time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Ingredients" representedClassName=".Ingredients" syncable="YES">
         <attribute name="descryption" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="halal_status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="halal_haram_flag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="halal_status_detail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="ingredient_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -12,19 +19,53 @@
         <attribute name="product_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="product_type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="ProductIngredients" representedClassName="AAAProductInfredientsMO" parentEntity="Products" syncable="YES"/>
-    <entity name="Products" representedClassName=".AAAProductsMO" syncable="YES"/>
+    <entity name="Permissions" representedClassName=".Permissions" syncable="YES">
+        <attribute name="permission" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="role_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="roleDescryption" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="ProductsWithIngredients" representedClassName="AAAProductsWithIngredientsMO" syncable="YES">
         <attribute name="h_Status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ing_descryption" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="ing_id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ing_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="prd_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prd_name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Roles" representedClassName=".Roles" syncable="YES">
+        <attribute name="descryption" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="role_id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Settings" representedClassName="AAASettingsMO" syncable="YES">
+        <attribute name="db_date_loaded" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="db_load_status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remote_server_address" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="UserRoles" representedClassName=".UserRoles" syncable="YES">
+        <attribute name="role_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Users" representedClassName=".AAAUsersMO" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contact_Number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reference_code_to_give" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="registered_via_reference_code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="user_name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Ingredients" positionX="-54" positionY="-9" width="128" height="105"/>
-        <element name="MasterProducts" positionX="241" positionY="54" width="128" height="105"/>
-        <element name="ProductIngredients" positionX="-261" positionY="153" width="128" height="45"/>
-        <element name="Products" positionX="142" positionY="153" width="128" height="45"/>
-        <element name="ProductsWithIngredients" positionX="187" positionY="-27" width="128" height="105"/>
+        <element name="DB_Log" positionX="-279" positionY="153" width="128" height="103"/>
+        <element name="Ingredients" positionX="-279" positionY="-198" width="128" height="120"/>
+        <element name="MasterProducts" positionX="135" positionY="-180" width="128" height="105"/>
+        <element name="Permissions" positionX="-135" positionY="18" width="128" height="90"/>
+        <element name="ProductsWithIngredients" positionX="-54" positionY="-189" width="128" height="135"/>
+        <element name="Roles" positionX="-144" positionY="9" width="128" height="75"/>
+        <element name="Settings" positionX="-306" positionY="18" width="128" height="88"/>
+        <element name="UserRoles" positionX="-153" positionY="0" width="128" height="73"/>
+        <element name="Users" positionX="-83" positionY="30" width="128" height="193"/>
     </elements>
 </model>

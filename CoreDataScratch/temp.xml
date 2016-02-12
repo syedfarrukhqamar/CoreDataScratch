@@ -1,0 +1,1448 @@
+<DocumentElement>
+  <Table1>
+    <ingredient_id>E100</ingredient_id>
+    <name>CURCUMIN</name>
+    <description>COLOR</description>
+    <halal_status>HALAL IF PURE GRIND TURMERIC</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E101</ingredient_id>
+    <name>RIBOFLAVIN</name>
+    <description>COLOR</description>
+    <halal_status>MUSHBOOH (HARAM IF FROM PORK LIVER &amp; KIDNEY, HALAL IF 100% PLANT MATERIAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E102</ingredient_id>
+    <name>TARTRAZINE</name>
+    <description>COLOR</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E103</ingredient_id>
+    <name>QUINOLINE YELLOW</name>
+    <description>COLOR</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E110</ingredient_id>
+    <name>SUNSET YELLOW FCF/ ORANGE YELLOW S</name>
+    <description>COLOR</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E120</ingredient_id>
+    <name>COCHINEAL/CARMINIC ACID</name>
+    <description>COLOR</description>
+    <halal_status>HARAM ACCORDING TO ULAMA FROM UK &amp; SOUTH AFRICA</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E122</ingredient_id>
+    <name>CARMOISINE/AZORUBINE</name>
+    <description>COLOR</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E123</ingredient_id>
+    <name>AMARANTH</name>
+    <description>COLOR</description>
+    <halal_status>HALAL IF 100% PLANT MATERIAL W/O ALCOHOL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E124</ingredient_id>
+    <name>PONCEAU 4R/COCHINEAL RED A</name>
+    <description>COLOR</description>
+    <halal_status>MUSHBOOH (SYNTHETIC)</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E127</ingredient_id>
+    <name>ERYTHROSINE BS</name>
+    <description>COLOR</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E131</ingredient_id>
+    <name>PATENT BLUE V</name>
+    <description>COLOR</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E132</ingredient_id>
+    <name>INDIGO CARMINE/IDIGOTINE</name>
+    <description>COLOR</description>
+    <halal_status>HARAM ACCORDING TO ULAMA FROM UK &amp; SOUTH AFRICA</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E140</ingredient_id>
+    <name>CHLOROPHYLL</name>
+    <description>COLOR</description>
+    <halal_status>HALAL IF NOT EXTRACTED WITH ALCOHOL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E141</ingredient_id>
+    <name>COPPER COMPLEX OF CHOROPHYLL</name>
+    <description>COLOR</description>
+    <halal_status>HALAL IF NOT EXTRACTED WITH ALCOHOL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E142</ingredient_id>
+    <name>GREEN S/ACID BRILLIANT GREEN BS</name>
+    <description>COLOR</description>
+    <halal_status>HALAL IF SYNTHETIC MATERIAL ARE HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E150</ingredient_id>
+    <name>CARAMEL COLOR/WITH CHEMICALS (E-150 A-D)</name>
+    <description>COLOR</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E151</ingredient_id>
+    <name>BLACK PN/BRILLIANT BLACK BN</name>
+    <description>COLOR</description>
+    <halal_status>HALAL IF SYNTHETIC MATERIAL ARE HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E153</ingredient_id>
+    <name>CARBON BLACK/VEGETABLE CARBON (CHARCOAL)</name>
+    <description>COLOR</description>
+    <halal_status>MUSHBOOH, HALAL IF 100% VEGETABLE DERIVED</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E160A</ingredient_id>
+    <name>ALPHA, BETA, GAMMA</name>
+    <description>COLOR - CAROTENE</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E160B</ingredient_id>
+    <name>ANNATTO, BIXIN, NORBIXIN</name>
+    <description>COLOR - CAROTENE</description>
+    <halal_status>MUSHBOOH, MAY BE MIXED WITH GELATIN</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E160C</ingredient_id>
+    <name>CAPSANTHIN/CAPSORBIN</name>
+    <description>COLOR - CAROTENE</description>
+    <halal_status>MUSHBOOH, MAY BE MIXED WITH GELATIN</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E160D</ingredient_id>
+    <name>LYCOPENE</name>
+    <description>COLOR - CAROTENE</description>
+    <halal_status>MUSHBOOH, MAY BE MIXED WITH GELATIN</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E160E</ingredient_id>
+    <name>BETA-APO-8-CAROTENAL</name>
+    <description>COLOR - CAROTENE</description>
+    <halal_status>MUSHBOOH, MAY BE MIXED WITH GELATIN</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E160F</ingredient_id>
+    <name>ETHYLESTER OF BETA-APO-8-CARTONOIC ACID</name>
+    <description>COLOR - CAROTENE</description>
+    <halal_status>MUSHBOOH, MAY BE EXTRACTED WITH ALCOHOL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E161A</ingredient_id>
+    <name>FLAVOXANTHIN</name>
+    <description>COLOR</description>
+    <halal_status>MUSHBOOH, MAY BE EXTRACTED WITH ALCOHOL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E161B</ingredient_id>
+    <name>LUTEIN</name>
+    <description>COLOR</description>
+    <halal_status>MUSHBOOH, MAY BE EXTRACTED WITH ALCOHOL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E161C</ingredient_id>
+    <name>CRYPTOXANTHIN</name>
+    <description>COLOR</description>
+    <halal_status>MUSHBOOH, MAY BE EXTRACTED WITH ALCOHOL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E161D</ingredient_id>
+    <name>RUBIXANTHIN</name>
+    <description>COLOR</description>
+    <halal_status>MUSHBOOH, MAY BE EXTRACTED WITH ALCOHOL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E161E</ingredient_id>
+    <name>VIOLAXANTHIN</name>
+    <description>COLOR</description>
+    <halal_status>MUSHBOOH, MAY BE EXTRACTED WITH ALCOHOL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E161F</ingredient_id>
+    <name>RHODOXANTHIN</name>
+    <description>COLOR</description>
+    <halal_status>MUSHBOOH, MAY BE EXTRACTED WITH ALCOHOL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E161G</ingredient_id>
+    <name>CANTHAXANTHIN</name>
+    <description>COLOR</description>
+    <halal_status>MUSHBOOH, HARAM IF FROM ANIMAL SOURCE (RETINAL)</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E162</ingredient_id>
+    <name>BEETROOT RED/BETANIN</name>
+    <description>COLOR</description>
+    <halal_status>HALAL IF NOT EXTRACTED WITH ALCOHOL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E163</ingredient_id>
+    <name>ANTHOCYANINS</name>
+    <description>COLOR</description>
+    <halal_status>HALAL IF NOT EXTRACTED WITH ALCOHOL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E170</ingredient_id>
+    <name>CALCIUM CARBONATE (CHALK)</name>
+    <description>COLOR - INORGANIC</description>
+    <halal_status>MUSHBOOH, HARAM IF FROM ANIMAL BONES, HALAL IF FROM ROCK MINERAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E171</ingredient_id>
+    <name>TITANIUM DIOXIDE</name>
+    <description>COLOR - INORGANIC</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E172</ingredient_id>
+    <name>IRON OXIDES AND HYDROXIDES</name>
+    <description>COLOR - INORGANIC</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E173</ingredient_id>
+    <name>ALUMINIUM</name>
+    <description>COLOR - INORGANIC</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E174</ingredient_id>
+    <name>SILVER</name>
+    <description>COLOR - INORGANIC</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E175</ingredient_id>
+    <name>GOLD</name>
+    <description>COLOR - INORGANIC</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E180</ingredient_id>
+    <name>PIGMENT RUBINE/LITHOL RUBINE BK</name>
+    <description>COLOR - INORGANIC</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E200</ingredient_id>
+    <name>SORBIC ACID</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E201</ingredient_id>
+    <name>SODUIM SORBATE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E202</ingredient_id>
+    <name>POTASSIUM SORBATE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E203</ingredient_id>
+    <name>CALCIUM SORBATE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E210</ingredient_id>
+    <name>BENZOIC ACID</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E211</ingredient_id>
+    <name>SODUIM BENZOATE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E212</ingredient_id>
+    <name>POTASSIUM BENZOATE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E213</ingredient_id>
+    <name>CALCIUM BENZOATE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E214</ingredient_id>
+    <name>ETHYL 4-HYDROXYBENZOATE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL, IF NO ALCOHOL IS USED</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E215</ingredient_id>
+    <name>ETHYL 4-HYDROXYBENZOATE, SODIUM SALT</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL, IF NO ALCOHOL IS USED</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E216</ingredient_id>
+    <name>PROPYL 4-HYDROXYBENZOATE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL, IF NO ALCOHOL IS USED</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E217</ingredient_id>
+    <name>PROPYL 4-HYDROXYBENZOATE, SODIUM SALT</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL, IF NO ALCOHOL IS USED</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E218</ingredient_id>
+    <name>METHYL 4-HYDROXYBENZOATE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL, IF NO ALCOHOL IS USED</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E219</ingredient_id>
+    <name>METHYL 4-HYDROXYBENZOATE, SODIUM SALT</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL, IF NO ALCOHOL IS USED</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E220</ingredient_id>
+    <name>SULPHUR DIOXIDE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E221</ingredient_id>
+    <name>SODIUM SULPHITE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E222</ingredient_id>
+    <name>SODIUM HYDROGEN SULPHITE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E223</ingredient_id>
+    <name>SODIUM METABISULPHITE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E224</ingredient_id>
+    <name>POTASSIUM METABISULPHITE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E226</ingredient_id>
+    <name>CALCIUM SULPHITE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E227</ingredient_id>
+    <name>CALCIUM HYDROGEN SULPHITE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E230</ingredient_id>
+    <name>BIPHENYL/DIPHENYL</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL, IF NO ALCOHOL IS USED</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E231</ingredient_id>
+    <name>2-HYDROXYBIPHENYL</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL, IF NO ALCOHOL IS USED</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E232</ingredient_id>
+    <name>SODIUM BIPHENYL-2-YL OXIDE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL, IF NO ALCOHOL IS USED</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E233</ingredient_id>
+    <name>2-(THIAZOL-4-YL) BENZIMIDAZOLE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL, IF NO ALCOHOL IS USED</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E239</ingredient_id>
+    <name>HEXAMINE</name>
+    <description>PRESERVATIVE - OTHER</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E249</ingredient_id>
+    <name>POTASSIUM NITRATE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E250</ingredient_id>
+    <name>SODIUM NITRATE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E251</ingredient_id>
+    <name>SODIUM NITRATE</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E252</ingredient_id>
+    <name>POTASSIUM NITRATE (SALTPETRE)</name>
+    <description>PRESERVATIVE</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E260</ingredient_id>
+    <name>ACETIC ACID</name>
+    <description>MISCELLANEOUS - ACIDS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E261</ingredient_id>
+    <name>POTASSIUM ACETATE</name>
+    <description>MISCELLANEOUS - ACIDS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E262</ingredient_id>
+    <name>POTASSIUM HYDROGEN DIACETATE</name>
+    <description>MISCELLANEOUS - ACIDS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E263</ingredient_id>
+    <name>CALCIUM ACETATE</name>
+    <description>MISCELLANEOUS - ACIDS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E270</ingredient_id>
+    <name>LACTIC ACID</name>
+    <description>MISCELLANEOUS - ACIDS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E280</ingredient_id>
+    <name>PROPIONIC ACID</name>
+    <description>PRESERVATIVE - ACIDS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E281</ingredient_id>
+    <name>SODIUM PROPIONATE</name>
+    <description>PRESERVATIVE - ACIDS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E282</ingredient_id>
+    <name>CALCIUM PROPIONATE</name>
+    <description>PRESERVATIVE - ACIDS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E283</ingredient_id>
+    <name>POTASSIUM PROPIONATE</name>
+    <description>PRESERVATIVE - ACIDS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E290</ingredient_id>
+    <name>CARBON DIOXIDE</name>
+    <description>MISCELLANEOUS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E300</ingredient_id>
+    <name>L-ASCORBIC ACID (VITAMIN C)</name>
+    <description>ANTIOXIDANTS - VITAMIN C</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E301</ingredient_id>
+    <name>SODIUM-L-ASCORBATE</name>
+    <description>ANTIOXIDANTS - VITAMIN C AND DERIVATIVES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E302</ingredient_id>
+    <name>CALCIUM-L-ASCORBATE</name>
+    <description>ANTIOXIDANTS - VITAMIN C AND DERIVATIVES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E304</ingredient_id>
+    <name>ASCORBYL PALMITATE</name>
+    <description>ANTIOXIDANTS - VITAMIN C AND DERIVATIVES</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E306</ingredient_id>
+    <name>NATURAL EXTRACTS RICH IN TOCOPHEROLS</name>
+    <description>ANTIOXIDANTS - VITAMIN E</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E307</ingredient_id>
+    <name>SYNTHETIC ALPHA-TOCOPHEROL</name>
+    <description>ANTIOXIDANTS - VITAMIN E</description>
+    <halal_status>HALAL ONLY IF IT IS MADE WITH ALL HALAL SYNTHETIC MATERIALS</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E308</ingredient_id>
+    <name>SYNTHETIC GAMMA-TOCOPHEROL</name>
+    <description>ANTIOXIDANTS - VITAMIN E</description>
+    <halal_status>HALAL ONLY IF IT IS MADE WITH ALL HALAL SYNTHETIC MATERIALS</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E309</ingredient_id>
+    <name>SYNTHETIC DELTA-TOCOPHEROL</name>
+    <description>ANTIOXIDANTS - VITAMIN E</description>
+    <halal_status>HALAL ONLY IF IT IS MADE WITH ALL HALAL SYNTHETIC MATERIALS</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E310</ingredient_id>
+    <name>PROPYL GALLATE</name>
+    <description>ANTIOXIDANTS - OTHER</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E311</ingredient_id>
+    <name>OCTYL GALLATE</name>
+    <description>ANTIOXIDANTS - OTHER</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E312</ingredient_id>
+    <name>DODECYL GALLATE</name>
+    <description>ANTIOXIDANTS - OTHER</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E320</ingredient_id>
+    <name>BUTYLATED HYDROXYANISOLE (BHA)</name>
+    <description>ANTIOXIDANTS - OTHER</description>
+    <halal_status>MUSHBOOH, HALAL IF VEGETABLE OIL IS USED AS A CARRIER, HARAM IF ANIMAL FAT IS USED AS CARRIER. THEY ARE NOT 100% BHA WHICH IS A CHEMICAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E321</ingredient_id>
+    <name>BUTYLATED HYDROXYTOLUENE (BHT)</name>
+    <description>ANTIOXIDANTS - OTHER</description>
+    <halal_status>MUSHBOOH, HALAL IF VEGETABLE OIL IS USED AS A CARRIER, HARAM IF ANIMAL FAT IS USED AS CARRIER. THEY ARE NOT 100% BHA WHICH IS A CHEMICAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E322</ingredient_id>
+    <name>LECITHIN</name>
+    <description>EMULSIFIERS AND STABILIZERS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS FROM SOY FAT OR EGG YOLK, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E325</ingredient_id>
+    <name>SODIUM LACTATE</name>
+    <description>MISCELLANEOUS - SALTS OF LACTIC ACID</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E326</ingredient_id>
+    <name>POTASSIUM LACTATE</name>
+    <description>MISCELLANEOUS - SALTS OF LACTIC ACID</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E327</ingredient_id>
+    <name>CALCIUM LACTATE</name>
+    <description>MISCELLANEOUS - SALTS OF LACTIC ACID</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E330</ingredient_id>
+    <name>CITRIC ACID</name>
+    <description>MISCELLANEOUS - CITRIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E331</ingredient_id>
+    <name>SODIUM CITRATES</name>
+    <description>MISCELLANEOUS - CITRIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E332</ingredient_id>
+    <name>POTASSIUM CITRATES</name>
+    <description>MISCELLANEOUS - CITRIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E333</ingredient_id>
+    <name>CALCIUM CITRATES</name>
+    <description>MISCELLANEOUS - CITRIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E334</ingredient_id>
+    <name>TARTARIC ACID</name>
+    <description>MISCELLANEOUS - TARTARIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL, IF NOT FROM WINE BY-PRODUCT, IN USA IT IS HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E335</ingredient_id>
+    <name>SODIUM TARTRATE</name>
+    <description>MISCELLANEOUS - TARTARIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL, IF NOT FROM WINE BY-PRODUCT, IN USA IT IS HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E336</ingredient_id>
+    <name>POTASSIUM TARTRATE (CREAM OF TARTAR)</name>
+    <description>MISCELLANEOUS - TARTARIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL, IF NOT FROM WINE BY-PRODUCT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E337</ingredient_id>
+    <name>POTASSIUM SODIUM TARTRATE</name>
+    <description>MISCELLANEOUS - TARTARIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL, IF NOT FROM WINE BY-PRODUCT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E338</ingredient_id>
+    <name>ORTHOPHOSPHORIC ACID</name>
+    <description>MISCELLANEOUS - PHOSPHORIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E339</ingredient_id>
+    <name>SODIUM PHOSPHATES</name>
+    <description>MISCELLANEOUS - PHOSPHORIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E340</ingredient_id>
+    <name>POTASSIUM PHOSPHATES</name>
+    <description>MISCELLANEOUS - PHOSPHORIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E341</ingredient_id>
+    <name>CALCIUM PHOSPHATES</name>
+    <description>MISCELLANEOUS - PHOSPHORIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E400</ingredient_id>
+    <name>ALGINIC ACID</name>
+    <description>EMULSIFIERS AND STABILIZERS - ALGINATES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E401</ingredient_id>
+    <name>SODIUM ALGINATE</name>
+    <description>EMULSIFIERS AND STABILIZERS - ALGINATES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E402</ingredient_id>
+    <name>POTASSIUM ALGINATE</name>
+    <description>EMULSIFIERS AND STABILIZERS - ALGINATES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E403</ingredient_id>
+    <name>AMMONIUM ALGINATE</name>
+    <description>EMULSIFIERS AND STABILIZERS - ALGINATES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E404</ingredient_id>
+    <name>CALCIUM ALGINATE</name>
+    <description>EMULSIFIERS AND STABILIZERS - ALGINATES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E405</ingredient_id>
+    <name>PROPANE-1, 2-DIOL ALGINATE</name>
+    <description>EMULSIFIERS AND STABILIZERS - ALGINATES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E406</ingredient_id>
+    <name>AGAR</name>
+    <description>EMULSIFIERS AND STABILIZERS - OTHER PLANT GUMS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E407</ingredient_id>
+    <name>CARRAGEENAN</name>
+    <description>EMULSIFIERS AND STABILIZERS - OTHER PLANT GUMS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E410</ingredient_id>
+    <name>LOCUST BEAN GUM (CAROB GUM)</name>
+    <description>EMULSIFIERS AND STABILIZERS - OTHER PLANT GUMS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E412</ingredient_id>
+    <name>GUAR GUM</name>
+    <description>EMULSIFIERS AND STABILIZERS - OTHER PLANT GUMS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E413</ingredient_id>
+    <name>TRAGACANTH</name>
+    <description>EMULSIFIERS AND STABILIZERS - OTHER PLANT GUMS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E414</ingredient_id>
+    <name>GUM ACACIA (GUM ARABIC)</name>
+    <description>EMULSIFIERS AND STABILIZERS - OTHER PLANT GUMS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E415</ingredient_id>
+    <name>XANTHAN GUM</name>
+    <description>EMULSIFIERS AND STABILIZERS - OTHER PLANT GUMS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E420</ingredient_id>
+    <name>SORBITOL</name>
+    <description>SUGAR ALCOHOLS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E421</ingredient_id>
+    <name>MANNITOL</name>
+    <description>SUGAR ALCOHOLS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E422</ingredient_id>
+    <name>GLYCEROL</name>
+    <description>SUGAR ALCOHOLS</description>
+    <halal_status>MUSHBOOH, CALLED GLYCERIN IN USA, HALAL IF IT IS FROM PLANT, HARAM IF IT IS FROM ANIMAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E440A</ingredient_id>
+    <name>PECTIN</name>
+    <description>EMULSIFIERS AND STABILISERS - PECTIN AND DERIVATIVES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E440B</ingredient_id>
+    <name>AMIDATED PECTIN</name>
+    <description>EMULSIFIERS AND STABILISERS - PECTIN AND DERIVATIVES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E450 A,B,C</ingredient_id>
+    <name>SODIUM AND POTASSIUM PHOSHATES AND POLYPHOSPHATES</name>
+    <description>MISCELLANEOUS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E460</ingredient_id>
+    <name>MICROCRYSTALLINE / POWDERED CELLULOSE</name>
+    <description>EMULSIFIERS AND STABILISERS - CELLULOSE AND DERIVATIVES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E461</ingredient_id>
+    <name>METHYLCELLULOSE</name>
+    <description>EMULSIFIERS AND STABILISERS - CELLULOSE AND DERIVATIVES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E463</ingredient_id>
+    <name>HYDROXYPROPYLCELLULOSE</name>
+    <description>EMULSIFIERS AND STABILISERS - CELLULOSE AND DERIVATIVES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E464</ingredient_id>
+    <name>HYDROXYPROPYL-METHYLCELLULOSE</name>
+    <description>EMULSIFIERS AND STABILISERS - CELLULOSE AND DERIVATIVES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E465</ingredient_id>
+    <name>ETHYLMETHYCELLULOSE</name>
+    <description>EMULSIFIERS AND STABILISERS - CELLULOSE AND DERIVATIVES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E466</ingredient_id>
+    <name>CARBOXYMETHYLCELLULOSE, SODIUM SALT</name>
+    <description>EMULSIFIERS AND STABILISERS - CELLULOSE AND DERIVATIVES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E470</ingredient_id>
+    <name>SODIUM, POTASSIUM AND CALCIUM SALTS OF FATTY ACIDS</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E471</ingredient_id>
+    <name>MONO-AND DIGLYCERIDES OF FATTY ACIDS</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E472</ingredient_id>
+    <name>VARIOUS ESTERS OF MONO-AND DIGLYCERIDES OF FATTY ACIDS</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E473</ingredient_id>
+    <name>SUCROSE ESTERS OF FATTY ACIDS</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E474</ingredient_id>
+    <name>SUCROGLYCERIDES</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E475</ingredient_id>
+    <name>POLYGLYCEROL ESTERS OF FATTY ACIDS</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E477</ingredient_id>
+    <name>PROPANE-1, 2-DIOL ESTERS OF FATTY ACIDS</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E481</ingredient_id>
+    <name>SODIUM STEAROYL-2-LACTYLATE</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E482</ingredient_id>
+    <name>CALCIUM STEAROYL-2-LACTYLATE</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>E483</ingredient_id>
+    <name>STEARYL TARTRATE</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>FOOD INGREDIENTS NUMBERS WITH NO E-PRE</ingredient_id>
+    <name />
+    <description />
+    <halal_status />
+  </Table1>
+  <Table1>
+    <ingredient_id>107</ingredient_id>
+    <name>YELLOW 2G</name>
+    <description>COLORS</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>128</ingredient_id>
+    <name>RED 2G</name>
+    <description>COLORS</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>133</ingredient_id>
+    <name>BRILLIANT BLUE FCF</name>
+    <description>COLORS</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>154</ingredient_id>
+    <name>BROWN FK</name>
+    <description>COLORS</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>155</ingredient_id>
+    <name>BROWN HT</name>
+    <description>COLORS</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>234</ingredient_id>
+    <name>NISIN</name>
+    <description>PRESERVATIVE - OTHER</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>262</ingredient_id>
+    <name>SODIUM ACETATE</name>
+    <description>MISCELLANEOUS - ACIDS AND THEIR SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>296</ingredient_id>
+    <name>MALIC ACID</name>
+    <description>MISCELLANEOUS - ACIDS AND THEIR SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>297</ingredient_id>
+    <name>FUMARIC ACID</name>
+    <description>MISCELLANEOUS - ACIDS AND THEIR SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>350</ingredient_id>
+    <name>SODIUM MALATE</name>
+    <description>MISCELLANEOUS - SALTS OF MALIC ACID</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>351</ingredient_id>
+    <name>POTASSIUM MALATE</name>
+    <description>MISCELLANEOUS - SALTS OF MALIC ACID</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>352</ingredient_id>
+    <name>CALCIUM MALATE</name>
+    <description>MISCELLANEOUS - SALTS OF MALIC ACID</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>353</ingredient_id>
+    <name>METATARIC ACID</name>
+    <description>MISCELLANEOUS - SALTS OF MALIC ACID</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>355</ingredient_id>
+    <name>ADIPIC ACID</name>
+    <description>MISCELLANEOUS - SALTS OF MALIC ACID</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>363</ingredient_id>
+    <name>SUCCINIC ACID</name>
+    <description>MISCELLANEOUS - SALTS OF MALIC ACID</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>370</ingredient_id>
+    <name>1, 4 - HEPTONO LACTANE</name>
+    <description>MISCELLANEOUS - SALTS OF MALIC ACID</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>375</ingredient_id>
+    <name>NICOTINIC ACID</name>
+    <description>MISCELLANEOUS - SALTS OF MALIC ACID</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>380</ingredient_id>
+    <name>TRIAMMONIUM CITRATE</name>
+    <description>MISCELLANEOUS - SALTS OF MALIC ACID</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>381</ingredient_id>
+    <name>AMMONIUM FERRIC CITRATE</name>
+    <description>MISCELLANEOUS - SALTS OF MALIC ACID</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>385</ingredient_id>
+    <name>CALCIUM DISODIUM EDTA</name>
+    <description>MISCELLANEOUS - SALTS OF MALIC ACID</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>416</ingredient_id>
+    <name>KARAYA GUM</name>
+    <description>EMULSIFIERS AND STABILISERS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>430</ingredient_id>
+    <name>POLYOXYETHANE (8) STEARATE</name>
+    <description>EMULSIFIERS AND STABILISERS - FATTY ACID DERIVATIVES</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS 100% FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>431</ingredient_id>
+    <name>POLYOXYETHANE (40) STEARATE</name>
+    <description>EMULSIFIERS AND STABILISERS - FATTY ACID DERIVATIVES</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS 100% FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>432</ingredient_id>
+    <name>POLYOXYETHANE (20) SORBITAN / POLYSORBATE 20</name>
+    <description>EMULSIFIERS AND STABILISERS - FATTY ACID DERIVATIVES</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS 100% FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>433</ingredient_id>
+    <name>POLYOXYETHANE (20) SORBITAN MONO-OLEATE / POLYSORBATE 80</name>
+    <description>EMULSIFIERS AND STABILISERS - FATTY ACID DERIVATIVES</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS 100% FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>434</ingredient_id>
+    <name>POLYOXYETHANE (20) SORBITAN MONOPALMITATE / POLYSORBATE 40</name>
+    <description>EMULSIFIERS AND STABILISERS - FATTY ACID DERIVATIVES</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS 100% FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>435</ingredient_id>
+    <name>POLYOXYETHANE (20) SORBITAN MONOSTEARATE / POLYSORBATE 60</name>
+    <description>EMULSIFIERS AND STABILISERS - FATTY ACID DERIVATIVES</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS 100% FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>436</ingredient_id>
+    <name>POLYOXYETHANE (20) SORBITAN TRISTEARATE / POLYSORBATE 65</name>
+    <description>EMULSIFIERS AND STABILISERS - FATTY ACID DERIVATIVES</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS 100% FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>476</ingredient_id>
+    <name>POLYGLYCEROL ESTERS OF POLYCONDENSED ESTERS OF CASTER OIL</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS 100% FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>478</ingredient_id>
+    <name>LACTYLATED FATTY ACID ESTERS OF GLYCEROL AND PROPANE-1, 2-DIOL</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS 100% FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>491</ingredient_id>
+    <name>SORBITAN MONOSTEARATE</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS 100% FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>492</ingredient_id>
+    <name>SORBITAN TRISTEARATE</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS 100% FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>493</ingredient_id>
+    <name>SORBITAN MONOLAURATE</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS 100% FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>494</ingredient_id>
+    <name>SORBITAN MONO-OLEATE</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS 100% FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>495</ingredient_id>
+    <name>SORBITAN MONOPALMITATE</name>
+    <description>EMULSIFIERS AND STABILISERS - SALTS OR ESTERS OF FATTY ACIDS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS 100% FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>500</ingredient_id>
+    <name>SODIUM CARBONATE / SODIUM BICARBONATE</name>
+    <description>MISCELLANEOUS - ACIDS AND SALTS: CARBONATES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>501</ingredient_id>
+    <name>POTASSIUM CARBONATE / POTASSIUM BICARBONATE</name>
+    <description>MISCELLANEOUS - ACIDS AND SALTS: CARBONATES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>503</ingredient_id>
+    <name>AMMONIUM CARBONATE</name>
+    <description>MISCELLANEOUS - ACIDS AND SALTS: CARBONATES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>504</ingredient_id>
+    <name>MAGNESIUM CARBONATE</name>
+    <description>MISCELLANEOUS - ACIDS AND SALTS: CARBONATES</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>507</ingredient_id>
+    <name>HYDROCHLORIC ACID</name>
+    <description>MISCELLANEOUS - ACIDS AND SALTS: HYDROCHLORIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>508</ingredient_id>
+    <name>POTASSIUM CHLORIDE</name>
+    <description>MISCELLANEOUS - ACIDS AND SALTS: HYDROCHLORIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>509</ingredient_id>
+    <name>CALCIUM CHLORIDE</name>
+    <description>MISCELLANEOUS - ACIDS AND SALTS: HYDROCHLORIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>510</ingredient_id>
+    <name>AMMONIUM CHLORIDE</name>
+    <description>MISCELLANEOUS - ACIDS AND SALTS: HYDROCHLORIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>513</ingredient_id>
+    <name>SULPHURIC ACID</name>
+    <description>MISCELLANEOUS - ACIDS AND SALTS: SULPHURIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>514</ingredient_id>
+    <name>SODIUM SULPHATE</name>
+    <description>MISCELLANEOUS - ACIDS AND SALTS: SULPHURIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>515</ingredient_id>
+    <name>POTASSIUM SULPHATE</name>
+    <description>MISCELLANEOUS - ACIDS AND SALTS: SULPHURIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>516</ingredient_id>
+    <name>CALCIUM SULPHATE</name>
+    <description>MISCELLANEOUS - ACIDS AND SALTS: SULPHURIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>518</ingredient_id>
+    <name>MAGNESIUM SULPHATE</name>
+    <description>MISCELLANEOUS - ACIDS AND SALTS: SULPHURIC ACID AND ITS SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>524</ingredient_id>
+    <name>SODIUM HYDROXIDE</name>
+    <description>MISCELLANEOUS - ALKALIS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>525</ingredient_id>
+    <name>POTASSIUM HYDROXIDE</name>
+    <description>MISCELLANEOUS - ALKALIS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>526</ingredient_id>
+    <name>CALCIUM HYDROXIDE</name>
+    <description>MISCELLANEOUS - ALKALIS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>527</ingredient_id>
+    <name>AMMONIUM HYDROXIDE</name>
+    <description>MISCELLANEOUS - ALKALIS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>528</ingredient_id>
+    <name>MAGNESIUM HYDROXIDE</name>
+    <description>MISCELLANEOUS - ALKALIS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>529</ingredient_id>
+    <name>CALCIUM OXIDE</name>
+    <description>MISCELLANEOUS - ALKALIS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>530</ingredient_id>
+    <name>MAGNESIUM OXIDE</name>
+    <description>MISCELLANEOUS - ALKALIS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>535</ingredient_id>
+    <name>SODIUM FERROCYANIDE</name>
+    <description>MISCELLANEOUS - OTHER SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>536</ingredient_id>
+    <name>POTASSIUM FERROCYANIDE</name>
+    <description>MISCELLANEOUS - OTHER SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>540</ingredient_id>
+    <name>DICALCIUM FERROCYANIDE</name>
+    <description>MISCELLANEOUS - OTHER SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>541</ingredient_id>
+    <name>SODIUM ALUMINIUM PHOSPHATE</name>
+    <description>MISCELLANEOUS - OTHER SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>542</ingredient_id>
+    <name>EDIBLE BONE PHOSPHATE (BONE-MEAL)</name>
+    <description>MISCELLANEOUS - ANTI-CAKING AGENTS</description>
+    <halal_status>HARAM</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>544</ingredient_id>
+    <name>CALCIUM POLYPHOSPHATES</name>
+    <description>MISCELLANEOUS - ANTI-CAKING AGENTS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS FROM MINERALS, HARAM IF IT IS FROM ANIMAL BONES</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>545</ingredient_id>
+    <name>AMMONIUM POLYPHOSPHATES</name>
+    <description>MISCELLANEOUS - ANTI-CAKING AGENTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>551</ingredient_id>
+    <name>SILICON DIOXIDE (SILICA SALT)</name>
+    <description>MSCELLANEOUS - SILICON SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>552</ingredient_id>
+    <name>CALCIUM SILICATE</name>
+    <description>MISCELLANEOUS - SILICON SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>553</ingredient_id>
+    <name>MAGNESIUM SILICATE / MAGNESIUM TRISILICATE (TALC)</name>
+    <description>MISCELLANEOUS - SILICON SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>554</ingredient_id>
+    <name>ALUMINIUM CALCIUM SILICATE</name>
+    <description>MISCELLANEOUS - SILICON SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>556</ingredient_id>
+    <name>ALUMINIUM CALCIUM SILICATE</name>
+    <description>MISCELLANEOUS - SILICON SALTS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS FROM MINERALS, HARAM IF IT IS FROM ANIMAL BONES</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>558</ingredient_id>
+    <name>BENTONITE</name>
+    <description>MISCELLANEOUS - SILICON SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>559</ingredient_id>
+    <name>KAOLIN (ALUMINIUM SILICATE)</name>
+    <description>MISCELLANEOUS - SILICON SALTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>570</ingredient_id>
+    <name>STEARIC ACID</name>
+    <description>MISCELLANEOUS - OTHER COMPOUNDS</description>
+    <halal_status>MUSHBOOH, HALAL IF THE SOURCE IS FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>572</ingredient_id>
+    <name>MAGNESIUM STEARATE</name>
+    <description>MISCELLANEOUS - OTHER COMPOUNDS</description>
+    <halal_status>MUSHBOOH, HALAL IF THE SOURCE IS FROM PLANT FAT, HARAM IF IT IS FROM ANIMAL FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>575</ingredient_id>
+    <name>GLUCONO DELTA-LACTONE</name>
+    <description>MISCELLANEOUS - OTHER COMOUNDS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>576</ingredient_id>
+    <name>SODIUM GLUCONATE</name>
+    <description>MISCELLANEOUS - OTHER COMPOUNDS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>577</ingredient_id>
+    <name>POTASSIUM GLUCONATE</name>
+    <description>MISCELLANEOUS - OTHER COMPOUNDS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>578</ingredient_id>
+    <name>CALCIUM GLUCONATE</name>
+    <description>MISCELLANEOUS - OTHER COMPOUNDS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>620</ingredient_id>
+    <name>L-GLUTAMIC ACID</name>
+    <description>MISCELLANEOUS - FLAVOUR ENHANCERS</description>
+    <halal_status>MUSHBOOH, HALAL IF IT IS FROM PLANT PROTEIN, HARAM IF IT IS FROM ANIMAL PROTEIN</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>621</ingredient_id>
+    <name>MONOSODIUM GLUTAMATE (MSG)</name>
+    <description>MISCELLANEOUS - FLAVOUR ENHANCERS</description>
+    <halal_status>MUSHBOOH, HALAL IF ALL INGREDIENTS INCLUDING CULTURE MEDIA TO GROW CULTURE FROM HALAL SOURCE, HARAM IF MEDIA IS FROM PORK FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>622</ingredient_id>
+    <name>MONOPOTASSIUM GLUTAMATE</name>
+    <description>MISCELLANEOUS - FLAVOUR ENHANCERS</description>
+    <halal_status>MUSHBOOH, HALAL IF ALL INGREDIENTS INCLUDING CULTURE MEDIA TO GROW CULTURE FROM HALAL SOURCE, HARAM IF MEDIA IS FROM PORK FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>623</ingredient_id>
+    <name>CALCIUM GLUTAMATE</name>
+    <description>MISCELLANEOUS - FLAVOUR ENHANCERS</description>
+    <halal_status>MUSHBOOH, HALAL IF ALL INGREDIENTS INCLUDING CULTURE MEDIA TO GROW CULTURE FROM HALAL SOURCE, HARAM IF MEDIA IS FROM PORK FAT</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>627</ingredient_id>
+    <name>SODIUM GUANYLATE</name>
+    <description>MISCELLANEOUS - FLAVOUR ENHANCERS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>631</ingredient_id>
+    <name>SODIUM INOSINATE</name>
+    <description>MISCELLANEOUS - FLAVOUR ENHANCERS</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>635</ingredient_id>
+    <name>SODIUM5 - RIBONUCLEOTIDE</name>
+    <description>MISCELLANEOUS - FLAVOUR ENHANCERS</description>
+    <halal_status>MUSHBOOH</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>636</ingredient_id>
+    <name>MALTOL</name>
+    <description>MISCELLANEOUS - FLAVOUR ENHANCERS</description>
+    <halal_status>MUSHBOOH, HALAL IF NO ALCOHOL IS USED IN THE PROCESS</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>637</ingredient_id>
+    <name>ETHYL MALTOL</name>
+    <description>MISCELLANEOUS - FLAVOUR ENHANCERS</description>
+    <halal_status>MUSHBOOH, HALAL IF NO ALCOHOL IS USED IN THE PROCESS</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>900</ingredient_id>
+    <name>DIMETHYLPOLYSILOXANE</name>
+    <description>MISCELLANEOUS - FLAVOUR ENHANCERS</description>
+    <halal_status>MUSHBOOH, HALAL IF NO ALCOHOL IS USED IN THE PROCESS</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>901</ingredient_id>
+    <name>BEESWAX</name>
+    <description>MISCELLANEOUS - GLAZING AGENTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>903</ingredient_id>
+    <name>CARNAUBA WAX</name>
+    <description>MISCELLANEOUS - GLAZING AGENTS</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>904</ingredient_id>
+    <name>SHELLAC</name>
+    <description>MISCELLANEOUS - GLAZING AGENTS</description>
+    <halal_status>MUSHBOOH, UNDER CONSULTATION WITH ISLAMIC SCHOLARS, A GUMMY SECRETION MATERIAL FROM THE PORES OF AN INSECT COCCUS LACCA THAT FEED ON PALAS TREES IN INDIA AND SOUTH ASIA. THIS GUMMY MATERIAL IS CALLED LAC.</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>905</ingredient_id>
+    <name>MINERAL HYDROCARBONS</name>
+    <description>MISCELLANEOUS - GLAZING AGENTS</description>
+    <halal_status>HALAL IF NO ALCOHOL IS USED</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>907</ingredient_id>
+    <name>REFINED MICROCRYSTALLINE WAX</name>
+    <description>MISCELLANEOUS - GLAZING AGENTS</description>
+    <halal_status>MUSHBOOH, HALAL IF OBTAINED FROM HALAL SOURCE</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>920</ingredient_id>
+    <name>L-CYSTEINE HYDROCHLORIDE</name>
+    <description>MISCELLANEOUS - COMPOUNDS USED TO TREAT FLOUR</description>
+    <halal_status>MUSHBOOH, HARAM IF IT IS OBTAINED FROM HUMAN HAIR, HALAL IF IT IS MADE FROM HALAL SYNTHETIC MATERIAL. NO OPINION IF IT IS MADE FROM CHICKEN FEATHERS</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>924</ingredient_id>
+    <name>POTASSIUM BROMATE</name>
+    <description>MISCELLANEOUS - COMPOUNDS USED TO TREAT FLOUR</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>925</ingredient_id>
+    <name>CHLORINE</name>
+    <description>MISCELLANEOUS - COMPOUNDS USED TO TREAT FLOUR</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>926</ingredient_id>
+    <name>CHLORINE DIOXIDE</name>
+    <description>MISCELLANEOUS - COMPOUNDS USED TO TREAT FLOUR</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id>927</ingredient_id>
+    <name>AZODICARBONAMIDE</name>
+    <description>MISCELLANEOUS - COMPOUNDS USED TO TREAT FLOUR</description>
+    <halal_status>HALAL</halal_status>
+  </Table1>
+  <Table1>
+    <ingredient_id xml:space="preserve"> </ingredient_id>
+    <name xml:space="preserve"> </name>
+    <description xml:space="preserve"> </description>
+    <halal_status xml:space="preserve"> </halal_status>
+  </Table1>
+</DocumentElement>

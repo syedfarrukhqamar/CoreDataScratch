@@ -7,25 +7,77 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D43CD81F1C2A8CD4008DE720 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43CD81E1C2A8CD4008DE720 /* TableViewController.swift */; };
-		D467D2D71C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D31C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift */; };
-		D467D2D81C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D31C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift */; };
-		D467D2D91C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D31C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift */; };
-		D467D2DA1C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D41C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift */; };
-		D467D2DB1C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D41C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift */; };
-		D467D2DC1C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D41C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift */; };
+		D40558E81C67ACFB00A64D60 /* temp.xml in Resources */ = {isa = PBXBuildFile; fileRef = D40558E71C67ACFB00A64D60 /* temp.xml */; };
+		D440F0861C61BD8A00F22BB6 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D440F0851C61BD8A00F22BB6 /* Temp.swift */; };
+		D440F0881C61BDCD00F22BB6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D440F0871C61BDCD00F22BB6 /* TableViewController.swift */; };
+		D440F0891C61BDCD00F22BB6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D440F0871C61BDCD00F22BB6 /* TableViewController.swift */; };
+		D440F08A1C61BDCD00F22BB6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D440F0871C61BDCD00F22BB6 /* TableViewController.swift */; };
+		D45FB2631C57E11C001CC1A2 /* AAAProductsWithIngredientsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2611C57E11C001CC1A2 /* AAAProductsWithIngredientsMO+CoreDataProperties.swift */; };
+		D45FB2641C57E11C001CC1A2 /* AAAProductsWithIngredientsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2621C57E11C001CC1A2 /* AAAProductsWithIngredientsMO.swift */; };
+		D45FB2661C581DDF001CC1A2 /* IngredientBundles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2651C581DDF001CC1A2 /* IngredientBundles.swift */; };
+		D45FB2671C581DDF001CC1A2 /* IngredientBundles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2651C581DDF001CC1A2 /* IngredientBundles.swift */; };
+		D45FB2681C581DDF001CC1A2 /* IngredientBundles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2651C581DDF001CC1A2 /* IngredientBundles.swift */; };
+		D45FB26B1C5A0EF6001CC1A2 /* CoreDataScratch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2691C5A0EF6001CC1A2 /* CoreDataScratch.xcdatamodeld */; };
+		D45FB26E1C5A1055001CC1A2 /* AAAUsersMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB26C1C5A1055001CC1A2 /* AAAUsersMO+CoreDataProperties.swift */; };
+		D45FB26F1C5A1055001CC1A2 /* AAAUsersMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB26C1C5A1055001CC1A2 /* AAAUsersMO+CoreDataProperties.swift */; };
+		D45FB2701C5A1055001CC1A2 /* AAAUsersMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB26C1C5A1055001CC1A2 /* AAAUsersMO+CoreDataProperties.swift */; };
+		D45FB2711C5A1055001CC1A2 /* AAAUsersMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB26D1C5A1055001CC1A2 /* AAAUsersMO.swift */; };
+		D45FB2721C5A1055001CC1A2 /* AAAUsersMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB26D1C5A1055001CC1A2 /* AAAUsersMO.swift */; };
+		D45FB2731C5A1055001CC1A2 /* AAAUsersMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB26D1C5A1055001CC1A2 /* AAAUsersMO.swift */; };
+		D45FB2761C5A10BC001CC1A2 /* AAASettingsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2741C5A10BC001CC1A2 /* AAASettingsMO+CoreDataProperties.swift */; };
+		D45FB2771C5A10BC001CC1A2 /* AAASettingsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2741C5A10BC001CC1A2 /* AAASettingsMO+CoreDataProperties.swift */; };
+		D45FB2781C5A10BC001CC1A2 /* AAASettingsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2741C5A10BC001CC1A2 /* AAASettingsMO+CoreDataProperties.swift */; };
+		D45FB2791C5A10BC001CC1A2 /* AAASettingsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2751C5A10BC001CC1A2 /* AAASettingsMO.swift */; };
+		D45FB27A1C5A10BC001CC1A2 /* AAASettingsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2751C5A10BC001CC1A2 /* AAASettingsMO.swift */; };
+		D45FB27B1C5A10BC001CC1A2 /* AAASettingsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2751C5A10BC001CC1A2 /* AAASettingsMO.swift */; };
+		D45FB2821C5A11B0001CC1A2 /* UserRoles+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB27C1C5A11B0001CC1A2 /* UserRoles+CoreDataProperties.swift */; };
+		D45FB2831C5A11B0001CC1A2 /* UserRoles+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB27C1C5A11B0001CC1A2 /* UserRoles+CoreDataProperties.swift */; };
+		D45FB2841C5A11B0001CC1A2 /* UserRoles+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB27C1C5A11B0001CC1A2 /* UserRoles+CoreDataProperties.swift */; };
+		D45FB2851C5A11B0001CC1A2 /* UserRoles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB27D1C5A11B0001CC1A2 /* UserRoles.swift */; };
+		D45FB2861C5A11B0001CC1A2 /* UserRoles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB27D1C5A11B0001CC1A2 /* UserRoles.swift */; };
+		D45FB2871C5A11B0001CC1A2 /* UserRoles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB27D1C5A11B0001CC1A2 /* UserRoles.swift */; };
+		D45FB2881C5A11B0001CC1A2 /* Roles+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB27E1C5A11B0001CC1A2 /* Roles+CoreDataProperties.swift */; };
+		D45FB2891C5A11B0001CC1A2 /* Roles+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB27E1C5A11B0001CC1A2 /* Roles+CoreDataProperties.swift */; };
+		D45FB28A1C5A11B0001CC1A2 /* Roles+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB27E1C5A11B0001CC1A2 /* Roles+CoreDataProperties.swift */; };
+		D45FB28B1C5A11B0001CC1A2 /* Roles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB27F1C5A11B0001CC1A2 /* Roles.swift */; };
+		D45FB28C1C5A11B0001CC1A2 /* Roles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB27F1C5A11B0001CC1A2 /* Roles.swift */; };
+		D45FB28D1C5A11B0001CC1A2 /* Roles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB27F1C5A11B0001CC1A2 /* Roles.swift */; };
+		D45FB28E1C5A11B0001CC1A2 /* Permissions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2801C5A11B0001CC1A2 /* Permissions+CoreDataProperties.swift */; };
+		D45FB28F1C5A11B0001CC1A2 /* Permissions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2801C5A11B0001CC1A2 /* Permissions+CoreDataProperties.swift */; };
+		D45FB2901C5A11B0001CC1A2 /* Permissions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2801C5A11B0001CC1A2 /* Permissions+CoreDataProperties.swift */; };
+		D45FB2911C5A11B0001CC1A2 /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2811C5A11B0001CC1A2 /* Permissions.swift */; };
+		D45FB2921C5A11B0001CC1A2 /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2811C5A11B0001CC1A2 /* Permissions.swift */; };
+		D45FB2931C5A11B0001CC1A2 /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2811C5A11B0001CC1A2 /* Permissions.swift */; };
+		D45FB2961C5A12E0001CC1A2 /* AAADB_LogMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2941C5A12E0001CC1A2 /* AAADB_LogMO+CoreDataProperties.swift */; };
+		D45FB2971C5A12E0001CC1A2 /* AAADB_LogMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2941C5A12E0001CC1A2 /* AAADB_LogMO+CoreDataProperties.swift */; };
+		D45FB2981C5A12E0001CC1A2 /* AAADB_LogMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2941C5A12E0001CC1A2 /* AAADB_LogMO+CoreDataProperties.swift */; };
+		D45FB2991C5A12E0001CC1A2 /* AAADB_LogMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2951C5A12E0001CC1A2 /* AAADB_LogMO.swift */; };
+		D45FB29A1C5A12E0001CC1A2 /* AAADB_LogMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2951C5A12E0001CC1A2 /* AAADB_LogMO.swift */; };
+		D45FB29B1C5A12E0001CC1A2 /* AAADB_LogMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45FB2951C5A12E0001CC1A2 /* AAADB_LogMO.swift */; };
 		D467D2DD1C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D51C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift */; };
 		D467D2DE1C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D51C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift */; };
 		D467D2DF1C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D51C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift */; };
 		D467D2E01C346AF60061E7EF /* AAAMasterProductsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D61C346AF60061E7EF /* AAAMasterProductsMO.swift */; };
 		D467D2E11C346AF60061E7EF /* AAAMasterProductsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D61C346AF60061E7EF /* AAAMasterProductsMO.swift */; };
 		D467D2E21C346AF60061E7EF /* AAAMasterProductsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2D61C346AF60061E7EF /* AAAMasterProductsMO.swift */; };
-		D467D2E61C346C130061E7EF /* temp.xml in Resources */ = {isa = PBXBuildFile; fileRef = D467D2E51C346C130061E7EF /* temp.xml */; };
 		D467D2E81C34779C0061E7EF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D467D2E71C34779C0061E7EF /* AVFoundation.framework */; };
 		D467D2EA1C34780E0061E7EF /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2E91C34780E0061E7EF /* BarcodeViewController.swift */; };
 		D467D2EB1C34780E0061E7EF /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2E91C34780E0061E7EF /* BarcodeViewController.swift */; };
 		D467D2EC1C34780E0061E7EF /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467D2E91C34780E0061E7EF /* BarcodeViewController.swift */; };
-		D4E550C11C2BFFB400199198 /* Ingredients+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E550BF1C2BFFB400199198 /* Ingredients+CoreDataProperties.swift */; };
+		D481E2461C56A8D2004B8615 /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D481E2451C56A8D2004B8615 /* IngredientsTableViewCell.swift */; };
+		D48E95D41C6B1DA800BB7C73 /* Ingredients+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48E95D31C6B1DA800BB7C73 /* Ingredients+CoreDataProperties.swift */; };
+		D48E95D51C6B1DA800BB7C73 /* Ingredients+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48E95D31C6B1DA800BB7C73 /* Ingredients+CoreDataProperties.swift */; };
+		D48E95D61C6B1DA800BB7C73 /* Ingredients+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48E95D31C6B1DA800BB7C73 /* Ingredients+CoreDataProperties.swift */; };
+		D4BD07EE1C63C046007DF24E /* DataControllerCentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BD07ED1C63C046007DF24E /* DataControllerCentral.swift */; };
+		D4BD07EF1C63C046007DF24E /* DataControllerCentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BD07ED1C63C046007DF24E /* DataControllerCentral.swift */; };
+		D4BD07F01C63C046007DF24E /* DataControllerCentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BD07ED1C63C046007DF24E /* DataControllerCentral.swift */; };
+		D4BE2DAB1C5B200F0018A88F /* Akharat Launch Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D4BE2DAA1C5B200E0018A88F /* Akharat Launch Screen.jpg */; };
+		D4C089251C5FBB35003E2D22 /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C089241C5FBB35003E2D22 /* IngredientsViewController.swift */; };
+		D4C089261C5FBB35003E2D22 /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C089241C5FBB35003E2D22 /* IngredientsViewController.swift */; };
+		D4C089271C5FBB35003E2D22 /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C089241C5FBB35003E2D22 /* IngredientsViewController.swift */; };
+		D4C089291C608D5D003E2D22 /* IngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C089281C608D5D003E2D22 /* IngredientsTableViewController.swift */; };
+		D4C0892A1C608D5D003E2D22 /* IngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C089281C608D5D003E2D22 /* IngredientsTableViewController.swift */; };
+		D4C0892B1C608D5D003E2D22 /* IngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C089281C608D5D003E2D22 /* IngredientsTableViewController.swift */; };
 		D4E550C21C2BFFB400199198 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E550C01C2BFFB400199198 /* Ingredients.swift */; };
 		D4E55BED1C50CBAE00B9468C /* AddProductManuallyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E55BEC1C50CBAE00B9468C /* AddProductManuallyController.swift */; };
 		D4E55BEE1C50CBAE00B9468C /* AddProductManuallyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E55BEC1C50CBAE00B9468C /* AddProductManuallyController.swift */; };
@@ -40,7 +92,6 @@
 		D4FEDAEB1C246F320007B4D7 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDAEA1C246F320007B4D7 /* DataController.swift */; };
 		D4FEDAEC1C246F320007B4D7 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDAEA1C246F320007B4D7 /* DataController.swift */; };
 		D4FEDAED1C246F320007B4D7 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDAEA1C246F320007B4D7 /* DataController.swift */; };
-		D4FEDAF01C248D180007B4D7 /* CoreDataScratch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4FEDAEE1C248D180007B4D7 /* CoreDataScratch.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,15 +112,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D43CD81E1C2A8CD4008DE720 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		D467D2D31C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AAAProductsWithIngredientsMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		D467D2D41C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAAProductsWithIngredientsMO.swift; sourceTree = "<group>"; };
+		D40558E71C67ACFB00A64D60 /* temp.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = temp.xml; sourceTree = "<group>"; };
+		D440F0851C61BD8A00F22BB6 /* Temp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
+		D440F0871C61BDCD00F22BB6 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		D45FB2611C57E11C001CC1A2 /* AAAProductsWithIngredientsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AAAProductsWithIngredientsMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D45FB2621C57E11C001CC1A2 /* AAAProductsWithIngredientsMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAAProductsWithIngredientsMO.swift; sourceTree = "<group>"; };
+		D45FB2651C581DDF001CC1A2 /* IngredientBundles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientBundles.swift; sourceTree = "<group>"; };
+		D45FB26A1C5A0EF6001CC1A2 /* CoreDataScratch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataScratch.xcdatamodel; sourceTree = "<group>"; };
+		D45FB26C1C5A1055001CC1A2 /* AAAUsersMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AAAUsersMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D45FB26D1C5A1055001CC1A2 /* AAAUsersMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAAUsersMO.swift; sourceTree = "<group>"; };
+		D45FB2741C5A10BC001CC1A2 /* AAASettingsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AAASettingsMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D45FB2751C5A10BC001CC1A2 /* AAASettingsMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAASettingsMO.swift; sourceTree = "<group>"; };
+		D45FB27C1C5A11B0001CC1A2 /* UserRoles+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserRoles+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D45FB27D1C5A11B0001CC1A2 /* UserRoles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRoles.swift; sourceTree = "<group>"; };
+		D45FB27E1C5A11B0001CC1A2 /* Roles+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Roles+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D45FB27F1C5A11B0001CC1A2 /* Roles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Roles.swift; sourceTree = "<group>"; };
+		D45FB2801C5A11B0001CC1A2 /* Permissions+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Permissions+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D45FB2811C5A11B0001CC1A2 /* Permissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
+		D45FB2941C5A12E0001CC1A2 /* AAADB_LogMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AAADB_LogMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D45FB2951C5A12E0001CC1A2 /* AAADB_LogMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAADB_LogMO.swift; sourceTree = "<group>"; };
 		D467D2D51C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AAAMasterProductsMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D467D2D61C346AF60061E7EF /* AAAMasterProductsMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAAMasterProductsMO.swift; sourceTree = "<group>"; };
-		D467D2E51C346C130061E7EF /* temp.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = temp.xml; path = ../../../../../../Downloads/temp.xml; sourceTree = "<group>"; };
 		D467D2E71C34779C0061E7EF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D467D2E91C34780E0061E7EF /* BarcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
-		D4E550BF1C2BFFB400199198 /* Ingredients+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ingredients+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D481E2451C56A8D2004B8615 /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
+		D48E95D31C6B1DA800BB7C73 /* Ingredients+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ingredients+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D4BD07ED1C63C046007DF24E /* DataControllerCentral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataControllerCentral.swift; sourceTree = "<group>"; };
+		D4BE2DAA1C5B200E0018A88F /* Akharat Launch Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Akharat Launch Screen.jpg"; sourceTree = "<group>"; };
+		D4C089241C5FBB35003E2D22 /* IngredientsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsViewController.swift; sourceTree = "<group>"; };
+		D4C089281C608D5D003E2D22 /* IngredientsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewController.swift; sourceTree = "<group>"; };
 		D4E550C01C2BFFB400199198 /* Ingredients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 		D4E55BEC1C50CBAE00B9468C /* AddProductManuallyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductManuallyController.swift; sourceTree = "<group>"; };
 		D4FEDAB61C246BC60007B4D7 /* CoreDataScratch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataScratch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +157,6 @@
 		D4FEDADC1C246BC60007B4D7 /* CoreDataScratchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataScratchUITests.swift; sourceTree = "<group>"; };
 		D4FEDADE1C246BC60007B4D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4FEDAEA1C246F320007B4D7 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		D4FEDAEF1C248D180007B4D7 /* CoreDataScratch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataScratch.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,24 +209,43 @@
 		D4FEDAB81C246BC60007B4D7 /* CoreDataScratch */ = {
 			isa = PBXGroup;
 			children = (
-				D467D2D31C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift */,
-				D467D2D41C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift */,
+				D40558E71C67ACFB00A64D60 /* temp.xml */,
+				D4BE2DAA1C5B200E0018A88F /* Akharat Launch Screen.jpg */,
+				D45FB2941C5A12E0001CC1A2 /* AAADB_LogMO+CoreDataProperties.swift */,
+				D45FB2951C5A12E0001CC1A2 /* AAADB_LogMO.swift */,
+				D45FB2691C5A0EF6001CC1A2 /* CoreDataScratch.xcdatamodeld */,
+				D48E95D31C6B1DA800BB7C73 /* Ingredients+CoreDataProperties.swift */,
+				D45FB27C1C5A11B0001CC1A2 /* UserRoles+CoreDataProperties.swift */,
+				D45FB27D1C5A11B0001CC1A2 /* UserRoles.swift */,
+				D45FB27E1C5A11B0001CC1A2 /* Roles+CoreDataProperties.swift */,
+				D45FB27F1C5A11B0001CC1A2 /* Roles.swift */,
+				D45FB2801C5A11B0001CC1A2 /* Permissions+CoreDataProperties.swift */,
+				D45FB2811C5A11B0001CC1A2 /* Permissions.swift */,
+				D45FB2741C5A10BC001CC1A2 /* AAASettingsMO+CoreDataProperties.swift */,
+				D45FB2751C5A10BC001CC1A2 /* AAASettingsMO.swift */,
+				D45FB26C1C5A1055001CC1A2 /* AAAUsersMO+CoreDataProperties.swift */,
+				D45FB26D1C5A1055001CC1A2 /* AAAUsersMO.swift */,
+				D45FB2611C57E11C001CC1A2 /* AAAProductsWithIngredientsMO+CoreDataProperties.swift */,
+				D45FB2621C57E11C001CC1A2 /* AAAProductsWithIngredientsMO.swift */,
 				D467D2D51C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift */,
 				D467D2D61C346AF60061E7EF /* AAAMasterProductsMO.swift */,
-				D4FEDAEE1C248D180007B4D7 /* CoreDataScratch.xcdatamodeld */,
-				D4E550BF1C2BFFB400199198 /* Ingredients+CoreDataProperties.swift */,
 				D4E550C01C2BFFB400199198 /* Ingredients.swift */,
 				D4FEDAB91C246BC60007B4D7 /* AppDelegate.swift */,
 				D4FEDABB1C246BC60007B4D7 /* ViewController.swift */,
 				D467D2E91C34780E0061E7EF /* BarcodeViewController.swift */,
-				D467D2E51C346C130061E7EF /* temp.xml */,
-				D43CD81E1C2A8CD4008DE720 /* TableViewController.swift */,
+				D440F0871C61BDCD00F22BB6 /* TableViewController.swift */,
+				D440F0851C61BD8A00F22BB6 /* Temp.swift */,
+				D4C089281C608D5D003E2D22 /* IngredientsTableViewController.swift */,
+				D4C089241C5FBB35003E2D22 /* IngredientsViewController.swift */,
+				D45FB2651C581DDF001CC1A2 /* IngredientBundles.swift */,
+				D481E2451C56A8D2004B8615 /* IngredientsTableViewCell.swift */,
 				D4FEDABD1C246BC60007B4D7 /* Main.storyboard */,
 				D4E55BEC1C50CBAE00B9468C /* AddProductManuallyController.swift */,
 				D4FEDAC31C246BC60007B4D7 /* Assets.xcassets */,
 				D4FEDAC51C246BC60007B4D7 /* LaunchScreen.storyboard */,
 				D4FEDAC81C246BC60007B4D7 /* Info.plist */,
 				D4FEDAEA1C246F320007B4D7 /* DataController.swift */,
+				D4BD07ED1C63C046007DF24E /* DataControllerCentral.swift */,
 			);
 			path = CoreDataScratch;
 			sourceTree = "<group>";
@@ -247,6 +336,7 @@
 				TargetAttributes = {
 					D4FEDAB51C246BC60007B4D7 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 5CVAFDS3BY;
 					};
 					D4FEDACC1C246BC60007B4D7 = {
 						CreatedOnToolsVersion = 7.2;
@@ -284,7 +374,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4FEDAC71C246BC60007B4D7 /* LaunchScreen.storyboard in Resources */,
-				D467D2E61C346C130061E7EF /* temp.xml in Resources */,
+				D4BE2DAB1C5B200F0018A88F /* Akharat Launch Screen.jpg in Resources */,
+				D40558E81C67ACFB00A64D60 /* temp.xml in Resources */,
 				D4FEDAC41C246BC60007B4D7 /* Assets.xcassets in Resources */,
 				D4FEDABF1C246BC60007B4D7 /* Main.storyboard in Resources */,
 			);
@@ -311,19 +402,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D45FB2821C5A11B0001CC1A2 /* UserRoles+CoreDataProperties.swift in Sources */,
+				D4BD07EE1C63C046007DF24E /* DataControllerCentral.swift in Sources */,
+				D45FB2881C5A11B0001CC1A2 /* Roles+CoreDataProperties.swift in Sources */,
+				D45FB2641C57E11C001CC1A2 /* AAAProductsWithIngredientsMO.swift in Sources */,
+				D45FB2631C57E11C001CC1A2 /* AAAProductsWithIngredientsMO+CoreDataProperties.swift in Sources */,
+				D45FB2791C5A10BC001CC1A2 /* AAASettingsMO.swift in Sources */,
 				D4E550C21C2BFFB400199198 /* Ingredients.swift in Sources */,
 				D4E55BED1C50CBAE00B9468C /* AddProductManuallyController.swift in Sources */,
-				D467D2DA1C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift in Sources */,
+				D45FB2851C5A11B0001CC1A2 /* UserRoles.swift in Sources */,
+				D45FB2961C5A12E0001CC1A2 /* AAADB_LogMO+CoreDataProperties.swift in Sources */,
+				D45FB2711C5A1055001CC1A2 /* AAAUsersMO.swift in Sources */,
+				D45FB2991C5A12E0001CC1A2 /* AAADB_LogMO.swift in Sources */,
 				D467D2E01C346AF60061E7EF /* AAAMasterProductsMO.swift in Sources */,
-				D4E550C11C2BFFB400199198 /* Ingredients+CoreDataProperties.swift in Sources */,
+				D45FB2761C5A10BC001CC1A2 /* AAASettingsMO+CoreDataProperties.swift in Sources */,
+				D440F0881C61BDCD00F22BB6 /* TableViewController.swift in Sources */,
+				D45FB28B1C5A11B0001CC1A2 /* Roles.swift in Sources */,
+				D481E2461C56A8D2004B8615 /* IngredientsTableViewCell.swift in Sources */,
+				D45FB28E1C5A11B0001CC1A2 /* Permissions+CoreDataProperties.swift in Sources */,
+				D440F0861C61BD8A00F22BB6 /* Temp.swift in Sources */,
+				D45FB2661C581DDF001CC1A2 /* IngredientBundles.swift in Sources */,
 				D467D2DD1C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift in Sources */,
+				D48E95D41C6B1DA800BB7C73 /* Ingredients+CoreDataProperties.swift in Sources */,
 				D467D2EA1C34780E0061E7EF /* BarcodeViewController.swift in Sources */,
+				D45FB26E1C5A1055001CC1A2 /* AAAUsersMO+CoreDataProperties.swift in Sources */,
+				D4C089291C608D5D003E2D22 /* IngredientsTableViewController.swift in Sources */,
 				D4FEDAEB1C246F320007B4D7 /* DataController.swift in Sources */,
+				D45FB2911C5A11B0001CC1A2 /* Permissions.swift in Sources */,
 				D4FEDABC1C246BC60007B4D7 /* ViewController.swift in Sources */,
+				D45FB26B1C5A0EF6001CC1A2 /* CoreDataScratch.xcdatamodeld in Sources */,
+				D4C089251C5FBB35003E2D22 /* IngredientsViewController.swift in Sources */,
 				D4FEDABA1C246BC60007B4D7 /* AppDelegate.swift in Sources */,
-				D43CD81F1C2A8CD4008DE720 /* TableViewController.swift in Sources */,
-				D467D2D71C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift in Sources */,
-				D4FEDAF01C248D180007B4D7 /* CoreDataScratch.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,12 +440,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D467D2DB1C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift in Sources */,
-				D467D2D81C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift in Sources */,
+				D45FB2831C5A11B0001CC1A2 /* UserRoles+CoreDataProperties.swift in Sources */,
+				D4C0892A1C608D5D003E2D22 /* IngredientsTableViewController.swift in Sources */,
+				D45FB2891C5A11B0001CC1A2 /* Roles+CoreDataProperties.swift in Sources */,
+				D4BD07EF1C63C046007DF24E /* DataControllerCentral.swift in Sources */,
+				D45FB2971C5A12E0001CC1A2 /* AAADB_LogMO+CoreDataProperties.swift in Sources */,
+				D45FB2771C5A10BC001CC1A2 /* AAASettingsMO+CoreDataProperties.swift in Sources */,
+				D48E95D51C6B1DA800BB7C73 /* Ingredients+CoreDataProperties.swift in Sources */,
+				D45FB2861C5A11B0001CC1A2 /* UserRoles.swift in Sources */,
+				D4C089261C5FBB35003E2D22 /* IngredientsViewController.swift in Sources */,
+				D45FB2721C5A1055001CC1A2 /* AAAUsersMO.swift in Sources */,
+				D45FB2671C581DDF001CC1A2 /* IngredientBundles.swift in Sources */,
+				D45FB28F1C5A11B0001CC1A2 /* Permissions+CoreDataProperties.swift in Sources */,
 				D4FEDAD21C246BC60007B4D7 /* CoreDataScratchTests.swift in Sources */,
+				D45FB26F1C5A1055001CC1A2 /* AAAUsersMO+CoreDataProperties.swift in Sources */,
+				D45FB28C1C5A11B0001CC1A2 /* Roles.swift in Sources */,
+				D45FB29A1C5A12E0001CC1A2 /* AAADB_LogMO.swift in Sources */,
 				D467D2DE1C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift in Sources */,
+				D45FB27A1C5A10BC001CC1A2 /* AAASettingsMO.swift in Sources */,
 				D4FEDAEC1C246F320007B4D7 /* DataController.swift in Sources */,
+				D440F0891C61BDCD00F22BB6 /* TableViewController.swift in Sources */,
 				D467D2E11C346AF60061E7EF /* AAAMasterProductsMO.swift in Sources */,
+				D45FB2921C5A11B0001CC1A2 /* Permissions.swift in Sources */,
 				D4E55BEE1C50CBAE00B9468C /* AddProductManuallyController.swift in Sources */,
 				D467D2EB1C34780E0061E7EF /* BarcodeViewController.swift in Sources */,
 			);
@@ -346,12 +471,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D467D2DC1C346AF60061E7EF /* AAAProductsWithIngredientsMO.swift in Sources */,
-				D467D2D91C346AF60061E7EF /* AAAProductsWithIngredientsMO+CoreDataProperties.swift in Sources */,
+				D45FB2841C5A11B0001CC1A2 /* UserRoles+CoreDataProperties.swift in Sources */,
+				D4C0892B1C608D5D003E2D22 /* IngredientsTableViewController.swift in Sources */,
+				D45FB28A1C5A11B0001CC1A2 /* Roles+CoreDataProperties.swift in Sources */,
+				D4BD07F01C63C046007DF24E /* DataControllerCentral.swift in Sources */,
+				D45FB2981C5A12E0001CC1A2 /* AAADB_LogMO+CoreDataProperties.swift in Sources */,
+				D45FB2781C5A10BC001CC1A2 /* AAASettingsMO+CoreDataProperties.swift in Sources */,
+				D48E95D61C6B1DA800BB7C73 /* Ingredients+CoreDataProperties.swift in Sources */,
+				D45FB2871C5A11B0001CC1A2 /* UserRoles.swift in Sources */,
+				D4C089271C5FBB35003E2D22 /* IngredientsViewController.swift in Sources */,
+				D45FB2731C5A1055001CC1A2 /* AAAUsersMO.swift in Sources */,
+				D45FB2681C581DDF001CC1A2 /* IngredientBundles.swift in Sources */,
+				D45FB2901C5A11B0001CC1A2 /* Permissions+CoreDataProperties.swift in Sources */,
 				D4FEDADD1C246BC60007B4D7 /* CoreDataScratchUITests.swift in Sources */,
+				D45FB2701C5A1055001CC1A2 /* AAAUsersMO+CoreDataProperties.swift in Sources */,
+				D45FB28D1C5A11B0001CC1A2 /* Roles.swift in Sources */,
+				D45FB29B1C5A12E0001CC1A2 /* AAADB_LogMO.swift in Sources */,
 				D467D2DF1C346AF60061E7EF /* AAAMasterProductsMO+CoreDataProperties.swift in Sources */,
+				D45FB27B1C5A10BC001CC1A2 /* AAASettingsMO.swift in Sources */,
 				D4FEDAED1C246F320007B4D7 /* DataController.swift in Sources */,
+				D440F08A1C61BDCD00F22BB6 /* TableViewController.swift in Sources */,
 				D467D2E21C346AF60061E7EF /* AAAMasterProductsMO.swift in Sources */,
+				D45FB2931C5A11B0001CC1A2 /* Permissions.swift in Sources */,
 				D4E55BEF1C50CBAE00B9468C /* AddProductManuallyController.swift in Sources */,
 				D467D2EC1C34780E0061E7EF /* BarcodeViewController.swift in Sources */,
 			);
@@ -479,10 +620,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CoreDataScratch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BeMyCompetenceAB.CoreDataScratch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -490,10 +636,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CoreDataScratch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BeMyCompetenceAB.CoreDataScratch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -587,12 +738,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D4FEDAEE1C248D180007B4D7 /* CoreDataScratch.xcdatamodeld */ = {
+		D45FB2691C5A0EF6001CC1A2 /* CoreDataScratch.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D4FEDAEF1C248D180007B4D7 /* CoreDataScratch.xcdatamodel */,
+				D45FB26A1C5A0EF6001CC1A2 /* CoreDataScratch.xcdatamodel */,
 			);
-			currentVersion = D4FEDAEF1C248D180007B4D7 /* CoreDataScratch.xcdatamodel */;
+			currentVersion = D45FB26A1C5A0EF6001CC1A2 /* CoreDataScratch.xcdatamodel */;
 			path = CoreDataScratch.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
